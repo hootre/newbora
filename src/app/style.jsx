@@ -144,7 +144,7 @@ const NavContainer = styled.nav`
     display: block;
   }
   .main-navigation .navbar-nav li a:hover {
-    color: #e5b409;
+    color: var(--accent-color);
     -webkit-transition: all 0.4s ease-out;
     -moz-transition: all 0.4s ease-out;
     -ms-transition: all 0.4s ease-out;
@@ -171,9 +171,12 @@ const NavContainer = styled.nav`
     z-index: 1;
   }
   .navbar-nav > .active > a {
-    color: #e5b409 !important;
+    color: var(--accent-color) !important;
     background: none;
     text-decoration: none;
+  }
+  .active-scroll-spy {
+    color: var(--accent-color) !important;
   }
   .navbar-nav > li > a {
     padding-top: 10px;
@@ -881,6 +884,138 @@ const WorksContainer = styled.section`
     margin-right: -15px;
     margin-left: -15px;
   }
+  /* vimeo video list css */
+  .vimeo-shadowbox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.5s ease;
+    overflow-y: scroll;
+
+    &--hidden {
+      transition: all 0.5s ease;
+      opacity: 0;
+      z-index: -1000;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    &__video-wrapper {
+      position: relative;
+      width: 100%;
+      left: 50%;
+      top: 20%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1920px;
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+    }
+    .contentBox_1 {
+      display: flex;
+      margin-top: 40px;
+      gap: 3rem;
+      .contents {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: left;
+        width: 100%;
+        h2 {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        div {
+          color: #aaa;
+        }
+      }
+      img {
+        width: 70%;
+        object-fit: contain;
+      }
+    }
+    .contentBox_2 {
+      display: flex;
+      padding-top: 40px;
+      flex-direction: row-reverse;
+      gap: 3rem;
+      .contents {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: left;
+        width: 100%;
+        height: 100%;
+        h2 {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        div {
+          color: #aaa;
+        }
+      }
+      img {
+        width: 70%;
+        object-fit: contain;
+      }
+    }
+    .bg_line {
+      width: 2px;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &__video {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+
+      iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+        padding: 10px;
+      }
+    }
+
+    &__close-button {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      overflow: hidden;
+      text-indent: -9999em;
+      background: #000;
+      > svg {
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+  }
   .col-lg-1,
   .col-lg-10,
   .col-lg-11,
@@ -933,6 +1068,25 @@ const WorksContainer = styled.section`
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+  }
+  @media (max-width: 768px) {
+    .vimeo-shadowbox__video-wrapper {
+      gap: 5rem;
+    }
+    .contentBox_1,
+    .contentBox_2 {
+      flex-direction: column !important;
+      align-items: center;
+      justify-content: center;
+
+      .contents {
+        text-align: center !important;
+      }
+    }
+    iframe {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
   @media (min-width: 768px) {
     .col-sm-1,
@@ -1030,7 +1184,9 @@ const AboutContainer = styled.section`
   .z_box {
     z-index: 2;
   }
-
+  .social-item:hover {
+    background-color: var(--accent-color);
+  }
   .accent-color {
     color: var(--accent-color);
   }

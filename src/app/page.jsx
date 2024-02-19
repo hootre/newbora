@@ -14,11 +14,26 @@ import {
   ContactContainer,
 } from "./style";
 import logo from "/public/images/logo.png";
-import aboutText from "/public/images/TTD.png";
-import aboutImg from "/public/images/dummy-img-600x800.jpg";
 import { BsPeopleFill } from "react-icons/bs";
 import { BiSolidArrowToTop } from "react-icons/bi";
+import { IoClose } from "react-icons/io5";
+import { aboutText, mainTitle, navs, works } from "./fileArray";
+import Vimeo from "@u-wave/react-vimeo";
+import ScrollSpy from "react-ui-scrollspy";
 export default function Home() {
+  const [videoPlay, setVideoPlay] = useState(false);
+  function showPopup(e) {
+    e.preventDefault();
+    setVideoPlay(false);
+    $("html").css({ overflow: "hidden" });
+    $(".vimeo-shadowbox").removeClass("vimeo-shadowbox--hidden");
+  }
+  function hidePopup() {
+    setVideoPlay(true);
+    $("html").css({ overflow: "auto" });
+    $(".vimeo-shadowbox").addClass("vimeo-shadowbox--hidden");
+  }
+
   const [isNav, setIsNav] = useState(false);
   const toggleNavbar = () => {
     setIsNav((pre) => !pre);
@@ -93,14 +108,6 @@ export default function Home() {
   });
   return (
     <MainContainer>
-      <div className="preloader-bg"></div>
-      <div id="preloader">
-        <div id="preloader-status">
-          <div className="preloader-position loader">
-            <span></span>
-          </div>
-        </div>
-      </div>
       <NavContainer className="navbar navbar-fixed-top navbar-bg-switch">
         <div className="container">
           <div className="navbar-header fadeIn-element">
@@ -137,26 +144,17 @@ export default function Home() {
               aria-expanded={isNav}
             >
               <ul className="nav navbar-nav navbar-right">
-                <li className="active">
-                  <a className="page-scroll active" href="#home">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a className="page-scroll" href="#about">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a className="page-scroll" href="#demos">
-                    Demos
-                  </a>
-                </li>
-                <li>
-                  <a className="page-scroll" href="#contact">
-                    Contact
-                  </a>
-                </li>
+                {navs.map((item, idx) => (
+                  <li key={idx}>
+                    <a
+                      className="page-scroll"
+                      href={`#${item.title}`}
+                      data-to-scrollspy-id={item.title}
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -175,667 +173,691 @@ export default function Home() {
         <div className="vertical-effect"></div>
       </VerticalContainer>
 
-      <MainVideoContainer className="upper-page" id="home">
-        <div className="hero-fullscreen overlay overlay-top-bottom-dark-15">
-          <div className="hero-fullscreen-FIX overlay overlay-dark-70">
-            <div className="hero-bg bg-img-SINGLE"></div>
+      <div className="preloader-bg"></div>
+      <div id="preloader">
+        <div id="preloader-status">
+          <div className="preloader-position loader">
+            <span></span>
           </div>
         </div>
-
-        <div className="center-container">
-          <div className="center-block">
-            <h2 className="home-page-title fadeIn-element">by BORA</h2>
-
-            <div className="inner-divider-half"></div>
-
-            <h1 className="home-page-title fadeIn-element">
-              2024
-              <br />
-              SHOWREEL
-            </h1>
-
-            <div className="inner-divider-half"></div>
-
-            <div className="more-wraper-center more-wraper-center-home fadeIn-element">
-              <a className="page-scroll" href="#demos">
-                <div className="more-button-bg-center more-button-circle"></div>
-                <div className="more-button-txt-center">
-                  <span>View</span>
-                </div>
-              </a>
+      </div>
+      <ScrollSpy scrollThrottle={100}>
+        <MainVideoContainer id="home" className="upper-page">
+          <div className="hero-fullscreen overlay overlay-top-bottom-dark-15">
+            <div className="hero-fullscreen-FIX overlay overlay-dark-70">
+              <div className="hero-bg bg-img-SINGLE"></div>
             </div>
           </div>
-        </div>
 
-        <div className="scroll-indicator">
-          <div className="scroll-indicator-wrapper">
-            <div className="scroll-line"></div>
+          <div className="center-container">
+            <div className="center-block">
+              <h2 className="home-page-title fadeIn-element">
+                {mainTitle.subTitle}
+              </h2>
+
+              <div className="inner-divider-half"></div>
+
+              <h1 className="home-page-title fadeIn-element">
+                {mainTitle.title_1}
+                <br />
+                {mainTitle.title_2}
+              </h1>
+
+              <div className="inner-divider-half"></div>
+
+              <div className="more-wraper-center more-wraper-center-home fadeIn-element">
+                <a className="page-scroll" href="#demos">
+                  <div className="more-button-bg-center more-button-circle"></div>
+                  <div className="more-button-txt-center">
+                    <span>View</span>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </MainVideoContainer>
-      <AboutContainer id="about" className="section position-relative pb-0">
-        <div className="r-container">
-          <div className="image-overlay-3"></div>
-          <div className="position-relative z_box">
+
+          <div className="scroll-indicator">
+            <div className="scroll-indicator-wrapper">
+              <div className="scroll-line"></div>
+            </div>
+          </div>
+        </MainVideoContainer>
+        <AboutContainer id="about" className="section position-relative pb-0">
+          <div className="r-container">
+            <div className="image-overlay-3"></div>
+            <div className="position-relative z_box">
+              <div className="row row-cols-1 row-cols-lg-2">
+                <div className="col mb-3">
+                  <div className="d-flex flex-column justify-content-center gap-3 h-100">
+                    <div className="divider mb-3">
+                      <span className="accent-color fs-5 me-3">
+                        {aboutText.top_title}
+                      </span>
+                    </div>
+                    <h4 className="text-title text-white fw-bold font-1 lh-1">
+                      {aboutText.title}
+                    </h4>
+                    <p className="text-white f-18 text-font my-4">
+                      {aboutText.subscription}
+                    </p>
+                    <div className="my-4">
+                      <Image
+                        src={aboutText.image}
+                        alt="logo"
+                        className="img-fluid"
+                      />
+                    </div>
+                    <div className="d-flex flex-row gap-3 ">
+                      {aboutText.iconList.map((item, idx) => (
+                        <a
+                          key={idx}
+                          type="button"
+                          href=""
+                          className="social-item p-2 d-flex align-items-center justify-content-center"
+                        >
+                          {item}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="col about-img">
+                  <Image
+                    src={aboutText.top_image}
+                    alt="logo"
+                    className="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="r-container">
+            <div class="row row-cols-1 row-cols-lg-4 py-3 position-relative w-100 z_box2">
+              {aboutText.aboutFooter.map((item, idx) => (
+                <div class="col mb-3" key={idx}>
+                  <div class="d-flex flex-column justify-content-center text-center align-items-center gap-3">
+                    {item.icon}
+                    <div class="font-2 fw-bold">
+                      <h3 class="text-white"> {item.count}</h3>
+                      <h6 class="text-white"> {item.text}</h6>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AboutContainer>
+        <WorksContainer id="demos">
+          <div className="container-fluid sections">
+            <div className="inner-divider"></div>
+
+            <div className="row">
+              <div className="col-lg-12">
+                <h2 className="section-heading section-heading-small">
+                  <span>{works.title_point}</span> {works.title}
+                </h2>
+
+                <div className="inner-divider-ultra-half"></div>
+
+                <h2 className="section-subheading">
+                  <span>{works.subscription}</span>
+                </h2>
+              </div>
+            </div>
+
+            <div className="inner-divider-half"></div>
+
+            <div className="row">
+              <div className="move-up section-demos">
+                {works.work_list.map((item) => (
+                  <div key={item.id} className="col-sm-12 col-md-12 col-lg-4">
+                    {/* view vimeo video  list*/}
+                    <div
+                      className="vimeo-shadowbox vimeo-shadowbox--hidden"
+                      onClick={hidePopup}
+                    >
+                      <div className="bg_line"></div>
+                      <div className="vimeo-shadowbox__video-wrapper">
+                        <div className="contentBox_1">
+                          {item.image}
+                          <div className="contents">
+                            <h2>이것은 이러한 영상입니다 참고하세요</h2>
+                            <div>
+                              이것을 이러한 영상으로 이렇게 만들었습니다
+                              제작자는 누구이고 누구고 누고고고고고ㅗ입니다
+                              이렇게 만들기 아이고 힘들다
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="contentBox_2">
+                          {item.image}
+                          <div className="contents">
+                            <h2>이것은 이러한 영상입니다 참고하세요</h2>
+                            <div>
+                              이것을 이러한 영상으로 이렇게 만들었습니다
+                              제작자는 누구이고 누구고 누고고고고고ㅗ입니다
+                              이렇게 만들기 아이고 힘들다
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div className="vimeo-shadowbox__video">
+                            <Vimeo video={item.href} paused={videoPlay} />
+                          </div>
+                          <div
+                            className="vimeo-shadowbox__close-button"
+                            onClick={hidePopup}
+                          >
+                            <IoClose />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="image-works">
+                      <div className="hover-effect"></div>
+                      <div className="icon-works">
+                        <div className="more-wraper-center more-wraper-center-demos">
+                          <a className="open-popup-link" onClick={showPopup}>
+                            <div className="more-button-bg-center more-button-circle"></div>
+                            <div className="more-button-txt-center">
+                              <span>View</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      {item.new ? (
+                        <span className="preview-corner">
+                          <span className="preview-corner-txt">New</span>
+                        </span>
+                      ) : (
+                        ""
+                      )}
+
+                      {item.image}
+                      <div className="preview-img-info">
+                        <h2>{item.title}</h2>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=63"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Parallax Slider</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=35"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Single Image · Film Grain Effect</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=65"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Single Image</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=37"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Video · Film Grain Effect</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=67"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Video</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=39"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Parallax Slider · Vertical · Film Grain Effect</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=69"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Parallax Slider · Vertical</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=41"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Hero Slideshow · Film Grain Effect</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=71"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Hero Slideshow</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=43"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <span className="preview-corner">
+                      <span className="preview-corner-txt">New</span>
+                    </span>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Filmstrip Carousel Slider · Film Grain Effect</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-12 col-lg-4">
+                  <div className="image-works">
+                    <div className="hover-effect"></div>
+                    <div className="icon-works">
+                      <div className="more-wraper-center more-wraper-center-demos">
+                        <a
+                          href="https://shtheme.com/demosd/stylex/?page_id=73"
+                          target="_top"
+                        >
+                          <div className="more-button-bg-center more-button-circle"></div>
+                          <div className="more-button-txt-center">
+                            <span>View</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <span className="preview-corner">
+                      <span className="preview-corner-txt">New</span>
+                    </span>
+                    <img
+                      alt="Image Preview"
+                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
+                    />
+                    <div className="preview-img-info">
+                      <h2>Filmstrip Carousel Slider</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </WorksContainer>
+        <ContactContainer className="section" id="contact">
+          <div className="r-container">
             <div className="row row-cols-1 row-cols-lg-2">
               <div className="col mb-3">
-                <div className="d-flex flex-column justify-content-center gap-3 h-100">
-                  <div className="divider mb-3">
-                    <span className="accent-color fs-5 me-3">HI ALEX</span>
-                  </div>
-                  <h4 className="text-title text-white fw-bold font-1 lh-1">
-                    Professional Photographer
-                  </h4>
-                  <p className="text-white f-18 text-font my-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <div className="my-4">
-                    <Image src={aboutText} alt="logo" className="img-fluid" />
-                  </div>
-                  <div className="d-flex flex-row gap-3 ">
-                    <a
-                      type="button"
-                      href=""
-                      className="social-item p-2 d-flex align-items-center justify-content-center"
-                    >
-                      <BsPeopleFill />
-                    </a>
-                    <a
-                      type="button"
-                      href=""
-                      className="social-item p-2 d-flex align-items-center justify-content-center"
-                    >
-                      <BsPeopleFill />
-                    </a>
-                    <a
-                      type="button"
-                      href=""
-                      className="social-item p-2 d-flex align-items-center justify-content-center"
-                    >
-                      <BsPeopleFill />
-                    </a>
-                    <a
-                      type="button"
-                      href=""
-                      className="social-item p-2 d-flex align-items-center justify-content-center"
-                    >
-                      <BsPeopleFill />
-                    </a>
-                  </div>
+                <div className="divider mb-4">
+                  <span className="accent-color fs-5 me-3">GET IN TOUCH</span>
                 </div>
-              </div>
-              <div className="col about-img">
-                <Image src={aboutImg} alt="logo" className="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="r-container">
-          <div class="row row-cols-1 row-cols-lg-4 py-3 position-relative w-100 z_box2">
-            <div class="col mb-3">
-              <div class="d-flex flex-column justify-content-center text-center align-items-center gap-3">
-                <BsPeopleFill className="icon" />
-                <div class="font-2 fw-bold">
-                  <h3 class="text-white">1,269</h3>
-                  <h6 class="text-white">Happy Costumer</h6>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-3">
-              <div class="d-flex flex-column justify-content-center text-center align-items-center gap-3">
-                <BsPeopleFill className="icon" />
-                <div class="font-2 fw-bold">
-                  <h3 class="text-white">99</h3>
-                  <h6 class="text-white">Award Winning</h6>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-3">
-              <div class="d-flex flex-column justify-content-center text-center align-items-center gap-3">
-                <BsPeopleFill className="icon" />
-                <div class="font-2 fw-bold">
-                  <h3 class="text-white">35</h3>
-                  <h6 class="text-white">Profesional Team</h6>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-3">
-              <div class="d-flex flex-column justify-content-center text-center align-items-center gap-3">
-                <BsPeopleFill className="icon" />
-                <div class="font-2 fw-bold">
-                  <h3 class="text-white">2,987</h3>
-                  <h6 class="text-white">Photos Taken</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </AboutContainer>
-      <WorksContainer id="demos">
-        <div className="container-fluid sections">
-          <div className="inner-divider"></div>
-
-          <div className="row">
-            <div className="col-lg-12">
-              <h2 className="section-heading section-heading-small">
-                <span>Home</span> Pages
-              </h2>
-
-              <div className="inner-divider-ultra-half"></div>
-
-              <h2 className="section-subheading">
-                <span>By all means, choose your style</span>
-              </h2>
-            </div>
-          </div>
-
-          <div className="inner-divider-half"></div>
-
-          <div className="row">
-            <div className="move-up section-demos">
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/"
-                        target="_top"
-                      >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
+                <h4 className="text-title text-white fw-bold font-1 lh-1 mb-5">
+                  Contact Us.
+                </h4>
+                <p className="text-gray">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris.
+                </p>
+                <div className="row row-cols-1 row-cols-lg-2 mt-5">
+                  <div className="col mb-3">
+                    <div className="d-flex flex-row align-items-center gap-3">
+                      <BsPeopleFill className="icon" />
+                      <div className="d-flex flex-column">
+                        <h6 className="text-white font-1">Phone</h6>
+                        <span className="text-gray">345 563 23</span>
+                      </div>
                     </div>
                   </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Parallax Slider · Film Grain Effect</h2>
+                  <div className="col mb-3">
+                    <div className="d-flex flex-row align-items-center gap-3">
+                      <BsPeopleFill className="icon" />
+                      <div className="d-flex flex-column">
+                        <h6 className="text-white font-1">Site</h6>
+                        <span className="text-gray">www.awesomesite.com</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col mb-3">
+                    <div className="d-flex flex-row align-items-center gap-3">
+                      <BsPeopleFill className="icon" />
+                      <div className="d-flex flex-column">
+                        <h6 className="text-white font-1">Email</h6>
+                        <span className="text-gray">hello@awesomesite.com</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col mb-3">
+                    <div className="d-flex flex-row align-items-center gap-3">
+                      <BsPeopleFill className="icon" />
+                      <div className="d-flex flex-column">
+                        <h6 className="text-white font-1">Address</h6>
+                        <span className="text-gray">
+                          99 Roving St., Big City, PKU 23456
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=63"
-                        target="_top"
+              <div className="col">
+                <div className="h-100 d-flex flex-column">
+                  <div
+                    className="success_msg toast align-items-center w-100 shadow-none mb-3 bg-transparent border border-success rounded-0 my-4"
+                    role="alert"
+                    aria-live="assertive"
+                    aria-atomic="true"
+                  >
+                    <div className="d-flex p-2">
+                      <div className="toast-body f-18 d-flex flex-row gap-3 align-items-center text-success">
+                        <i className="fa-solid fa-check f-36 text-success"></i>
+                        Your Message Successfully Send.
+                      </div>
+                      <button
+                        type="button"
+                        className="me-2 m-auto bg-transparent border-0 ps-1 pe-0 text-success"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
                       >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
+                        <i className="fa-solid fa-xmark"></i>
+                      </button>
                     </div>
                   </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Parallax Slider</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=35"
-                        target="_top"
+                  <div
+                    className="error_msg toast align-items-center w-100 shadow-none border-danger mb-3 bg-transparent my-4 border rounded-0"
+                    role="alert"
+                    aria-live="assertive"
+                    aria-atomic="true"
+                  >
+                    <div className="d-flex p-2">
+                      <div className="toast-body f-18 d-flex flex-row gap-3 align-items-center text-danger">
+                        <i className="fa-solid fa-triangle-exclamation f-36 text-danger"></i>
+                        Something Wrong ! Send Form Failed.
+                      </div>
+                      <button
+                        type="button"
+                        className="me-2 m-auto bg-transparent border-0 ps-1 pe-0 text-danger"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
                       >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
+                        <i className="fa-solid fa-xmark"></i>
+                      </button>
                     </div>
                   </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Single Image · Film Grain Effect</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=65"
-                        target="_top"
-                      >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
+                  <form
+                    action=""
+                    className="d-flex flex-column w-100 needs-validation mb-3 form"
+                    novalidate=""
+                  >
+                    <div className="mb-3">
+                      <input
+                        type="text"
+                        className="form-control p-3"
+                        name="name"
+                        id="name"
+                        placeholder="Name"
+                        required=""
+                      />
+                      <div className="invalid-feedback">
+                        The field is required.
+                      </div>
                     </div>
-                  </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Single Image</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=37"
-                        target="_top"
-                      >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
+                    <div className="mb-3">
+                      <input
+                        type="email"
+                        className="form-control p-3"
+                        name="email"
+                        id="email"
+                        placeholder="Email"
+                        required=""
+                      />
+                      <div className="invalid-feedback">
+                        The field is required.
+                      </div>
                     </div>
-                  </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Video · Film Grain Effect</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=67"
-                        target="_top"
-                      >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
+                    <div className="mb-3">
+                      <textarea
+                        className="form-control"
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Message"
+                      ></textarea>
                     </div>
-                  </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Video</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=39"
-                        target="_top"
+                    <div className="mb-3">
+                      <button
+                        type="submit"
+                        className="btn submit_form font-1 py-3"
                       >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
+                        Send Message
+                      </button>
                     </div>
-                  </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Parallax Slider · Vertical · Film Grain Effect</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=69"
-                        target="_top"
-                      >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Parallax Slider · Vertical</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=41"
-                        target="_top"
-                      >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Hero Slideshow · Film Grain Effect</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=71"
-                        target="_top"
-                      >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Hero Slideshow</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=43"
-                        target="_top"
-                      >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <span className="preview-corner">
-                    <span className="preview-corner-txt">New</span>
-                  </span>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Filmstrip Carousel Slider · Film Grain Effect</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="image-works">
-                  <div className="hover-effect"></div>
-                  <div className="icon-works">
-                    <div className="more-wraper-center more-wraper-center-demos">
-                      <a
-                        href="https://shtheme.com/demosd/stylex/?page_id=73"
-                        target="_top"
-                      >
-                        <div className="more-button-bg-center more-button-circle"></div>
-                        <div className="more-button-txt-center">
-                          <span>View</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <span className="preview-corner">
-                    <span className="preview-corner-txt">New</span>
-                  </span>
-                  <img
-                    alt="Image Preview"
-                    src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                  />
-                  <div className="preview-img-info">
-                    <h2>Filmstrip Carousel Slider</h2>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </WorksContainer>
-      <ContactContainer className="section" id="contact">
-        <div className="r-container">
-          <div className="row row-cols-1 row-cols-lg-2">
-            <div className="col mb-3">
-              <div className="divider mb-4">
-                <span className="accent-color fs-5 me-3">GET IN TOUCH</span>
-              </div>
-              <h4 className="text-title text-white fw-bold font-1 lh-1 mb-5">
-                Contact Us.
+          <div class="mb-3">
+            <iframe
+              loading="lazy"
+              class="maps"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.0694715065006!2d127.19015707645416!3d37.576981772035865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb1855ce835e3%3A0x244a55c410a119d2!2z66-47IKs6rCV67OAIOyKpOy5tOydtO2PtOumrOyKpA!5e0!3m2!1sko!2skr!4v1708070377252!5m2!1sko!2skr"
+              title="하남 미사 스카이폴리스"
+              aria-label="London Eye, London, United Kingdom"
+            ></iframe>
+          </div>
+          <div className="r-container footer">
+            <div className="flex-box">
+              <h4 className="text-white font-1 fw-bold fs-1">
+                Take your moment with Codagraph
               </h4>
               <p className="text-gray">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
               </p>
-              <div className="row row-cols-1 row-cols-lg-2 mt-5">
-                <div className="col mb-3">
-                  <div className="d-flex flex-row align-items-center gap-3">
-                    <BsPeopleFill className="icon" />
-                    <div className="d-flex flex-column">
-                      <h6 className="text-white font-1">Phone</h6>
-                      <span className="text-gray">345 563 23</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col mb-3">
-                  <div className="d-flex flex-row align-items-center gap-3">
-                    <BsPeopleFill className="icon" />
-                    <div className="d-flex flex-column">
-                      <h6 className="text-white font-1">Site</h6>
-                      <span className="text-gray">www.awesomesite.com</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col mb-3">
-                  <div className="d-flex flex-row align-items-center gap-3">
-                    <BsPeopleFill className="icon" />
-                    <div className="d-flex flex-column">
-                      <h6 className="text-white font-1">Email</h6>
-                      <span className="text-gray">hello@awesomesite.com</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col mb-3">
-                  <div className="d-flex flex-row align-items-center gap-3">
-                    <BsPeopleFill className="icon" />
-                    <div className="d-flex flex-column">
-                      <h6 className="text-white font-1">Address</h6>
-                      <span className="text-gray">
-                        99 Roving St., Big City, PKU 23456
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="h-100 d-flex flex-column">
-                <div
-                  className="success_msg toast align-items-center w-100 shadow-none mb-3 bg-transparent border border-success rounded-0 my-4"
-                  role="alert"
-                  aria-live="assertive"
-                  aria-atomic="true"
-                >
-                  <div className="d-flex p-2">
-                    <div className="toast-body f-18 d-flex flex-row gap-3 align-items-center text-success">
-                      <i className="fa-solid fa-check f-36 text-success"></i>
-                      Your Message Successfully Send.
-                    </div>
-                    <button
-                      type="button"
-                      className="me-2 m-auto bg-transparent border-0 ps-1 pe-0 text-success"
-                      data-bs-dismiss="toast"
-                      aria-label="Close"
-                    >
-                      <i className="fa-solid fa-xmark"></i>
-                    </button>
-                  </div>
-                </div>
-                <div
-                  className="error_msg toast align-items-center w-100 shadow-none border-danger mb-3 bg-transparent my-4 border rounded-0"
-                  role="alert"
-                  aria-live="assertive"
-                  aria-atomic="true"
-                >
-                  <div className="d-flex p-2">
-                    <div className="toast-body f-18 d-flex flex-row gap-3 align-items-center text-danger">
-                      <i className="fa-solid fa-triangle-exclamation f-36 text-danger"></i>
-                      Something Wrong ! Send Form Failed.
-                    </div>
-                    <button
-                      type="button"
-                      className="me-2 m-auto bg-transparent border-0 ps-1 pe-0 text-danger"
-                      data-bs-dismiss="toast"
-                      aria-label="Close"
-                    >
-                      <i className="fa-solid fa-xmark"></i>
-                    </button>
-                  </div>
-                </div>
-                <form
-                  action=""
-                  className="d-flex flex-column w-100 needs-validation mb-3 form"
-                  novalidate=""
-                >
-                  <div className="mb-3">
-                    <input
-                      type="text"
-                      className="form-control p-3"
-                      name="name"
-                      id="name"
-                      placeholder="Name"
-                      required=""
-                    />
-                    <div className="invalid-feedback">
-                      The field is required.
-                    </div>
-                  </div>
-                  <div className="mb-3">
-                    <input
-                      type="email"
-                      className="form-control p-3"
-                      name="email"
-                      id="email"
-                      placeholder="Email"
-                      required=""
-                    />
-                    <div className="invalid-feedback">
-                      The field is required.
-                    </div>
-                  </div>
-                  <div className="mb-3">
-                    <textarea
-                      className="form-control"
-                      id="message"
-                      name="message"
-                      rows="5"
-                      placeholder="Message"
-                    ></textarea>
-                  </div>
-                  <div className="mb-3">
-                    <button
-                      type="submit"
-                      className="btn submit_form font-1 py-3"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </form>
-              </div>
+              <a href="" type="button" className="btn rounded-0">
+                GET STARTED
+              </a>
             </div>
           </div>
-        </div>
-        <div class="mb-3">
-          <iframe
-            loading="lazy"
-            class="maps"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.0694715065006!2d127.19015707645416!3d37.576981772035865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb1855ce835e3%3A0x244a55c410a119d2!2z66-47IKs6rCV67OAIOyKpOy5tOydtO2PtOumrOyKpA!5e0!3m2!1sko!2skr!4v1708070377252!5m2!1sko!2skr"
-            title="하남 미사 스카이폴리스"
-            aria-label="London Eye, London, United Kingdom"
-          ></iframe>
-        </div>
-        <div className="r-container footer">
-          <div className="flex-box">
-            <h4 className="text-white font-1 fw-bold fs-1">
-              Take your moment with Codagraph
-            </h4>
-            <p className="text-gray">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <a href="" type="button" className="btn rounded-0">
-              GET STARTED
-            </a>
-          </div>
-        </div>
-      </ContactContainer>
+        </ContactContainer>
+      </ScrollSpy>
       <PageTopBtn className="page-scroll" href="#home">
         <div className="to-top-arrow show">
           <BiSolidArrowToTop className="icon" />
