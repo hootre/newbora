@@ -1,15 +1,19 @@
 export let navs = [
   {
     title: "home",
+    acitve: true,
   },
   {
     title: "about",
+    acitve: false,
   },
   {
     title: "demos",
+    acitve: false,
   },
   {
     title: "contact",
+    acitve: false,
   },
 ];
 

@@ -170,14 +170,14 @@ const NavContainer = styled.nav`
     transition: all 0.4s ease-out;
     z-index: 1;
   }
-  .navbar-nav > .active > a {
+  .navbar-nav .active {
     color: var(--accent-color) !important;
     background: none;
     text-decoration: none;
   }
-  .active-scroll-spy {
+  /* .active-scroll-spy {
     color: var(--accent-color) !important;
-  }
+  } */
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
