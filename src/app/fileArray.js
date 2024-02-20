@@ -72,7 +72,7 @@ export let works = {
       title: "Parallax Slider · Film Grain Effect",
       href: "76979871",
       image: (
-        <AdvancedImage cldImg={cld.image("newbora/w5tdyhbgfx7rnkxsf34l")} />
+        <AdvancedImage cldImg={cld.image("newbora/zbqnbwicto9avnrwrcq8")} />
       ),
       new: true,
     },

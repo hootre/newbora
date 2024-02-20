@@ -389,7 +389,7 @@ const VerticalContainer = styled.div`
     box-sizing: border-box;
     border-right: 1px solid rgba(119, 119, 119, 0.2);
   }
-  .vertical-effect:first-child::before {
+  .vertical-effect:first-of-type::before {
     top: 0;
     -webkit-animation: raindrop 6s ease-out infinite;
     -moz-animation: raindrop 6s ease-out infinite;
@@ -412,7 +412,7 @@ const VerticalContainer = styled.div`
       rgba(225, 225, 225, 1)
     );
   }
-  .vertical-effect:first-child::before,
+  .vertical-effect:first-of-type::before,
   .vertical-effect:last-child::before {
     content: "";
     position: absolute;
@@ -819,6 +819,57 @@ const MainContainer = styled.main`
     }
     100% {
       transform: rotate(360deg);
+    }
+  }
+`;
+const WorksInfoContainer = styled.section`
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  .sections {
+    position: relative;
+    z-index: 5;
+  }
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .intro-years h3 {
+    position: relative;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 155px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+    width: 100%;
+    line-height: 100%;
+    margin: -20px auto;
+    z-index: 0;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
     }
   }
 `;
@@ -1441,13 +1492,14 @@ const AboutContainer = styled.section`
   }
 `;
 const ContactContainer = styled.section`
-  padding: 5em 2em;
+  padding: 10em 2em;
   overflow: hidden;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 30px;
   .r-container {
+    padding: 4em 0em;
     max-width: 1140px;
     margin-right: auto;
     margin-left: auto;
@@ -1850,6 +1902,7 @@ export {
   VerticalContainer,
   MainVideoContainer,
   PageTopBtn,
+  WorksInfoContainer,
   WorksContainer,
   AboutContainer,
   ContactContainer,

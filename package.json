@@ -15,7 +15,6 @@
     "@emotion/styled": "^11.11.0",
     "@u-wave/react-vimeo": "^0.9.10",
     "jquery": "^3.7.1",
-    "jquery-ui": "^1.13.2",
     "jquery.easing": "^1.4.1",
     "next": "14.1.0",
     "prettier": "^3.2.5",
@@ -26,6 +25,7 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.11.0",
+    "@types/jquery": "^3.5.29",
     "eslint": "^8",
     "eslint-config-next": "14.1.0"
   }

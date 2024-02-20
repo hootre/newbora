@@ -9,6 +9,7 @@ import {
   VerticalContainer,
   MainVideoContainer,
   PageTopBtn,
+  WorksInfoContainer,
   WorksContainer,
   AboutContainer,
   ContactContainer,
@@ -105,7 +106,7 @@ export default function Home() {
         "h1.home-page-title, h2.home-page-title, .the-button, .the-button-light, .scroll-line, .more-wraper-center.more-wraper-center-home"
       ).css("opacity", 1 - $(window).scrollTop() / 500);
     });
-  });
+  }, []);
   return (
     <MainContainer>
       <NavContainer className="navbar navbar-fixed-top navbar-bg-switch">
@@ -222,6 +223,7 @@ export default function Home() {
             </div>
           </div>
         </MainVideoContainer>
+
         <AboutContainer id="about" className="section position-relative pb-0">
           <div className="r-container">
             <div className="image-overlay-3"></div>
@@ -271,15 +273,15 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div class="r-container">
-            <div class="row row-cols-1 row-cols-lg-4 py-3 position-relative w-100 z_box2">
+          <div className="r-container">
+            <div className="row row-cols-1 row-cols-lg-4 py-3 position-relative w-100 z_box2">
               {aboutText.aboutFooter.map((item, idx) => (
-                <div class="col mb-3" key={idx}>
-                  <div class="d-flex flex-column justify-content-center text-center align-items-center gap-3">
+                <div className="col mb-3" key={idx}>
+                  <div className="d-flex flex-column justify-content-center text-center align-items-center gap-3">
                     {item.icon}
-                    <div class="font-2 fw-bold">
-                      <h3 class="text-white"> {item.count}</h3>
-                      <h6 class="text-white"> {item.text}</h6>
+                    <div className="font-2 fw-bold">
+                      <h3 className="text-white"> {item.count}</h3>
+                      <h6 className="text-white"> {item.text}</h6>
                     </div>
                   </div>
                 </div>
@@ -287,6 +289,65 @@ export default function Home() {
             </div>
           </div>
         </AboutContainer>
+        <WorksInfoContainer>
+          <div className="container sections">
+            <div className="inner-divider"></div>
+
+            <div className="row">
+              <div className="col-lg-12">
+                <h2 className="section-heading">Stylex</h2>
+
+                <div className="inner-divider-ultra-half"></div>
+
+                <h2 className="section-subheading">
+                  <span>A fully responsive WordPress</span>
+                </h2>
+              </div>
+            </div>
+
+            <div className="inner-divider-half"></div>
+
+            <div className="row section-intro">
+              <div className="col-lg-12">
+                <div className="intro-txt">
+                  <p>
+                    Stylex is a fully responsive theme with a modern design
+                    suitable for all creative fields. The theme is featuring a
+                    powerful fullscreen background video and imagery making it a
+                    perfect choice for photographers, artists and designers who
+                    want to showcase their work.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="intro-years">
+                  <div className="inner-divider"></div>
+
+                  <div className="the-line"></div>
+
+                  <div className="inner-divider-half"></div>
+
+                  <h2>Ready</h2>
+
+                  <div className="inner-divider-half"></div>
+
+                  <h3 className="facts-counter-number">12</h3>
+
+                  <div className="inner-divider-half"></div>
+
+                  <h4>Demos</h4>
+                </div>
+
+                <div className="inner-divider-half"></div>
+
+                <div className="the-line"></div>
+              </div>
+            </div>
+          </div>
+        </WorksInfoContainer>
         <WorksContainer id="demos">
           <div className="container-fluid sections">
             <div className="inner-divider"></div>
@@ -781,7 +842,7 @@ export default function Home() {
                   <form
                     action=""
                     className="d-flex flex-column w-100 needs-validation mb-3 form"
-                    novalidate=""
+                    noValidate=""
                   >
                     <div className="mb-3">
                       <input
@@ -831,10 +892,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div class="mb-3">
+          <div className="mb-3">
             <iframe
               loading="lazy"
-              class="maps"
+              className="maps"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.0694715065006!2d127.19015707645416!3d37.576981772035865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb1855ce835e3%3A0x244a55c410a119d2!2z66-47IKs6rCV67OAIOyKpOy5tOydtO2PtOumrOyKpA!5e0!3m2!1sko!2skr!4v1708070377252!5m2!1sko!2skr"
               title="하남 미사 스카이폴리스"
               aria-label="London Eye, London, United Kingdom"
