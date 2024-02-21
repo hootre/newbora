@@ -11,6 +11,7 @@ const NavContainer = styled.nav`
     &.active {
       height: auto;
       max-height: 220px;
+      padding: 1rem 0;
     }
   }
   &.navbar {
@@ -29,7 +30,7 @@ const NavContainer = styled.nav`
     -ms-transition: all 0.4s ease-out;
     -o-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
-    z-index: 999;
+    z-index: 40;
   }
   &.navbar-fixed-top {
     top: 0;
@@ -40,7 +41,7 @@ const NavContainer = styled.nav`
     position: fixed;
     right: 0;
     left: 0;
-    z-index: 1030;
+    z-index: 10;
   }
 
   .container {
@@ -130,9 +131,6 @@ const NavContainer = styled.nav`
   }
   .collapse.in {
     display: block;
-  }
-  .navbar-nav {
-    margin: 7.5px -15px;
   }
   .nav {
     padding-left: 0;
@@ -938,16 +936,26 @@ const WorksContainer = styled.section`
   /* vimeo video list css */
   .vimeo-shadowbox {
     position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 0.5s ease;
-    overflow-y: scroll;
+    left: 10%;
+    top: 10%;
 
+    right: 10%;
+    bottom: 10%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+    background: rgba(200, 200, 200, 0.3);
+    z-index: 50;
+    overflow-y: scroll;
+    .bg_back {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      z-index: 50;
+      background: rgba(0, 0, 0, 0.7);
+    }
     &--hidden {
       transition: all 0.5s ease;
       opacity: 0;
@@ -958,14 +966,16 @@ const WorksContainer = styled.section`
     &__video-wrapper {
       position: relative;
       width: 100%;
+      bottom: -10%;
       left: 50%;
-      top: 20%;
       transform: translateX(-50%);
       width: 90%;
       max-width: 1920px;
       display: flex;
       flex-direction: column;
-      gap: 10rem;
+      padding-bottom: 10rem;
+      gap: 5rem;
+      z-index: 100;
     }
     .contentBox_1 {
       display: flex;
@@ -1015,6 +1025,15 @@ const WorksContainer = styled.section`
         object-fit: contain;
       }
     }
+    .carousel .thumb {
+      border: 3px solid #333 !important;
+      &:hover {
+        border: 3px solid var(--accent-color) !important;
+      }
+    }
+    .carousel .thumb.selected {
+      border: 3px solid var(--accent-color) !important;
+    }
     .bg_line {
       width: 2px;
       height: 100%;
@@ -1029,29 +1048,34 @@ const WorksContainer = styled.section`
       padding-bottom: 56.25%; /* 16:9 */
       padding-top: 25px;
       height: 0;
-
-      iframe {
+      display: flex;
+      > div {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 70%;
-        height: 70%;
-        padding: 10px;
+        width: 100%;
+        height: 100%;
+      }
+      iframe {
+        width: 100% !important;
+        min-height: 500px;
+        margin: 0 !important;
       }
     }
 
     &__close-button {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       border: 1px solid #fff;
       border-radius: 50%;
       position: absolute;
-      right: -5px;
-      top: -5px;
+      right: -4%;
+      top: -3.5%;
       overflow: hidden;
       text-indent: -9999em;
       background: #000;
+      transition: all 0.2s ease-in-out;
       > svg {
         color: #fff;
         position: absolute;
@@ -1064,6 +1088,11 @@ const WorksContainer = styled.section`
         align-items: center;
         justify-content: center;
         cursor: pointer;
+      }
+      &:hover {
+        font-weight: bold;
+        cursor: pointer;
+        transform: translateY(-2px);
       }
     }
   }
@@ -1129,7 +1158,9 @@ const WorksContainer = styled.section`
       flex-direction: column !important;
       align-items: center;
       justify-content: center;
-
+      img {
+        width: 100% !important;
+      }
       .contents {
         text-align: center !important;
       }

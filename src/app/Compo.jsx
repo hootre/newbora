@@ -1,4 +1,5 @@
 "use client";
+
 import $ from "jquery";
 import "jquery.easing";
 import Image from "next/image";
@@ -19,18 +20,20 @@ import { BsPeopleFill } from "react-icons/bs";
 import { BiSolidArrowToTop } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import { aboutText, mainTitle, navs, works } from "./fileArray";
-import Vimeo from "@u-wave/react-vimeo";
-import ScrollSpy from "react-ui-scrollspy";
+import { IoPlayOutline } from "react-icons/io5";
+import YouTube from "react-youtube";
 
+import ScrollSpy from "react-ui-scrollspy";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 const Compo = () => {
-  function showPopup(e) {
-    e.preventDefault();
+  function showPopup(id) {
     $("html").css({ overflow: "hidden" });
-    $(".vimeo-shadowbox").removeClass("vimeo-shadowbox--hidden");
+    $(`#vimeo_${id}`).removeClass("vimeo-shadowbox--hidden");
   }
-  function hidePopup() {
+  function hidePopup(id) {
     $("html").css({ overflow: "auto" });
-    $(".vimeo-shadowbox").addClass("vimeo-shadowbox--hidden");
+    $(`#vimeo_${id}`).addClass("vimeo-shadowbox--hidden");
   }
 
   const [isNav, setIsNav] = useState(false);
@@ -41,15 +44,6 @@ const Compo = () => {
     // 1. preloader
     $("#preloader").fadeOut(600);
     $(".preloader-bg").delay(400).fadeOut(600);
-    // 2. fadeIn.element
-    setTimeout(function () {
-      $(".fadeIn-element")
-        .delay(600)
-        .css({
-          display: "none",
-        })
-        .fadeIn(800);
-    }, 0);
 
     // 3. navigation
     // 3.1. page scroll
@@ -109,18 +103,33 @@ const Compo = () => {
       $(window).off("load");
     };
   });
+
+  // 비디오 캐러셀
+  const customRenderItem = (item, props) => (
+    <item.type {...item.props} {...props} />
+  );
+
+  const getVideoThumb = (videoId) =>
+    `https://img.youtube.com/vi/${videoId}/0.jpg`;
+
+  const customRenderThumb = (children) => {
+    children.map((item, idx) => {
+      return <img key={idx} src={getVideoThumb(item)} />;
+    });
+  };
+
   return (
     <MainContainer>
       <NavContainer className="navbar navbar-fixed-top navbar-bg-switch">
         <div className="container">
-          <div className="navbar-header fadeIn-element">
+          <div className="navbar-header ">
             <div className="logo">
               <a className="navbar-brand logo" href="#">
                 <Image src={logo} alt="logo" />
               </a>
             </div>
           </div>
-          <div className="main-navigation fadeIn-element">
+          <div className="main-navigation ">
             <div className="navbar-header">
               <button
                 aria-expanded={isNav}
@@ -196,13 +205,11 @@ const Compo = () => {
 
           <div className="center-container">
             <div className="center-block">
-              <h2 className="home-page-title fadeIn-element">
-                {mainTitle.subTitle}
-              </h2>
+              <h2 className="home-page-title ">{mainTitle.subTitle}</h2>
 
               <div className="inner-divider-half"></div>
 
-              <h1 className="home-page-title fadeIn-element">
+              <h1 className="home-page-title ">
                 {mainTitle.title_1}
                 <br />
                 {mainTitle.title_2}
@@ -210,11 +217,11 @@ const Compo = () => {
 
               <div className="inner-divider-half"></div>
 
-              <div className="more-wraper-center more-wraper-center-home fadeIn-element">
+              <div className="more-wraper-center more-wraper-center-home ">
                 <a className="page-scroll" href="#demos">
                   <div className="more-button-bg-center more-button-circle"></div>
                   <div className="more-button-txt-center">
-                    <span>View</span>
+                    <IoPlayOutline className="play_icon" />
                   </div>
                 </a>
               </div>
@@ -340,7 +347,9 @@ const Compo = () => {
 
                     <div className="inner-divider-half"></div>
 
-                    <h3 className="facts-counter-number">12</h3>
+                    <h3 className="facts-counter-number">
+                      {works.work_list.length}
+                    </h3>
 
                     <div className="inner-divider-half"></div>
 
@@ -379,59 +388,93 @@ const Compo = () => {
                   <div key={item.id} className="col-sm-12 col-md-12 col-lg-4">
                     {/* view vimeo video  list*/}
                     <div
+                      id={`vimeo_${item.id}`}
                       className="vimeo-shadowbox vimeo-shadowbox--hidden"
-                      onClick={hidePopup}
                     >
+                      <div
+                        className="bg_back"
+                        onClick={() => hidePopup(item.id)}
+                      ></div>
                       <div className="bg_line"></div>
                       <div className="vimeo-shadowbox__video-wrapper">
                         <div className="contentBox_1">
-                          {item.image}
+                          {item.content_img_1}
                           <div className="contents">
-                            <h2>이것은 이러한 영상입니다 참고하세요</h2>
-                            <div>
-                              이것을 이러한 영상으로 이렇게 만들었습니다
-                              제작자는 누구이고 누구고 누고고고고고ㅗ입니다
-                              이렇게 만들기 아이고 힘들다
-                            </div>
+                            <h2>{item.content_title_1}</h2>
+                            <div>{item.content_subscription_1}</div>
                           </div>
                         </div>
-
                         <div className="contentBox_2">
-                          {item.image}
+                          {item.content_img_2}
                           <div className="contents">
-                            <h2>이것은 이러한 영상입니다 참고하세요</h2>
-                            <div>
-                              이것을 이러한 영상으로 이렇게 만들었습니다
-                              제작자는 누구이고 누구고 누고고고고고ㅗ입니다
-                              이렇게 만들기 아이고 힘들다
-                            </div>
+                            <h2>{item.content_title_2}</h2>
+                            <div>{item.content_subscription_2}</div>
                           </div>
                         </div>
+                        {item.content_img_3 ? (
+                          <div className="contentBox_1">
+                            {item.content_img_3}
+                            <div className="contents">
+                              <h2>{item.content_title_3}</h2>
+                              <div>{item.content_subscription_3}</div>
+                            </div>
+                          </div>
+                        ) : (
+                          ""
+                        )}
                         <div>
                           <div className="vimeo-shadowbox__video">
-                            <Vimeo video={item.href} />
+                            <Carousel
+                              showArrows={false}
+                              showStatus={false}
+                              thumbWidth={150}
+                              showIndicators={false}
+                              renderItem={customRenderItem}
+                              renderThumbs={() => customRenderThumb(item.href)}
+                            >
+                              {item.href.map((video, idx) => (
+                                <YouTube
+                                  key={idx}
+                                  videoId={video}
+                                  opts={{
+                                    playerVars: {
+                                      autoplay: 0,
+                                      rel: 0,
+                                      modestbranding: 1,
+                                    },
+                                  }}
+                                  onEnd={(e) => {
+                                    e.target.stopVideo(0);
+                                  }}
+                                />
+                              ))}
+                            </Carousel>
                           </div>
-                          <div
-                            className="vimeo-shadowbox__close-button"
-                            onClick={hidePopup}
-                          >
-                            <IoClose />
-                          </div>
+                        </div>
+                        <div
+                          className="vimeo-shadowbox__close-button"
+                          onClick={() => hidePopup(item.id)}
+                        >
+                          <IoClose />
                         </div>
                       </div>
                     </div>
                     <div className="image-works">
-                      <div className="hover-effect"></div>
-                      <div className="icon-works">
-                        <div className="more-wraper-center more-wraper-center-demos">
-                          <a className="open-popup-link" onClick={showPopup}>
+                      <a
+                        className="open-popup-link"
+                        onClick={() => showPopup(item.id)}
+                      >
+                        <div className="hover-effect"></div>
+
+                        <div className="icon-works">
+                          <div className="more-wraper-center more-wraper-center-demos">
                             <div className="more-button-bg-center more-button-circle"></div>
                             <div className="more-button-txt-center">
-                              <span>View</span>
+                              <IoPlayOutline className="play_icon" />
                             </div>
-                          </a>
+                          </div>
                         </div>
-                      </div>
+                      </a>
                       {item.new ? (
                         <span className="preview-corner">
                           <span className="preview-corner-txt">New</span>
@@ -447,298 +490,6 @@ const Compo = () => {
                     </div>
                   </div>
                 ))}
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=63"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Parallax Slider</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=35"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Single Image · Film Grain Effect</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=65"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Single Image</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=37"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Video · Film Grain Effect</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=67"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Video</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=39"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Parallax Slider · Vertical · Film Grain Effect</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=69"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Parallax Slider · Vertical</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=41"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Hero Slideshow · Film Grain Effect</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=71"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Hero Slideshow</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=43"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <span className="preview-corner">
-                      <span className="preview-corner-txt">New</span>
-                    </span>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Filmstrip Carousel Slider · Film Grain Effect</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-12 col-lg-4">
-                  <div className="image-works">
-                    <div className="hover-effect"></div>
-                    <div className="icon-works">
-                      <div className="more-wraper-center more-wraper-center-demos">
-                        <a
-                          href="https://shtheme.com/demosd/stylex/?page_id=73"
-                          target="_top"
-                        >
-                          <div className="more-button-bg-center more-button-circle"></div>
-                          <div className="more-button-txt-center">
-                            <span>View</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <span className="preview-corner">
-                      <span className="preview-corner-txt">New</span>
-                    </span>
-                    <img
-                      alt="Image Preview"
-                      src="https://shtheme.com/preview/stylex/intro-images/intro/parallax-slider/2.jpg"
-                    />
-                    <div className="preview-img-info">
-                      <h2>Filmstrip Carousel Slider</h2>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
