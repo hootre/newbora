@@ -22,27 +22,32 @@ export let mainTitle = {
   title_1: "2024",
   title_2: "SHOWREEL",
 };
-import aboutTextImg from "/public/images/TTD.png";
 import aboutImg from "/public/images/dummy-img-600x800.jpg";
 import { BsPeopleFill } from "react-icons/bs";
 
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from "@cloudinary/react";
-import { fit } from "@cloudinary/url-gen/actions/resize";
+import { TfiYoutube } from "react-icons/tfi";
+import { FaInstagram } from "react-icons/fa";
+import { MdWeb } from "react-icons/md";
 const cld = new Cloudinary({ cloud: { cloudName: "dquicfvbk" } });
 
 export let aboutText = {
-  top_title: "HI ALEX",
-  title: "Professional Photographer",
-  subscription:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  top_title: "MOVIE MAKERS",
+  title: "TEAM BORA",
+  subscription: (
+    <pre className="pre">
+      TEAMBORA is comprised of 5 team members, each with 12 years of experience.
+      Over the years, we have created numerous works and consist of team members
+      who work in various fields. We will bring your ideas to life. We always
+      look forward to hearing from you.
+    </pre>
+  ),
   top_image: aboutImg,
-  image: aboutTextImg,
   iconList: [
-    <BsPeopleFill key={1} />,
-    <BsPeopleFill key={2} />,
-    <BsPeopleFill key={3} />,
-    <BsPeopleFill key={4} />,
+    <TfiYoutube key={1} />,
+    <FaInstagram key={2} />,
+    <MdWeb key={3} />,
   ],
   aboutFooter: [
     {
@@ -529,7 +534,7 @@ export let works = {
     {
       id: 15,
       title: "24K SOO",
-      href: ["PWVcnqnPV3c"],
+      href: ["qG9CndmDqsw"],
       image: (
         <AdvancedImage cldImg={cld.image("newbora/24K/p7a4wgcoxkh2dqyflx9h")} />
       ),
