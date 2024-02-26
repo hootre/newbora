@@ -1,98 +1,15 @@
-"use client";
-import $ from "jquery";
-import "jquery.easing";
 import Image from "next/image";
-import { useEffect } from "react";
-import {
-  PageTopBtn,
-  WorksInfoContainer,
-  WorksContainer,
-  AboutContainer,
-  ContactContainer,
-} from "./style";
+
 import { BsPeopleFill } from "react-icons/bs";
 import { BiSolidArrowToTop } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import { aboutText, works } from "./fileArray";
 import { IoPlayOutline } from "react-icons/io5";
-import YouTube from "react-youtube";
 import ScrollSpy from "react-ui-scrollspy";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import "./style.css";
 const Compo = () => {
-  function showPopup(id) {
-    $("html").css({ overflow: "hidden" });
-    $(`#vimeo_${id}`).removeClass("vimeo-shadowbox--hidden");
-  }
-  function hidePopup(id) {
-    $("html").css({ overflow: "auto" });
-    $(`#vimeo_${id}`).addClass("vimeo-shadowbox--hidden");
-  }
-
-  useEffect(() => {
-    // 1. preloader
-    $("#preloader").fadeOut(600);
-    $(".preloader-bg").delay(400).fadeOut(600);
-
-    // 3. navigation
-    // 3.1. page scroll
-    $(".page-scroll").on("click", function (e) {
-      var $anchor = $(this);
-      if ($anchor.attr("href") === "#home") {
-        $("html, body").stop().animate(
-          {
-            scrollTop: 0,
-          },
-          1500,
-          "easeInOutExpo"
-        );
-      } else {
-        $("html, body")
-          .stop()
-          .animate(
-            {
-              scrollTop: $($anchor.attr("href")).offset().top - 55,
-            },
-            1500,
-            "easeInOutExpo"
-          );
-      }
-
-      e.preventDefault();
-    });
-    // 3.2. highlight navigation
-    // $("body").scrollspy({
-    //   target: ".navbar",
-    //   offset: 65,
-    // });
-    $(window).on("scroll", function () {
-      // 3.5. collapse navigation
-      if ($(".navbar").offset().top > 50) {
-        $(".navbar-bg-switch").addClass("main-navigation-bg");
-      } else {
-        $(".navbar-bg-switch").removeClass("main-navigation-bg");
-      }
-
-      // 4. to top arrow animation
-      if ($(this).scrollTop() > 400) {
-        $(".to-top-arrow").addClass("show");
-      } else {
-        $(".to-top-arrow").removeClass("show");
-      }
-
-      // 5. home fadeOut animation
-      $(
-        "h1.home-page-title, h2.home-page-title, .the-button, .the-button-light, .scroll-line, .more-wraper-center.more-wraper-center-home"
-      ).css("opacity", 1 - $(window).scrollTop() / 500);
-    });
-
-    return () => {
-      $(".page-scroll").off("click");
-      $(window).off("scroll");
-      $(window).off("load");
-    };
-  });
-
   // 비디오 캐러셀
   const customRenderItem = (item, props) => (
     <item.type {...item.props} {...props} />
@@ -109,7 +26,10 @@ const Compo = () => {
 
   return (
     <ScrollSpy>
-      <AboutContainer id="about" className="section position-relative pb-0">
+      <section
+        id="about"
+        className="section position-relative pb-0 AboutContainer"
+      >
         <div className="r-container">
           <div className="image-overlay-3"></div>
           <div className="position-relative z_box">
@@ -164,10 +84,10 @@ const Compo = () => {
             ))}
           </div>
         </div>
-      </AboutContainer>
+      </section>
 
-      <WorksContainer id="demos">
-        <WorksInfoContainer>
+      <section id="demos" className="WorksContainer">
+        <div className="WorksInfoContainer">
           <div className="container sections">
             <div className="inner-divider"></div>
 
@@ -221,7 +141,7 @@ const Compo = () => {
               </div>
             </div>
           </div>
-        </WorksInfoContainer>
+        </div>
         <div className="container-fluid sections">
           <div className="inner-divider"></div>
 
@@ -250,10 +170,7 @@ const Compo = () => {
                     id={`vimeo_${item.id}`}
                     className="vimeo-shadowbox vimeo-shadowbox--hidden"
                   >
-                    <div
-                      className="bg_back"
-                      onClick={() => hidePopup(item.id)}
-                    ></div>
+                    <div className="bg_back hide-popup" data-id={item.id}></div>
                     <div className="bg_line"></div>
                     <div className="vimeo-shadowbox__video-wrapper">
                       <div className="contentBox_1">
@@ -292,37 +209,28 @@ const Compo = () => {
                             renderThumbs={() => customRenderThumb(item.href)}
                           >
                             {item.href.map((video, idx) => (
-                              <YouTube
+                              <iframe
                                 key={idx}
-                                videoId={video}
-                                opts={{
-                                  playerVars: {
-                                    autoplay: 0,
-                                    rel: 0,
-                                    modestbranding: 1,
-                                  },
-                                }}
-                                onEnd={(e) => {
-                                  e.target.stopVideo(0);
-                                }}
-                              />
+                                src={`https://www.youtube.com/embed/${video}`}
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay=1; rel=0; amp; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              ></iframe>
                             ))}
                           </Carousel>
                         </div>
                       </div>
                       <div
                         className="vimeo-shadowbox__close-button"
-                        onClick={() => hidePopup(item.id)}
+                        data-id={item.id}
                       >
                         <IoClose />
                       </div>
                     </div>
                   </div>
                   <div className="image-works">
-                    <a
-                      className="open-popup-link"
-                      onClick={() => showPopup(item.id)}
-                    >
+                    <a className="open-popup-link hide-popup" data-id={item.id}>
                       <div className="hover-effect"></div>
 
                       <div className="icon-works">
@@ -352,8 +260,8 @@ const Compo = () => {
             </div>
           </div>
         </div>
-      </WorksContainer>
-      <ContactContainer className="section" id="contact">
+      </section>
+      <section className="section ContactContainer" id="contact">
         <div className="r-container">
           <div className="row row-cols-1 row-cols-lg-2">
             <div className="col mb-3">
@@ -531,12 +439,12 @@ const Compo = () => {
             </a>
           </div>
         </div>
-      </ContactContainer>
-      <PageTopBtn className="page-scroll" href="#home">
+      </section>
+      <div className="page-scroll PageTopBtn" href="#home">
         <div className="to-top-arrow show">
           <BiSolidArrowToTop className="icon" />
         </div>
-      </PageTopBtn>
+      </div>
     </ScrollSpy>
   );
 };

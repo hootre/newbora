@@ -1,5 +1,5 @@
 "use client";
-import { NavContainer } from "./style";
+import "./style.css";
 import Image from "next/image";
 
 import logo from "/public/images/logo.png";
@@ -11,7 +11,7 @@ const NavCom = () => {
     setIsNav((pre) => !pre);
   };
   return (
-    <NavContainer className="navbar navbar-fixed-top navbar-bg-switch">
+    <section className="navbar navbar-fixed-top navbar-bg-switch NavContainer">
       <div className="container">
         <div className="navbar-header ">
           <div className="logo">
@@ -64,7 +64,7 @@ const NavCom = () => {
           </div>
         </div>
       </div>
-    </NavContainer>
+    </section>
   );
 };
 export default NavCom;

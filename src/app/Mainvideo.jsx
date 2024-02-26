@@ -6,6 +6,7 @@ const Mainvideo = () => {
       className="react-player"
       url="mainvideo.mp4"
       playing
+      loop
       muted
       width="100%"
       height="100%"
