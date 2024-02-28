@@ -22,17 +22,37 @@ export let mainTitle = {
   title_1: "2024",
   title_2: "SHOWREEL",
 };
-import aboutImg from "/public/images/aboutImg.jpg";
-import { BsPeopleFill } from "react-icons/bs";
 import { TfiYoutube } from "react-icons/tfi";
 import { FaInstagram } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
+import { BiSolidVideoRecording } from "react-icons/bi";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { FaBuilding } from "react-icons/fa";
+import { BiMoviePlay } from "react-icons/bi";
 import CldImage from "./CldImage";
 export let aboutText = {
   top_title: "MOVIE MAKERS",
+  subscription: (
+    <pre>
+      {`[TEAMBORA] is comprised of 5 team members, each with 12 years of experience.
+Over the years, we have created numerous works and consist of team members
+ who work in various fields.
 
+We will bring your ideas to life.
+We always look forward to hearing from you.
+`}
+    </pre>
+  ),
   title: "TEAM BORA",
-  image: aboutImg,
+  image: (
+    <CldImage
+      width="1600"
+      height="900"
+      alt="image"
+      style={{ width: "100%", height: "auto" }}
+      src="newbora/sftzzhf1wm1snqykpzzv"
+    />
+  ),
   iconList: [
     {
       href: "https://www.youtube.com/@bora8340",
@@ -49,24 +69,24 @@ export let aboutText = {
   ],
   aboutFooter: [
     {
-      icon: <BsPeopleFill className="icon" />,
-      count: "1,693",
+      icon: <FaBuilding className="icon" />,
+      count: "137",
       text: "Happy Costumer",
     },
     {
-      icon: <BsPeopleFill className="icon" />,
-      count: "99",
-      text: "Award Winning",
+      icon: <BiMoviePlay className="icon" />,
+      count: "385",
+      text: "Content provided",
     },
     {
-      icon: <BsPeopleFill className="icon" />,
-      count: "35",
+      icon: <FaPeopleGroup className="icon" />,
+      count: "5+",
       text: "Profesional Team",
     },
     {
-      icon: <BsPeopleFill className="icon" />,
-      count: "2,987",
-      text: "Photos Taken",
+      icon: <BiSolidVideoRecording className="icon" />,
+      count: "27",
+      text: "Partner company",
     },
   ],
 };
@@ -120,7 +140,7 @@ export let works = {
       content_title_2: "Introducing TEMP's: Korea's Leather Workshop",
       content_subscription_2:
         "TEMP's, a Korean leather workshop, specializes in delicately capturing the finish and texture of leather through the use of soft filters in filming. To enhance the overall tone of the video, we incorporate white and wood-tone props, adding a touch of sophistication and elegance.",
-      new: true,
+      new: false,
     },
     {
       id: 2,
@@ -184,7 +204,7 @@ export let works = {
           src="newbora/image2/jfmhoprjuwcv6c8p4s5c"
         />
       ),
-      new: true,
+      new: false,
     },
     {
       id: 3,
@@ -232,7 +252,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
       content_title_2: "Cinematic Drone Filming Services",
       content_subscription_2:
         "Experience stunning aerial cinematography across various genres including films, dramas, commercials, promotions, music videos, and documentaries. With over 8 years of experience and a diverse portfolio of award-winning projects, we have the expertise to turn any vision into art.We utilize state-of-the-art equipment from DJI, including the Inspire, Mavic, Matrice X8, and more, to ensure the highest quality footage tailored to your project's needs.Our goal is to bring your vision to life from the skies. Explore the endless possibilities with our cinematic drone filming services.",
-      new: true,
+      new: false,
     },
     {
       id: 4,
