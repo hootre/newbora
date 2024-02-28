@@ -4,8 +4,9 @@ const nextConfig = {
     emotion: true,
   },
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ["res.cloudinary.com", "img.youtube.com"],
   },
+  reactStrictMode: false,
 };
 
 export default nextConfig;

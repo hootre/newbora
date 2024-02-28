@@ -239,7 +239,7 @@ img {
   max-width: 100%;
 }
 body {
-  font-family: "Alumni Sans", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-optical-sizing: auto;
   font-size: 14px;
   line-height: 1.5;
@@ -613,14 +613,14 @@ h2.section-subheading span:before {
   -ms-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  .play_icon {
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    transition: all 0.5s linear;
-  }
   z-index: 1;
+}
+.more-wraper-center .play_icon {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 a,
 a:hover,
@@ -721,6 +721,18 @@ a:focus {
 }
 .play_icon {
   font-size: 35px;
+}
+.more-wraper-center:hover .more-button-bg-center {
+  -webkit-animation: spin 5s linear infinite;
+  -moz-animation: spin 5s linear infinite;
+  -ms-animation: spin 5s linear infinite;
+  -o-animation: spin 5s linear infinite;
+  animation: spin 5s linear infinite;
+  border-color: #d84758;
+}
+.page-scroll:hover .play_icon {
+  color: #db0018;
+  font-weight: bold;
 }
 @media (min-width: 1920px) {
   h2.section-heading {

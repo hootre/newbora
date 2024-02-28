@@ -41,17 +41,17 @@
   -o-animation: raindrop 6s ease-out infinite;
   animation: raindrop 6s ease-out infinite;
   background: -webkit-linear-gradient(
-    top,
+    to top,
     rgba(225, 225, 225, 0),
     rgba(225, 225, 225, 1)
   );
   background: -ms-linear-gradient(
-    top,
+    to top,
     rgba(225, 225, 225, 0),
     rgba(225, 225, 225, 1)
   );
   background: linear-gradient(
-    top,
+    to top,
     rgba(225, 225, 225, 0),
     rgba(225, 225, 225, 1)
   );
@@ -80,18 +80,9 @@
   -ms-animation: raindrop-reverse 6s ease-out infinite;
   -o-animation: raindrop-reverse 6s ease-out infinite;
   animation: raindrop-reverse 6s ease-out infinite;
-  background: -webkit-linear-gradient(
-    top,
-    rgba(225, 225, 225, 1),
-    rgba(225, 225, 225, 0)
-  );
-  background: -ms-linear-gradient(
-    top,
-    rgba(225, 225, 225, 1),
-    rgba(225, 225, 225, 0)
-  );
+
   background: linear-gradient(
-    top,
+    to top,
     rgba(225, 225, 225, 1),
     rgba(225, 225, 225, 0)
   );
@@ -268,6 +259,7 @@ h1.home-page-title {
   height: 50px;
   background: none;
 }
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);
