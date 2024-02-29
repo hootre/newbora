@@ -1,5 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import dynamic from "next/dynamic";
+
+const Jquery = dynamic(() => import("./Jquery"), { ssr: false });
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,7 +16,10 @@ export default function RootLayout({ children }) {
       <head>
         <script src="https://www.youtube.com/iframe_api" defer></script>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Jquery />
+      </body>
     </html>
   );
 }

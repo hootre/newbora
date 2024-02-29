@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { FaAddressCard } from "react-icons/fa";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { MdEmail, MdWeb } from "react-icons/md";
+import { FaRegAddressCard } from "react-icons/fa6";
 import emailjs from "emailjs-com";
 const Contact = () => {
   const {
@@ -91,7 +92,7 @@ const Contact = () => {
               </div>
               <div className="col mb-3">
                 <div className="d-flex flex-row align-items-center gap-3">
-                  <FaAddressCard className="icon" />
+                  <FaRegAddressCard className="icon" />
                   <div className="d-flex flex-column">
                     <h6 className="text-white font-1">Address</h6>
                     <span className="text-gray">

@@ -8,7 +8,7 @@ export let navs = [
     acitve: false,
   },
   {
-    title: "demos",
+    title: "works",
     acitve: false,
   },
   {
@@ -99,6 +99,7 @@ export let works = {
     {
       id: 1,
       title: "TEMP_4",
+      videoType: "row",
       href: ["Uy5KyqZgXdo"],
       image: (
         <CldImage
@@ -145,6 +146,7 @@ export let works = {
     {
       id: 2,
       title: "I AM 배우 프로필 프로젝트",
+      videoType: "row",
       href: [
         "cHNJ8pGA8lo",
         "rws2PK3tIAk",
@@ -209,6 +211,7 @@ export let works = {
     {
       id: 3,
       title: "CINEMATIC DRONE",
+      videoType: "row",
       href: ["GVgtyPkVLUY", "RERvflAzyoo"],
       image: (
         <CldImage
@@ -257,6 +260,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 4,
       title: "Korea Tourism Organization: Kantabi Supporters",
+      videoType: "row",
       href: ["xU5uqPZ5bLc", "COcdAyY8Cbs", "vahpOw2ErC8", "pabr9kisHC0"],
       image: (
         <CldImage
@@ -312,6 +316,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 5,
       title: "Korea Tourism Organization: Astro Cha Eun-woo",
+      videoType: "col",
       href: ["vr7ywDFE9QY", "XwAaOiGDvTo", "6pko78JC1hg", "FOe78vXJ854"],
       image: (
         <CldImage
@@ -360,6 +365,8 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
       id: 6,
       title:
         "Korea Tourism Organization: Kantabi Supporters in Jeju(ShortForm)",
+      videoType: "col",
+
       href: [
         "WWpcBk7Ufig",
         "OocxbMcXqDY",
@@ -421,6 +428,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 7,
       title: "Puma Korea Annual Closing Ceremony Video Production",
+      videoType: "row",
       href: ["t2FV93j1aDE"],
       image: (
         <CldImage
@@ -468,6 +476,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 8,
       title: "Journeying Through Kansai and Hokkaido Together",
+      videoType: "row",
       href: ["4KbzGQEH7wU", "16ghX5_8Cx0"],
       image: (
         <CldImage
@@ -523,6 +532,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 9,
       title: "WolfLaunch: Discovering the Beauty of Nature Through Camping",
+      videoType: "row",
       href: ["AetUzkiK4Lc"],
       image: (
         <CldImage
@@ -570,6 +580,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 10,
       title: "Amway Nutrilite",
+      videoType: "row",
       href: ["P_meXPECOK8", "Bd1JEfLo8VU", "FGBNw7WnE0g", "1eWOjNnlErI"],
       image: (
         <CldImage
@@ -628,6 +639,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 11,
       title: "Astro Moonbin, Sanha",
+      videoType: "row",
       href: ["vIGA1ywlfks", "oTR3gx6MkQQ"],
       image: (
         <CldImage
@@ -684,6 +696,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 12,
       title: "Astro Moonbin, Sanha",
+      videoType: "row",
       href: ["bsITqTBv1bg"],
       image: (
         <CldImage
@@ -740,6 +753,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 13,
       title: "CHUNGCHUN MUSIC",
+      videoType: "row",
       href: ["X8m7bigVGow", "KrLodmi6tvc", "COK17JjDgXs", "NCE5AroaMSo"],
       image: (
         <CldImage
@@ -797,6 +811,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 14,
       title: "YOUTUBE 500CC",
+      videoType: "row",
       href: ["kdZYjJRWAn8", "frq2i-nN7kk", "_wgEeqb8wSQ"],
       image: (
         <CldImage
@@ -845,6 +860,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 15,
       title: "24K",
+      videoType: "row",
       href: ["qG9CndmDqsw"],
       image: (
         <CldImage
@@ -895,14 +911,13 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/24K/wncbrq20t5e2nitufrpo"
         />
       ),
-      content_title_3: "칸타비 서포터즈 발대식",
-      content_subscription_3: "촬영 : 전동찬, 권정혁",
 
       new: true,
     },
     {
       id: 16,
       title: "2023 BORA SHOWREEL",
+      videoType: "row",
       href: ["nMK6b4CNFl8"],
       image: (
         <CldImage
@@ -925,6 +940,214 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
       content_title_1: "2023 BORA SHOWREEL",
       content_subscription_1:
         "2023년을 정리하면서 제작한 보라미디어 쇼릴입니다.",
+
+      new: true,
+    },
+    {
+      id: 17,
+      title: "The 기끔 타이포그래피",
+      videoType: "row",
+      href: ["32TBzWZRk_M", "7RpQ0HhuucU", "RVGwkRRz9rw"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/더가꿈/iutv1j8c0itazzqs1tkw"
+        />
+      ),
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/더가꿈/avooz7lft9dgyyftc4px"
+        />
+      ),
+      content_title_1: "The 가꿈 홍보,모집영상 타이포그래피",
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon dongchan / Kim Hyoung Tae
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] Adobe After Effects
+[Location] Korea Seoul
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/더가꿈/tkf1ovgod5zjutfkkrmf"
+        />
+      ),
+      content_title_2: "The Gakkum filming episode story",
+      content_subscription_2:
+        "The Gakkum is one of the main projects of the Korea Association of Local Children's Centers, which provides a mentoring program for local children. In order to photograph these companies, we put a lot of thought into it with the person in charge and produced the best results.",
+
+      new: true,
+    },
+    {
+      id: 18,
+      title: "The 기끔 홍보영상",
+      videoType: "row",
+      href: ["_M1JtG2B5YI", "oggsJu7Jg8M", "cctt5Vmmu64"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/더가꿈 홍보/dcdxvycw6bfvin9gg6rc"
+        />
+      ),
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/더가꿈 홍보/cmrmu16rcelvms0gyrca"
+        />
+      ),
+      content_title_1: "The 가꿈 홍보,모집영상",
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon dongchan / Kim Hyoung Tae
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY A7S3 / FX6
+[Location] Korea Seoul
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/더가꿈 홍보/gv9rvauh6k9xrq7xdwo2"
+        />
+      ),
+      content_title_2: "The Gakkum filming episode story",
+      content_subscription_2:
+        "The Gakkum is one of the main projects of the Korea Association of Local Children's Centers, which provides a mentoring program for local children. In order to photograph these companies, we put a lot of thought into it with the person in charge and produced the best results.",
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/더가꿈 홍보/u2jrh757okaaixcqifho"
+        />
+      ),
+      new: true,
+    },
+    {
+      id: 19,
+      title: "MESSEESSANG GOCAF",
+      videoType: "row",
+      href: ["nbAMWJFH6TU", "UDIaJMTwgRE"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/고카프/sxiyd1blgh1ho1l6woog"
+        />
+      ),
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/고카프/jovzd6snduabb0woh9ev"
+        />
+      ),
+      content_title_1: "MESSEESSANG GOCAF sketch",
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon dongchan / Kim Hyoung Tae
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY A7S3 / FX6
+[Location] Korea Seoul
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/고카프/v1cv809hcnnekvlmuza5"
+        />
+      ),
+      content_title_2: "MESSEESSANG GOCAF filming episode story",
+      content_subscription_2:
+        "While filming the Messeisang GoCarp video, considering that it is a sketch video, I look for references in various fields and am always thinking about what concept to film with.",
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/고카프/milmdpniaiwjya8mlgov"
+        />
+      ),
+      new: true,
+    },
+    {
+      id: 20,
+      title: "MESSEESSANG K-PET",
+      videoType: "row",
+      href: ["geVXUjnp0cM"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/케이펫/alegi8vura0vzbqte5ds"
+        />
+      ),
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/케이펫/pmfxpjfgcy3bjstxozby"
+        />
+      ),
+      content_title_1: "MESSEESSANG K-PET sketch",
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon dongchan / Kim Hyoung Tae
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY A7S3 / FX6
+[Location] Korea Seoul
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/케이펫/u3usrhceqayjjc0kkdpf"
+        />
+      ),
+      content_title_2: "MESSEESSANG K-PET filming episode story",
+      content_subscription_2:
+        "While filming the Messeisang K-PET video, considering that it is a sketch video, I look for references in various fields and am always thinking about what concept to film with.",
 
       new: true,
     },

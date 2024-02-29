@@ -11,7 +11,13 @@ const NavCom = () => {
     setIsNav((pre) => !pre);
   };
   return (
-    <section className="navbar navbar-fixed-top navbar-bg-switch NavContainer">
+    <section
+      className={
+        isNav
+          ? "navbar navbar-fixed-top navbar-bg-switch NavContainer main-navigation-bg"
+          : "navbar navbar-fixed-top navbar-bg-switch NavContainer"
+      }
+    >
       <div className="container">
         <div className="navbar-header ">
           <div className="logo">

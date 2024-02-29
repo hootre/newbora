@@ -127,7 +127,7 @@ const Home = async () => {
             </div>
           </div>
         </div>
-        <div className="r-container">
+        <div className="r-container icons_box">
           <div className="row row-cols-1 row-cols-lg-4 py-3 position-relative w-100 z_box2">
             {aboutText.aboutFooter.map((item, idx) => (
               <div className="col mb-3" key={idx}>
@@ -144,11 +144,11 @@ const Home = async () => {
         </div>
       </section>
 
-      <section id="demos" className="WorksContainer">
+      <section id="works" className="WorksContainer">
         <div className="container-fluid sections">
           <div className="inner-divider"></div>
-
-          <div className="row">
+          ``
+          <div className="rowContainer">
             <div className="col-lg-12">
               <h2 className="section-heading section-heading-small">
                 <span>{works.title_point}</span> {works.title}
@@ -159,7 +159,6 @@ const Home = async () => {
               </h2>
             </div>
           </div>
-
           <div className="WorksInfoContainer">
             <div className="container sections">
               <div className="row">
@@ -176,7 +175,7 @@ const Home = async () => {
 
                     <div className="inner-divider-half"></div>
 
-                    <h4>Demos</h4>
+                    <h4>Works</h4>
                   </div>
 
                   <div className="the-line"></div>
@@ -184,10 +183,8 @@ const Home = async () => {
               </div>
             </div>
           </div>
-
           <div className="inner-divider-half"></div>
-
-          <div className="row">
+          <div className="rowContainer">
             <div className="move-up section-demos">
               {works.work_list.map((item) => (
                 <div key={item.id} className="col-sm-12 col-md-12 col-lg-4">
@@ -201,10 +198,12 @@ const Home = async () => {
                       data-item={item.id}
                     ></div>
                     <div className="bg_line"></div>
-                    <div className="vimeo-shadowbox__video-wrapper">
+                    <div
+                      className={`vimeo-shadowbox__video-wrapper ${item.videoType}`}
+                    >
                       <div>
                         <ImgCom item={item} />
-                        <div className="vimeo-shadowbox__video">
+                        <div className={`vimeo-shadowbox__video `}>
                           <div className="carousel">
                             <input
                               type="radio"
@@ -249,23 +248,30 @@ const Home = async () => {
                             </ul>
 
                             <ul className="carousel__thumbnails">
-                              {item.href.map((videoId, idx) => (
-                                <li key={idx}>
-                                  <label
-                                    data-video={`video_${idx + 1}`}
-                                    data-slide={`slide_${idx + 1}`}
-                                    className="label"
-                                  >
-                                    <Image
-                                      width={500}
-                                      height={300}
-                                      style={{ width: "100%", height: "auto" }}
-                                      src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
-                                      alt="image"
-                                    />
-                                  </label>
-                                </li>
-                              ))}
+                              {item.href.map((videoId, idx) => {
+                                if (item.href.length > 1) {
+                                  return (
+                                    <li key={idx}>
+                                      <label
+                                        data-video={`video_${idx + 1}`}
+                                        data-slide={`slide_${idx + 1}`}
+                                        className="label"
+                                      >
+                                        <Image
+                                          width={100}
+                                          height={200}
+                                          style={{
+                                            width: "100%",
+                                            height: "auto",
+                                          }}
+                                          src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
+                                          alt="image"
+                                        />
+                                      </label>
+                                    </li>
+                                  );
+                                }
+                              })}
                             </ul>
                           </div>
                         </div>
@@ -307,6 +313,7 @@ const Home = async () => {
             </div>
           </div>
         </div>
+        <div id="more_btn">view more</div>
       </section>
       <Contact />
       <div className="page-scroll PageTopBtn" href="#home">
