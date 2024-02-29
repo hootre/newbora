@@ -546,6 +546,7 @@
   background: rgba(200, 200, 200, 0.3);
   z-index: 50;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .WorksContainer .vimeo-shadowbox .bg_back {
   position: fixed;
@@ -782,7 +783,7 @@
   }
   .WorksContainer .contentBox_1 img,
   .WorksContainer .contentBox_2 img {
-    width: 80% !important;
+    width: 100% !important;
   }
   .WorksContainer .contentBox_1 .contents,
   .WorksContainer .contentBox_2 .contents {
@@ -1860,7 +1861,25 @@
 .less_btn:hover {
   background: #000000;
 }
+.react-player {
+}
+.react-player.ready {
+  display: block;
+}
 @media (max-width: 767px) {
+  .WorksContainer .vimeo-shadowbox .contentBox_1 .contents h2 {
+    font-size: 18px;
+  }
+  .WorksContainer .vimeo-shadowbox .contentBox_1 .contents pre {
+    font-size: 13px;
+  }
+  .WorksContainer .vimeo-shadowbox .contentBox_2 .contents h2 {
+    font-size: 18px;
+  }
+  .WorksContainer .vimeo-shadowbox .contentBox_2 .contents div {
+    font-size: 13px;
+  }
+
   .ContactContainer .row-cols-lg-2 > * {
     flex: 0 0 auto;
     width: 100%;

@@ -3,7 +3,6 @@ import ReactPlayer from "react-player";
 import { useVideoStore } from "./Store";
 const VideoCom = ({ video }) => {
   const { stopVideo, toggleStopVideo } = useVideoStore();
-  console.log(stopVideo);
   return (
     <ReactPlayer
       light={`https://img.youtube.com/vi/${video}/maxresdefault.jpg`}

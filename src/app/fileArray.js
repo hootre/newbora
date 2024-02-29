@@ -260,7 +260,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
     {
       id: 4,
       title: "Korea Tourism Organization: Kantabi Supporters",
-      videoType: "row",
+      videoType: "col",
       href: ["xU5uqPZ5bLc", "COcdAyY8Cbs", "vahpOw2ErC8", "pabr9kisHC0"],
       image: (
         <CldImage

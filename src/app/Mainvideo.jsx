@@ -1,13 +1,17 @@
 "use client";
 import ReactPlayer from "react-player";
+import { useState } from "react";
 const Mainvideo = () => {
+  const [ready, setReady] = useState(false);
+  console.log(ready);
   return (
     <ReactPlayer
-      className="react-player"
+      className={ready ? "ready" : "react-player"}
       url="mainvideo.mp4"
       playing
       loop
       muted
+      onReady={() => setReady(true)}
       width="100%"
       height="100%"
     />

@@ -2,10 +2,24 @@
 import $ from "jquery";
 import "jquery.easing";
 
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useVideoStore } from "./Store";
 
 const Jquery = () => {
+  // 뒤로가기 막기
+  useEffect(() => {
+    const preventGoBack = () => {
+      if (confirm("페이지를 나가시겠습니까?")) {
+        history.go(-1);
+      } else {
+        history.pushState(null, "", location.href);
+      }
+    };
+    history.pushState(null, "", location.href);
+    window.addEventListener("popstate", preventGoBack);
+    return () => window.removeEventListener("popstate", preventGoBack);
+  }, []);
+
   const { stopVideo, toggleStopVideo } = useVideoStore();
   function showPopup(id) {
     $("html").css({ overflow: "hidden", marginRight: " 17px" });
