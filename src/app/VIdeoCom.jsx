@@ -9,8 +9,9 @@ const VideoCom = ({ video }) => {
       className="detail_video"
       url={`https://www.youtube.com/embed/${video}`}
       playing={stopVideo}
-      width="100%"
+      width="80%"
       height="100%"
+      style={{ padding: "0 0 30px 0" }}
     />
   );
 };
