@@ -3,7 +3,6 @@ import ReactPlayer from "react-player";
 import { useState } from "react";
 const Mainvideo = () => {
   const [ready, setReady] = useState(false);
-  console.log(ready);
   return (
     <ReactPlayer
       className={ready ? "ready" : "react-player"}

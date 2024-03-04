@@ -12,6 +12,7 @@ const VideoCom = ({ video }) => {
       width="80%"
       height="100%"
       style={{ padding: "0 0 30px 0" }}
+      controls={true}
     />
   );
 };
