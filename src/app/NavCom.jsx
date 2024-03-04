@@ -5,6 +5,7 @@ import Image from "next/image";
 import logo from "/public/images/logo.png";
 import { navs } from "./fileArray";
 import { useState } from "react";
+import Link from "next/link";
 const NavCom = () => {
   const [isNav, setIsNav] = useState(false);
   const toggleNavbar = () => {
@@ -15,15 +16,15 @@ const NavCom = () => {
       className={
         isNav
           ? "navbar navbar-fixed-top navbar-bg-switch NavContainer main-navigation-bg"
-          : "navbar navbar-fixed-top navbar-bg-switch NavContainer"
+          : "navbar navbar-fixed-top navbar-bg-switch NavContainer main-navigation-bg"
       }
     >
       <div className="container">
         <div className="navbar-header ">
           <div className="logo">
-            <a className="navbar-brand logo" href="#">
+            <Link className="navbar-brand logo" href="/">
               <Image src={logo} alt="logo" />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="main-navigation ">
@@ -47,7 +48,7 @@ const NavCom = () => {
             className={
               isNav
                 ? "navbar-collapse collapse in active"
-                : "navbar-collapse collapse"
+                : "navbar-collapse collapse "
             }
             id="navbar-collapse"
             aria-expanded={isNav}
@@ -59,7 +60,7 @@ const NavCom = () => {
                     className={
                       item.acitve ? "page-scroll active" : "page-scroll"
                     }
-                    href={`#${item.title}`}
+                    href={`/#${item.title}`}
                     data-to-scrollspy-id={item.title}
                   >
                     {item.title}

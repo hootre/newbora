@@ -577,69 +577,67 @@
   flex-direction: column;
   z-index: 100;
 }
-
-.WorksContainer .vimeo-shadowbox .contentBox_1 {
-  display: flex;
-  margin-top: 40px;
-  gap: 3rem;
-}
-.WorksContainer .vimeo-shadowbox .contentBox_1 .contents {
+.vimeo-shadowbox .contentBox_1 .contents {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  text-align: left;
+  text-align: center;
+  align-items: center;
+  padding: 1rem 0;
   width: 100%;
 }
-.WorksContainer .vimeo-shadowbox .contentBox_1 .contents h2 {
+.vimeo-shadowbox .contentBox_1 .contents h2 {
   font-size: 28px;
   font-weight: bold;
 }
-.WorksContainer .vimeo-shadowbox .contentBox_1 .contents pre,
-.WorksContainer .vimeo-shadowbox .contentBox_2 .contents div {
+.vimeo-shadowbox .contentBox_1 .contents pre,
+.vimeo-shadowbox .contentBox_2 .contents div {
   font-size: 20px;
   color: #aaa;
+  width: 70%;
 }
-.WorksContainer .vimeo-shadowbox .contentBox_1 img {
+.vimeo-shadowbox .contentBox_1 img {
   width: 70%;
   object-fit: contain;
 }
-.WorksContainer .vimeo-shadowbox .contentBox_2 {
+.vimeo-shadowbox .contentBox_2 {
   display: flex;
-  padding-top: 40px;
-  flex-direction: row-reverse;
-  gap: 3rem;
+  flex-direction: column;
+  align-items: center;
 }
-.WorksContainer .vimeo-shadowbox .contentBox_2 .contents {
+.vimeo-shadowbox .contentBox_2 .contents {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  text-align: left;
+  text-align: center;
+  align-items: center;
   width: 100%;
   height: 100%;
+  padding: 1rem 0;
 }
-.WorksContainer .vimeo-shadowbox .contentBox_2 .contents h2 {
+.vimeo-shadowbox .contentBox_2 .contents h2 {
   font-size: 28px;
   font-weight: bold;
 }
-.WorksContainer .vimeo-shadowbox .contentBox_2 .contents pre,
-.WorksContainer .vimeo-shadowbox .contentBox_2 .contents div {
+.vimeo-shadowbox .contentBox_2 .contents pre,
+.vimeo-shadowbox .contentBox_2 .contents div {
   font-size: 20px;
   color: #aaa;
 }
-.WorksContainer .vimeo-shadowbox .contentBox_2 img {
+.vimeo-shadowbox .contentBox_2 img {
   width: 70%;
   object-fit: contain;
 }
-.WorksContainer .vimeo-shadowbox .carousel .thumb {
+.vimeo-shadowbox .carousel .thumb {
   border: 3px solid #333 !important;
 }
-.WorksContainer .vimeo-shadowbox .carousel .thumb:hover {
+.vimeo-shadowbox .carousel .thumb:hover {
   border: 3px solid var(--accent-color) !important;
 }
-.WorksContainer .vimeo-shadowbox .carousel .thumb.selected {
+.vimeo-shadowbox .carousel .thumb.selected {
   border: 3px solid var(--accent-color) !important;
 }
-.WorksContainer .vimeo-shadowbox .bg_line {
+.vimeo-shadowbox .bg_line {
   width: 2px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.3);
@@ -648,21 +646,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.WorksContainer .vimeo-shadowbox__video {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  padding-top: 25px;
-  display: flex;
-}
-.WorksContainer .vimeo-shadowbox__video > div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-}
+
 .vimeo-shadowbox__video-wrapper .carousel__slide > figure > div {
   aspect-ratio: 16 / 9;
   object-fit: cover;
@@ -1785,10 +1769,6 @@
   display: flex;
   margin: 0 -10px;
 }
-.vimeo-shadowbox__video-wrapper.row .carousel__thumbnails {
-  margin-top: 20px;
-  padding-bottom: 20rem;
-}
 .carousel__thumbnails li {
   margin: 0 10px;
   transition: all 300ms ease-in-out;
@@ -1866,17 +1846,22 @@
 .react-player.ready {
   display: block;
 }
+.vimeo-shadowbox__video-wrapper.col .vimeo-shadowbox__video {
+  margin-left: -4rem;
+  transform: translateX(17%);
+}
+
 @media (max-width: 767px) {
-  .WorksContainer .vimeo-shadowbox .contentBox_1 .contents h2 {
+  .vimeo-shadowbox .contentBox_1 .contents h2 {
     font-size: 18px;
   }
-  .WorksContainer .vimeo-shadowbox .contentBox_1 .contents pre {
+  .vimeo-shadowbox .contentBox_1 .contents pre {
     font-size: 13px;
   }
-  .WorksContainer .vimeo-shadowbox .contentBox_2 .contents h2 {
+  .vimeo-shadowbox .contentBox_2 .contents h2 {
     font-size: 18px;
   }
-  .WorksContainer .vimeo-shadowbox .contentBox_2 .contents div {
+  .vimeo-shadowbox .contentBox_2 .contents div {
     font-size: 13px;
   }
 
@@ -1898,6 +1883,10 @@
   }
   .col .carousel__thumbnails > li {
     width: 50% !important;
+  }
+  .vimeo-shadowbox__video-wrapper.col .vimeo-shadowbox__video {
+    margin-left: -4rem;
+    transform: translateX(17%);
   }
   .vimeo-shadowbox__video-wrapper.col .carousel__slide div iframe,
   .vimeo-shadowbox__video-wrapper.col

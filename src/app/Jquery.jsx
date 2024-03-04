@@ -6,20 +6,6 @@ import { useCallback, useEffect, useRef } from "react";
 import { useVideoStore } from "./Store";
 
 const Jquery = () => {
-  // 뒤로가기 막기
-  useEffect(() => {
-    const preventGoBack = () => {
-      if (confirm("페이지를 나가시겠습니까?")) {
-        history.go(-1);
-      } else {
-        history.pushState(null, "", location.href);
-      }
-    };
-    history.pushState(null, "", location.href);
-    window.addEventListener("popstate", preventGoBack);
-    return () => window.removeEventListener("popstate", preventGoBack);
-  }, []);
-
   const { stopVideo, toggleStopVideo } = useVideoStore();
   function showPopup(id) {
     $("html").css({ overflow: "hidden", marginRight: " 17px" });
@@ -63,7 +49,6 @@ const Jquery = () => {
     });
   }, []);
   useEffect(() => {
-    $(".section-demos > div").slice(0, 12).css("display", "block");
     // 1. preloader
     $("#preloader").fadeOut(600);
     $(".preloader-bg").delay(400).fadeOut(600);
@@ -84,32 +69,6 @@ const Jquery = () => {
       }
     });
 
-    // 3. navigation
-    // 3.1. page scroll
-    $(".page-scroll").on("click", function (e) {
-      var $anchor = $(this);
-      if ($anchor.attr("href") === "#home") {
-        $("html, body").stop().animate(
-          {
-            scrollTop: 0,
-          },
-          1500,
-          "easeInOutExpo"
-        );
-      } else {
-        $("html, body")
-          .stop()
-          .animate(
-            {
-              scrollTop: $($anchor.attr("href")).offset().top - 55,
-            },
-            1500,
-            "easeInOutExpo"
-          );
-      }
-
-      e.preventDefault();
-    });
     // 3.2. highlight navigation
     // $("body").scrollspy({
     //   target: ".navbar",
@@ -120,7 +79,7 @@ const Jquery = () => {
       if ($(".navbar").offset().top > 50) {
         $(".navbar-bg-switch").addClass("main-navigation-bg");
       } else {
-        $(".navbar-bg-switch").removeClass("main-navigation-bg");
+        $("#navbar-collapse").removeClass("active");
       }
 
       // 4. to top arrow animation

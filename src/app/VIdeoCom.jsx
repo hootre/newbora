@@ -11,11 +11,6 @@ const VideoCom = ({ video }) => {
       playing={stopVideo}
       width="100%"
       height="100%"
-      config={{
-        youtube: {
-          playerVars: { showinfo: 1 },
-        },
-      }}
     />
   );
 };
