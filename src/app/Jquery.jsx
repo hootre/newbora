@@ -7,52 +7,22 @@ import { useVideoStore } from "./Store";
 
 const Jquery = () => {
   const { stopVideo, toggleStopVideo } = useVideoStore();
-  function showPopup(id) {
-    $("html").css({ overflow: "hidden", marginRight: " 17px" });
-    $(".navbar, .vimeo-shadowbox, .vertical-lines-wrapper").css({
-      paddingRight: " 17px",
-    });
-
-    $(`#vimeo_${id}`).removeClass("vimeo-shadowbox--hidden");
-  }
-  function hidePopup(id) {
-    $("html").css({ overflow: "auto", marginRight: " 0px" });
-    $(".navbar, .vimeo-shadowbox, .vertical-lines-wrapper ").css({
-      paddingRight: " 0px",
-    });
-    $(`#vimeo_${id}`).addClass("vimeo-shadowbox--hidden");
-    $(".slide_active").delay(1000).removeClass("slide_active");
-    $(".vimeo-shadowbox").scrollTop(0);
-  }
+  const { readyVideo, toggleReadyVideo } = useVideoStore();
 
   useEffect(() => {
-    // label input
-    $(".label").on("click", function (e) {
-      e.stopPropagation();
-      let id = $(this).data("slide");
-
-      $(".slide_active").removeClass("slide_active");
-      toggleStopVideo(false);
-      $(`.${id}`).addClass("slide_active");
-    });
+    if (readyVideo) {
+      if (!$("#preloader").hasClass("loaded")) {
+        $("#preloader").addClass("loaded");
+        $("#preloader").fadeOut(600);
+        $(".preloader-bg").delay(400).fadeOut(600);
+      }
+    }
+  }, [readyVideo]);
+  useEffect(() => {
     // popup event
     $(".open-popup-link").on("click", function (e) {
       e.stopPropagation();
-      let id = $(this).data("item");
-      showPopup(id);
     });
-    $(".hide-popup").on("click", function (e) {
-      e.stopPropagation();
-      let id = $(this).data("item");
-      toggleStopVideo(false);
-      hidePopup(id);
-    });
-  }, []);
-  useEffect(() => {
-    // 1. preloader
-    $("#preloader").fadeOut(600);
-    $(".preloader-bg").delay(400).fadeOut(600);
-
     // more btn
     $("#more_btn").on("click", function () {
       if ($("#more_btn").hasClass("open_more")) {
@@ -79,9 +49,8 @@ const Jquery = () => {
       if ($(".navbar").offset().top > 50) {
         $(".navbar-bg-switch").addClass("main-navigation-bg");
       } else {
-        $("#navbar-collapse").removeClass("active");
+        $(".navbar-bg-switch").removeClass("main-navigation-bg");
       }
-
       // 4. to top arrow animation
       if ($(this).scrollTop() > 400) {
         $(".to-top-arrow").addClass("show");

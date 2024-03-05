@@ -8,12 +8,6 @@
   -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
 }
-.NavContainer #navbar-collapse.active {
-  height: auto;
-  max-height: 220px;
-  padding: 0rem 0 2rem 0;
-  overflow: hidden;
-}
 .NavContainer.navbar {
   position: relative;
   min-height: 50px;
@@ -56,7 +50,6 @@
   margin-left: auto;
 }
 .NavContainer .logo {
-  padding-top: 17px;
   padding-left: 0;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
@@ -65,7 +58,6 @@
   transition: all 0.4s ease-out;
 }
 .NavContainer.main-navigation-bg .logo {
-  padding-top: 6px;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
   -ms-transition: all 0.4s ease-out;
@@ -104,6 +96,23 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+.navCom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navCom .contact_btn {
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 20px;
+  padding: 5px 20px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.navCom .contact_btn > a {
+  color: #fff;
 }
 .NavContainer .navbar-toggle .icon-bar {
   display: block;
@@ -151,13 +160,12 @@
   font-family: "Alumni Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
-  padding: 45px 15px 35px 15px;
   right: -15px;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
@@ -190,19 +198,10 @@
   -ms-transition: all 0.4s ease-out;
   -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
-}
-.NavContainer.main-navigation-bg,
-.NavContainer .bg-color-1,
-.NavContainer .slick-auto {
   background: #111;
-  min-height: 20px;
 }
 
 .NavContainer.main-navigation-bg .main-navigation .navbar-nav li a {
-  padding: 25px 15px 0 15px;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
   -ms-transition: all 0.4s ease-out;
@@ -237,7 +236,6 @@
 }
 @media only screen and (max-width: 880px) {
   .NavContainer .logo {
-    padding-top: 15px;
     padding-left: 8px;
     margin-left: auto;
   }
@@ -583,7 +581,7 @@
   gap: 10px;
   text-align: center;
   align-items: center;
-  padding: 1rem 0;
+  padding: 2rem 0;
   width: 100%;
 }
 .vimeo-shadowbox .contentBox_1 .contents h2 {
@@ -595,6 +593,7 @@
   font-size: 20px;
   color: #aaa;
   width: 70%;
+  text-align: left;
 }
 .vimeo-shadowbox .contentBox_1 img {
   width: 70%;
@@ -613,7 +612,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 .vimeo-shadowbox .contentBox_2 .contents h2 {
   font-size: 28px;
@@ -653,7 +652,7 @@
   object-position: center; /* default: center */
 }
 .vimeo-shadowbox__video-wrapper.col .carousel__slide > figure > div {
-  aspect-ratio: 9 / 9;
+  aspect-ratio: 9 / 6;
   object-fit: cover;
   object-position: center; /* default: center */
   display: flex;
@@ -1780,7 +1779,7 @@
 
 .vimeo-shadowbox__video-wrapper.row .carousel__thumbnails li {
   flex: 1 1 auto;
-  max-width: calc((100% / 5) - 20px);
+  max-width: calc((100% / 7) - 20px);
 }
 .vimeo-shadowbox__video-wrapper.col .carousel__thumbnails {
   padding-bottom: 20rem;
@@ -1844,6 +1843,32 @@
 #more_btn:hover,
 .less_btn:hover {
   background: #000000;
+}
+.main_video {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+.main_video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+}
+@media (min-aspect-ratio: 16/9) {
+  .main_video iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 56.25vw;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .main_video iframe {
+    /* width = 100 / (9 / 16) = 177.777777 */
+    width: 177.78vh;
+  }
 }
 .react-player {
 }

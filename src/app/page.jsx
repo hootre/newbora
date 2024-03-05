@@ -1,8 +1,4 @@
-"use server";
-
-import { IoPlayOutline } from "react-icons/io5";
 import "./ssr.css";
-import { mainTitle } from "./fileArray";
 import Mainvideo from "./Mainvideo";
 import dynamic from "next/dynamic";
 
@@ -17,50 +13,8 @@ const VideoCom = dynamic(() => import("./VIdeoCom"), { ssr: false });
 const Home = async () => {
   return (
     <>
-      <section id="home" className="upper-page">
-        <div className="hero-fullscreen overlay overlay-top-bottom-dark-15">
-          <div className="hero-fullscreen-FIX overlay overlay-dark-70">
-            <div className="main_video">
-              <Mainvideo />
-            </div>
-          </div>
-        </div>
+      <Mainvideo />
 
-        <div className="center-container">
-          <div className="center-block">
-            <h2 className="home-page-title ">{mainTitle.subTitle}</h2>
-
-            <div className="inner-divider-half"></div>
-
-            <h1 className="home-page-title ">
-              {mainTitle.title_1}
-              <br />
-              {mainTitle.title_2}
-            </h1>
-
-            <div className="inner-divider-half"></div>
-
-            <div className="more-wraper-center more-wraper-center-home">
-              <Link
-                className="page-scroll open-popup-link"
-                data-item={16}
-                href="/15"
-              >
-                <div className="more-button-bg-center more-button-circle"></div>
-                <div className="more-button-txt-center ">
-                  <IoPlayOutline className="play_icon" />
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="scroll-indicator">
-          <div className="scroll-indicator-wrapper">
-            <div className="scroll-line"></div>
-          </div>
-        </div>
-      </section>
       <section
         id="about"
         className="section position-relative pb-0 AboutContainer"
@@ -120,12 +74,12 @@ const Home = async () => {
         </div>
       </section>
       <WorkList title={true} />
-      <Contact />
-      <div className="page-scroll PageTopBtn" href="#home">
+
+      <Link className="page-scroll PageTopBtn" href="/#home">
         <div className="to-top-arrow show">
           <BiSolidArrowToTop className="icon" />
         </div>
-      </div>
+      </Link>
     </>
   );
 };

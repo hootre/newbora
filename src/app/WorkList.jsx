@@ -1,6 +1,8 @@
+"use client";
 import { IoPlayOutline } from "react-icons/io5";
 import { works } from "./fileArray";
 import Link from "next/link";
+import { motion } from "framer-motion";
 const WorkList = ({ title }) => {
   return (
     <section id="works" className="WorksContainer">
@@ -8,7 +10,7 @@ const WorkList = ({ title }) => {
         {title ? (
           <>
             <div className="inner-divider"></div>
-            <div className="rowContainer">
+            {/* <div className="rowContainer">
               <div className="col-lg-12">
                 <h2 className="section-heading section-heading-small">
                   <span>{works.title_point}</span> {works.title}
@@ -18,7 +20,7 @@ const WorkList = ({ title }) => {
                   <span>{works.subscription}</span>
                 </h2>
               </div>
-            </div>
+            </div> */}
             <div className="WorksInfoContainer">
               <div className="container sections">
                 <div className="row">
@@ -37,13 +39,10 @@ const WorkList = ({ title }) => {
 
                       <h4>Works</h4>
                     </div>
-
-                    <div className="the-line"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="inner-divider-half"></div>
           </>
         ) : (
           <></>
@@ -52,7 +51,13 @@ const WorkList = ({ title }) => {
         <div className="rowContainer">
           <div className="move-up section-demos">
             {works.work_list.map((item, idx) => (
-              <div key={item.id} className="col-sm-12 col-md-12 col-lg-4">
+              <motion.div
+                key={item.id}
+                className="col-sm-12 col-md-12 col-lg-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.8 }}
+              >
                 <div className="image-works">
                   <Link
                     className="open-popup-link "
@@ -81,7 +86,7 @@ const WorkList = ({ title }) => {
                     <h2>{item.title}</h2>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

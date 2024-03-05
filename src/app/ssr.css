@@ -9,7 +9,7 @@
   -webkit-pointer-events: none;
   -moz-pointer-events: none;
   pointer-events: none;
-  z-index: 2;
+  z-index: -1;
 }
 .vertical-lines {
   position: fixed;
@@ -33,7 +33,7 @@
   box-sizing: border-box;
   border-right: 1px solid rgba(119, 119, 119, 0.2);
 }
-.vertical-effect:first-of-type::before {
+.vertical-effect:last-child::before {
   top: 0;
   -webkit-animation: raindrop 6s ease-out infinite;
   -moz-animation: raindrop 6s ease-out infinite;
@@ -41,17 +41,17 @@
   -o-animation: raindrop 6s ease-out infinite;
   animation: raindrop 6s ease-out infinite;
   background: -webkit-linear-gradient(
-    to top,
+    to bottom,
     rgba(225, 225, 225, 0),
     rgba(225, 225, 225, 1)
   );
   background: -ms-linear-gradient(
-    to top,
+    to bottom,
     rgba(225, 225, 225, 0),
     rgba(225, 225, 225, 1)
   );
   background: linear-gradient(
-    to top,
+    to bottom,
     rgba(225, 225, 225, 0),
     rgba(225, 225, 225, 1)
   );
@@ -73,7 +73,7 @@
   -o-animation-direction: normal;
   animation-direction: normal;
 }
-.vertical-effect:last-child::before {
+.vertical-effect:first-of-type::before {
   bottom: 0;
   -webkit-animation: raindrop-reverse 6s ease-out infinite;
   -moz-animation: raindrop-reverse 6s ease-out infinite;
@@ -81,10 +81,20 @@
   -o-animation: raindrop-reverse 6s ease-out infinite;
   animation: raindrop-reverse 6s ease-out infinite;
 
+  background: -webkit-linear-gradient(
+    to top,
+    rgba(225, 225, 225, 0),
+    rgba(225, 225, 225, 1)
+  );
+  background: -ms-linear-gradient(
+    to top,
+    rgba(225, 225, 225, 0),
+    rgba(225, 225, 225, 1)
+  );
   background: linear-gradient(
     to top,
-    rgba(225, 225, 225, 1),
-    rgba(225, 225, 225, 0)
+    rgba(225, 225, 225, 0),
+    rgba(225, 225, 225, 1)
   );
 }
 @keyframes raindrop {
