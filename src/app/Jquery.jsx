@@ -38,12 +38,6 @@ const Jquery = () => {
         $(".section-demos > div").slice(0, 20).css("display", "block");
       }
     });
-
-    // 3.2. highlight navigation
-    // $("body").scrollspy({
-    //   target: ".navbar",
-    //   offset: 65,
-    // });
     $(window).on("scroll", function () {
       // 3.5. collapse navigation
       if ($(".navbar").offset().top > 50) {
