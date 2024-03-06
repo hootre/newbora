@@ -14,11 +14,6 @@ export let navs = [
     href: "/#works",
     acitve: false,
   },
-  {
-    title: "contact",
-    href: "/contact",
-    acitve: false,
-  },
 ];
 
 export let mainTitle = {
@@ -67,7 +62,7 @@ We always look forward to hearing from you.
       icon: <FaInstagram />,
     },
     {
-      href: "https://www.youtube.com/@bora8340",
+      href: "https://boramedia.co.kr/",
       icon: <MdWeb />,
     },
   ],

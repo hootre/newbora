@@ -1,4 +1,5 @@
-import { works } from "../fileArray";
+"use client";
+
 import LayoutCom from "../LayoutCom";
 import Contact from "../Contact";
 

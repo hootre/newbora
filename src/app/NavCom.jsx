@@ -6,7 +6,7 @@ import logo from "/public/images/logo.png";
 import { navs } from "./fileArray";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 const NavCom = () => {
   const { scrollYProgress, scrollY } = useScroll();
@@ -18,11 +18,6 @@ const NavCom = () => {
       setHidden(true);
     }
   }
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
   const variants = {
     visible: { opacity: 1, y: 0 },
     hidden: { opacity: 0, y: -25 },
@@ -78,10 +73,6 @@ const NavCom = () => {
           </motion.div>
         </div>
       </motion.section>
-      <motion.div
-        className={hidden ? "bar hidden" : "bar"}
-        style={{ scaleX }}
-      />
     </>
   );
 };

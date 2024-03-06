@@ -5,16 +5,38 @@ import VideoCom from "../VIdeoCom";
 import { works } from "../fileArray";
 import WorkList from "../WorkList";
 import LayoutCom from "../LayoutCom";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
+import { motion, useScroll, useSpring } from "framer-motion";
 export default function Page({ params }) {
   let item = works.work_list[params.id];
   const [videoState, setVideoState] = useState(1);
   const handleVideoState = (id) => {
     setVideoState(id);
   };
+  const { scrollYProgress, scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+  function update() {
+    if (scrollY?.current < scrollY?.prev) {
+      setHidden(false);
+    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
+      setHidden(true);
+    }
+  }
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  useEffect(() => {
+    return scrollY.onChange(() => update());
+  });
   return (
     <LayoutCom>
+      <motion.div
+        className={hidden ? "bar hidden" : "bar"}
+        style={{ scaleX }}
+      />
       <div className="move-up section-demos">
         <div key={item.id} className="col-sm-12 col-md-12 col-lg-4">
           {/* view vimeo video  list*/}

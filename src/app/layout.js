@@ -42,12 +42,12 @@ export default function RootLayout({ children }) {
             <div className="vertical-lines">
               <div className="vertical-lines-wrapper">
                 <div className="vertical-effect"></div>
-                <div className="vertical-effect"></div>
+                <div className="vertical-effect mobile_vertical"></div>
                 <div className="vertical-effect"></div>
               </div>
             </div>
             <div className="vertical-effect"></div>
-            <div className="vertical-effect"></div>
+            <div className="vertical-effect mobile_vertical"></div>
             <div className="vertical-effect"></div>
           </div>
 

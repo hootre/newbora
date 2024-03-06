@@ -3,10 +3,19 @@ import { IoPlayOutline } from "react-icons/io5";
 import { works } from "./fileArray";
 import Link from "next/link";
 import { motion } from "framer-motion";
-const WorkList = ({ title }) => {
+import { forwardRef, useState } from "react";
+const WorkList = forwardRef(({ title }) => {
+  const [moreBtn, setMoreBtn] = useState(false);
+  const handleSetMoreBtn = () => {
+    setMoreBtn((prev) => !prev);
+  };
   return (
     <section id="works" className="WorksContainer">
-      <div className="container-fluid sections">
+      <div
+        className={
+          moreBtn ? "container-fluid sections" : "container-fluid sections more"
+        }
+      >
         {title ? (
           <>
             <div className="inner-divider"></div>
@@ -53,7 +62,11 @@ const WorkList = ({ title }) => {
             {works.work_list.map((item, idx) => (
               <motion.div
                 key={item.id}
-                className="col-sm-12 col-md-12 col-lg-4"
+                className={
+                  moreBtn
+                    ? "col-sm-12 col-md-12 col-lg-4 open_more"
+                    : "col-sm-12 col-md-12 col-lg-4"
+                }
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.8 }}
@@ -91,8 +104,15 @@ const WorkList = ({ title }) => {
           </div>
         </div>
       </div>
-      <div id="more_btn">view more</div>
+      <div
+        id="more_btn"
+        className={moreBtn ? "open_more" : ""}
+        onClick={handleSetMoreBtn}
+      >
+        {moreBtn ? "view less" : `view more`}
+      </div>
     </section>
   );
-};
+});
+WorkList.displayName = "WorkList";
 export default WorkList;

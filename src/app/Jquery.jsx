@@ -23,20 +23,20 @@ const Jquery = () => {
       e.stopPropagation();
     });
     // more btn
-    $("#more_btn").on("click", function () {
-      if ($("#more_btn").hasClass("open_more")) {
-        $("#more_btn").removeClass("open_more");
-        $(".container-fluid").removeClass("more");
-        $("#more_btn").text("view more");
-        $(".section-demos > div").slice(12, 20).css("display", "none");
-      } else {
-        $("#more_btn").addClass("open_more");
-        $(".container-fluid").addClass("more");
-        $("#more_btn").text("view less");
+    // $("#more_btn").on("click", function () {
+    //   if ($("#more_btn").hasClass("open_more")) {
+    //     $("#more_btn").removeClass("open_more");
+    //     $(".container-fluid").removeClass("more");
+    //     $("#more_btn").text("view more");
+    //     $(".section-demos > div").slice(12, 20).css("display", "none");
+    //   } else {
+    //     $("#more_btn").addClass("open_more");
+    //     $(".container-fluid").addClass("more");
+    //     $("#more_btn").text("view less");
 
-        $(".section-demos > div").slice(0, 20).css("display", "block");
-      }
-    });
+    //     $(".section-demos > div").slice(0, 20).css("display", "block");
+    //   }
+    // });
     $(window).on("scroll", function () {
       // 3.5. collapse navigation
       if ($(".navbar").offset().top > 50) {

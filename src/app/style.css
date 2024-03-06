@@ -191,6 +191,7 @@
   position: relative;
   display: block;
   padding: 10px 15px;
+  cursor: pointer;
 }
 .NavContainer.main-navigation-bg {
   -webkit-transition: all 0.4s ease-out;
@@ -652,7 +653,7 @@
   object-position: center; /* default: center */
 }
 .vimeo-shadowbox__video-wrapper.col .carousel__slide > figure > div {
-  aspect-ratio: 9 / 6;
+  aspect-ratio: 9 / 9;
   object-fit: cover;
   object-position: center; /* default: center */
   display: flex;
@@ -1858,6 +1859,14 @@
   height: 100vh;
   transform: translate(-50%, -50%);
 }
+
+/*  모달 비디어 사이즈 커스텀 */
+.modal-video {
+  background: #000 !important;
+}
+.modal-video .modal-video-body {
+  max-width: none !important;
+}
 @media (min-aspect-ratio: 16/9) {
   .main_video iframe {
     /* height = 100 * (9 / 16) = 56.25 */
@@ -1881,6 +1890,9 @@
 }
 
 @media (max-width: 767px) {
+  .mobile_vertical {
+    opacity: 0;
+  }
   .vimeo-shadowbox .contentBox_1 .contents h2 {
     font-size: 18px;
   }

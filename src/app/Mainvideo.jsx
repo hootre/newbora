@@ -5,9 +5,9 @@ import { IoPlayOutline } from "react-icons/io5";
 import Link from "next/link";
 import { mainTitle } from "./fileArray";
 import VideoModal from "./VideoModal";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import { motion } from "framer-motion";
-const Mainvideo = () => {
+const Mainvideo = forwardRef(() => {
   const { readyVideo, toggleReadyVideo } = useVideoStore();
   const [isOpen, setOpen] = useState(false);
 
@@ -69,5 +69,6 @@ const Mainvideo = () => {
       </div>
     </motion.section>
   );
-};
+});
+Mainvideo.displayName = "Mainvideo";
 export default Mainvideo;

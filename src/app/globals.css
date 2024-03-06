@@ -415,6 +415,9 @@ h2.section-subheading span:before {
 .section-demos > div:nth-child(-n + 12) {
   display: block;
 }
+.section-demos > div.open_more {
+  display: block;
+}
 .move-up {
   margin-top: 7rem;
 }
