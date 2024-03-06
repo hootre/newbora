@@ -12,7 +12,9 @@ import { useRef } from "react";
 
 const VideoCom = dynamic(() => import("./VIdeoCom"), { ssr: false });
 const Home = () => {
-  const scrollRef = useRef([]);
+  const content1Ref = useRef(null);
+  const content2Ref = useRef(null);
+  const content3Ref = useRef(null);
   return (
     <>
       <Mainvideo />

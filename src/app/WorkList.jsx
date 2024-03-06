@@ -16,47 +16,6 @@ const WorkList = forwardRef(({ title }) => {
           moreBtn ? "container-fluid sections" : "container-fluid sections more"
         }
       >
-        {title ? (
-          <>
-            <div className="inner-divider"></div>
-            {/* <div className="rowContainer">
-              <div className="col-lg-12">
-                <h2 className="section-heading section-heading-small">
-                  <span>{works.title_point}</span> {works.title}
-                </h2>
-
-                <h2 className="section-subheading">
-                  <span>{works.subscription}</span>
-                </h2>
-              </div>
-            </div> */}
-            <div className="WorksInfoContainer">
-              <div className="container sections">
-                <div className="row">
-                  <div className="col-lg-12">
-                    <div className="intro-years">
-                      <div className="inner-divider-half"></div>
-                      <h2>Ready</h2>
-
-                      <div className="inner-divider-half"></div>
-
-                      <h3 className="facts-counter-number">
-                        {works.work_list.length}
-                      </h3>
-
-                      <div className="inner-divider-half"></div>
-
-                      <h4>Works</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
-
         <div className="rowContainer">
           <div className="move-up section-demos">
             {works.work_list.map((item, idx) => (

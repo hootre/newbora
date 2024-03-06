@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+.NavContainer {
+  transition: background-color 0.5s ease !important;
+}
 .NavContainer #navbar-collapse {
   max-height: 0px;
   -webkit-transition: all 0.4s ease-out;
@@ -13,12 +15,6 @@
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  -webkit-transition: all 0.4s ease-out;
-  -moz-transition: all 0.4s ease-out;
-  -ms-transition: all 0.4s ease-out;
-  -o-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
-  transition: padding 0s ease !important;
 }
 .NavContainer.navbar-bg-switch {
   position: fixed;
@@ -66,13 +62,12 @@
 }
 .NavContainer .navbar-brand {
   float: left;
-  padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
 }
 .NavContainer .navbar-brand img {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 .NavContainer .navbar-toggle {
@@ -199,7 +194,7 @@
   -ms-transition: all 0.4s ease-out;
   -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
-  background: #111;
+  background-color: rgba(25, 25, 25, 0) !important;
 }
 
 .NavContainer.main-navigation-bg .main-navigation .navbar-nav li a {
@@ -958,10 +953,6 @@
 }
 .AboutContainer .font-1 {
   font-family: var(--font-1);
-}
-.AboutContainer .text-white {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }
 .AboutContainer .text-title {
   font-size: 5rem;

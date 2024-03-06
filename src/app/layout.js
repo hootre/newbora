@@ -3,6 +3,8 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 import NavCom from "./NavCom";
 import LayoutCom from "./LayoutCom";
+import logo from "/public/images/logo.png";
+import Image from "next/image";
 
 const Jquery = dynamic(() => import("./Jquery"), { ssr: false });
 const inter = Inter({ subsets: ["latin"] });
@@ -54,9 +56,7 @@ export default function RootLayout({ children }) {
           <div className="preloader-bg"></div>
           <div id="preloader">
             <div id="preloader-status">
-              <div className="preloader-position loader">
-                <span></span>
-              </div>
+              <Image src={logo} alt="logo" className="loading_logo" />
             </div>
           </div>
           {children}

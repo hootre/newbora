@@ -4,10 +4,11 @@ import "jquery.easing";
 
 import { useEffect } from "react";
 import { useVideoStore } from "./Store";
+import { usePathname, useRouter } from "next/navigation";
 
 const Jquery = () => {
+  console.log("tfl");
   const { readyVideo, toggleReadyVideo } = useVideoStore();
-
   useEffect(() => {
     if (readyVideo) {
       if (!$("#preloader").hasClass("loaded")) {
@@ -17,6 +18,41 @@ const Jquery = () => {
       }
     }
   }, [readyVideo]);
+  const router = useRouter();
+  const pathname = usePathname();
+  useEffect(() => {
+    // 3.1. page scroll
+    $(".page-scroll").on("click", function (e) {
+      var $anchor = $(this);
+      console.log(pathname);
+      if (pathname !== "/") {
+        console.log("move");
+        router.push("/");
+      } else {
+        if ($anchor.data("href") === "#home") {
+          $("html, body").stop().animate(
+            {
+              scrollTop: 0,
+            },
+            1500,
+            "easeInOutExpo"
+          );
+        } else {
+          $("html, body")
+            .stop()
+            .animate(
+              {
+                scrollTop: $($anchor.data("href")).offset().top - 55,
+              },
+              1500,
+              "easeInOutExpo"
+            );
+        }
+      }
+
+      e.preventDefault();
+    });
+  }, [pathname, router]);
   useEffect(() => {
     // popup event
     $(".open-popup-link").on("click", function (e) {
@@ -39,7 +75,7 @@ const Jquery = () => {
     // });
     $(window).on("scroll", function () {
       // 3.5. collapse navigation
-      if ($(".navbar").offset().top > 50) {
+      if ($(".navbar").offset().top === 0) {
         $(".navbar-bg-switch").addClass("main-navigation-bg");
       } else {
         $(".navbar-bg-switch").removeClass("main-navigation-bg");

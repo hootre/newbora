@@ -306,6 +306,11 @@ h1.home-page-title {
 .mainContainer {
   position: relative;
 }
+.loading_logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
 .preloader-bg,
 #preloader {
   background: #000;

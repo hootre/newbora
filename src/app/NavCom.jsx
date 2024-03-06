@@ -7,7 +7,6 @@ import { navs } from "./fileArray";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
-
 const NavCom = () => {
   const { scrollYProgress, scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
@@ -19,8 +18,13 @@ const NavCom = () => {
     }
   }
   const variants = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: -25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      touchAction: "active",
+      backgroundColor: "#000",
+    },
+    hidden: { opacity: 0, y: -25, touchAction: "none" },
   };
   useEffect(() => {
     return scrollY.onChange(() => update());
@@ -31,7 +35,7 @@ const NavCom = () => {
         className={"navbar navbar-fixed-top navbar-bg-switch NavContainer"}
         variants={variants}
         animate={hidden ? "hidden" : "visible"}
-        transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
+        transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.3 }}
       >
         <div className="container navCom">
           <div className="navbar-header ">
@@ -46,15 +50,14 @@ const NavCom = () => {
               <ul className="nav navbar-nav navbar-right">
                 {navs.map((item, idx) => (
                   <li key={idx}>
-                    <Link
+                    <a
                       className={
                         item.acitve ? "page-scroll active" : "page-scroll"
                       }
-                      href={`${item.href}`}
-                      data-to-scrollspy-id={item.title}
+                      data-href={`${item.href}`}
                     >
                       {item.title}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
