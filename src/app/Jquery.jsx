@@ -2,11 +2,10 @@
 import $ from "jquery";
 import "jquery.easing";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useVideoStore } from "./Store";
 
 const Jquery = () => {
-  const { stopVideo, toggleStopVideo } = useVideoStore();
   const { readyVideo, toggleReadyVideo } = useVideoStore();
 
   useEffect(() => {
