@@ -8,6 +8,67 @@ import LayoutCom from "../LayoutCom";
 import { useEffect, useRef, useState } from "react";
 
 import { motion, useScroll, useSpring } from "framer-motion";
+
+function CustomCarousel(props) {
+  const slider = useRef(null);
+  let isDown = useRef(false);
+  let startX = useRef(null);
+  let scrollLeft = useRef(null);
+
+  useEffect(() => {
+    if (slider && slider.current) {
+      let sliderRef = slider.current;
+      sliderRef.addEventListener("mousedown", one);
+      sliderRef.addEventListener("mousedown", two);
+      sliderRef.addEventListener("mouseleave", three);
+      sliderRef.addEventListener("mouseup", four);
+      sliderRef.addEventListener("mousemove", five);
+
+      return () => {
+        sliderRef.removeEventListener("mousedown", one);
+        sliderRef.removeEventListener("mousedown", two);
+        sliderRef.removeEventListener("mouseleave", three);
+        sliderRef.removeEventListener("mouseup", four);
+        sliderRef.removeEventListener("mousemove", five);
+      };
+    }
+  }, []);
+
+  function one(e) {
+    isDown.current = true;
+    startX.current = e.pageX - slider.current.offsetLeft;
+    scrollLeft.current = slider.current.scrollLeft;
+  }
+
+  function two(e) {
+    isDown.current = true;
+    startX.current = e.pageX - slider.current.offsetLeft;
+    scrollLeft.current = slider.current.scrollLeft;
+  }
+
+  function three() {
+    isDown.current = false;
+  }
+
+  function four() {
+    isDown.current = false;
+  }
+
+  function five(e) {
+    if (!isDown.current) return;
+    e.preventDefault();
+    const x = e.pageX - slider.current.offsetLeft;
+    const walk = x - startX.current;
+    slider.current.scrollLeft = scrollLeft.current - walk;
+  }
+
+  return (
+    <ul className="items carousel__thumbnails" ref={slider}>
+      {props.children}
+    </ul>
+  );
+}
+
 export default function Page({ params }) {
   let item = works.work_list[params.id];
   const [videoState, setVideoState] = useState(1);
@@ -75,7 +136,9 @@ export default function Page({ params }) {
                       name="slides"
                       className={videoState === 5 ? "slide_active" : ""}
                     />
-                    <ul className="carousel__slides">
+                    <ul
+                      className={`carousel__slides ${item.videoType} ${item.href.length === 1 ? "only" : ""}`}
+                    >
                       {item.href.map((video, idx) => (
                         <li className="carousel__slide" key={idx}>
                           <figure>
@@ -93,31 +156,31 @@ export default function Page({ params }) {
                           </figure>
                         </li>
                       ))}
-                    </ul>
-                    <ul className="carousel__thumbnails">
-                      {item.href.map((videoId, idx) => {
-                        if (item.href.length > 1) {
-                          return (
-                            <li key={idx}>
-                              <label
-                                onClick={() => handleVideoState(idx + 1)}
-                                className="label"
-                              >
-                                <Image
-                                  width={1920}
-                                  height={1080}
-                                  style={{
-                                    width: "100%",
-                                    height: "auto",
-                                  }}
-                                  src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-                                  alt="image"
-                                />
-                              </label>
-                            </li>
-                          );
-                        }
-                      })}
+                      <CustomCarousel>
+                        {item.href.map((videoId, idx) => {
+                          if (item.href.length > 1) {
+                            return (
+                              <li key={idx} className="thumbnails_list">
+                                <label
+                                  onClick={() => handleVideoState(idx + 1)}
+                                  className="label"
+                                >
+                                  <Image
+                                    width={1920}
+                                    height={1080}
+                                    style={{
+                                      width: "100%",
+                                      height: "auto",
+                                    }}
+                                    src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                                    alt="image"
+                                  />
+                                </label>
+                              </li>
+                            );
+                          }
+                        })}
+                      </CustomCarousel>
                     </ul>
                   </div>
                 </div>

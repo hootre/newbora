@@ -100,9 +100,7 @@ export let works = {
       title: "TEMP_4",
       videoType: "row",
       href: ["Uy5KyqZgXdo"],
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708477049/newbora/image1/cjh8lz2vg8nni1bi5sna.png",
-      ],
+
       image: (
         <CldImage
           width="1600"
@@ -112,9 +110,7 @@ export let works = {
           src="newbora/image1/cjh8lz2vg8nni1bi5sna"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -169,13 +165,6 @@ export let works = {
         />
       ),
 
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1709780543/newbora/image2/qihpoojcbdzwukvxn1g4.jpg",
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1709780546/newbora/image2/asudv9vdogxuatxveo6g.jpg",
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1709780017/newbora/image2/spgxuxyuryiwhkortfgu.jpg",
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1709780659/newbora/image2/ppemmafgy9pnkvpiufmu.jpg",
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1709780679/newbora/image2/oa9gjhpxoi6noipjjjcn.jpg",
-      ],
       content_img_1: (
         <CldImage
           width="1600"
@@ -234,10 +223,7 @@ export let works = {
           src="newbora/image3/qnzjern8eyjwrskiqj5o"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1709780716/newbora/image3/kqczfoqnwcenl7hxgh9h.jpg",
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1709780734/newbora/image3/nizhcgo0k1j2yysukpn2.jpg",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -287,9 +273,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/kantabi/zsjgqswdf92qrfcqyvpw"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -336,7 +320,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
       id: 5,
       title: "Korea Tourism Organization: Astro Cha Eun-woo",
       videoType: "col",
-      href: ["vr7ywDFE9QY", "XwAaOiGDvTo", "6pko78JC1hg", "FOe78vXJ854"],
+      href: ["FOe78vXJ854"],
       image: (
         <CldImage
           width="1600"
@@ -346,9 +330,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/차은우/weduplqybfcb4xmkm0gx"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -405,9 +387,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/제주 팸투어/ilhfmzpvyz4dxmsnh4gf"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -464,9 +444,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/퓨마/i3abbeh8xamzpqxfflii"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -515,9 +493,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/일본정부관광국/mflyrpuhjigevhkqgcdm"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -574,9 +550,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/울프라운치/g2j0etoxrph8jpky9ynk"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -625,9 +599,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/암웨이/kjz1jjooiufoiwtoghkd"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -687,9 +659,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/하라메/xyxbjawothj67txsc5n8"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -747,9 +717,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/아스트로컨셉/gyv58qfemvo33evyrk28"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -808,9 +776,6 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
         />
       ),
 
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
       content_img_1: (
         <CldImage
           width="1600"
@@ -868,9 +833,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/500cc/n2x7eraqivc6qwoblarj"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -920,9 +883,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/24K/p7a4wgcoxkh2dqyflx9h"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -980,9 +941,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/borashowreel/uyqy6g9q82tsxenngcbx"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -1012,9 +971,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/더가꿈/iutv1j8c0itazzqs1tkw"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -1063,9 +1020,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/더가꿈 홍보/dcdxvycw6bfvin9gg6rc"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -1122,9 +1077,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/고카프/sxiyd1blgh1ho1l6woog"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"
@@ -1181,9 +1134,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/케이펫/alegi8vura0vzbqte5ds"
         />
       ),
-      thumbnails: [
-        "https://res.cloudinary.com/dquicfvbk/image/upload/v1708497947/newbora/image2/tu3lqvqziv6hly99ebet.png",
-      ],
+
       content_img_1: (
         <CldImage
           width="1600"

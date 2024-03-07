@@ -7,8 +7,10 @@ import { navs } from "./fileArray";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
+import { usePathname } from "next/navigation";
 const NavCom = () => {
   const { scrollYProgress, scrollY } = useScroll();
+  const pathname = usePathname();
   const [hidden, setHidden] = useState(false);
   function update() {
     if (scrollY?.current < scrollY?.prev) {
@@ -21,10 +23,8 @@ const NavCom = () => {
     visible: {
       opacity: 1,
       y: 0,
-      touchAction: "active",
-      backgroundColor: "#000",
     },
-    hidden: { opacity: 0, y: -25, touchAction: "none" },
+    hidden: { opacity: 0, y: -25 },
   };
   useEffect(() => {
     return scrollY.onChange(() => update());
@@ -72,7 +72,11 @@ const NavCom = () => {
             }}
             whileTap={{ scale: 0.9 }}
           >
-            <Link href={"/contact"}>Contact</Link>
+            {pathname === "/" ? (
+              <Link href={"/contact"}>Contact</Link>
+            ) : (
+              <Link href={"/"}>Back</Link>
+            )}
           </motion.div>
         </div>
       </motion.section>

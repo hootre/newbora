@@ -22,11 +22,11 @@ const Home = () => {
       <AboutCom />
       <WorkList title={true} />
 
-      <Link className="page-scroll PageTopBtn" href="/#home">
+      <div className="page-scroll PageTopBtn" data-href="#home">
         <div className="to-top-arrow show">
           <BiSolidArrowToTop className="icon" />
         </div>
-      </Link>
+      </div>
     </>
   );
 };

@@ -3,8 +3,8 @@ import { IoPlayOutline } from "react-icons/io5";
 import { works } from "./fileArray";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { forwardRef, useState } from "react";
-const WorkList = forwardRef(({ title }) => {
+import { useState } from "react";
+const WorkList = () => {
   const [moreBtn, setMoreBtn] = useState(false);
   const handleSetMoreBtn = () => {
     setMoreBtn((prev) => !prev);
@@ -32,7 +32,7 @@ const WorkList = forwardRef(({ title }) => {
               >
                 <div className="image-works">
                   <Link
-                    className="open-popup-link "
+                    className="open-popup-link"
                     data-item={item.id}
                     href={`/${idx}`}
                   >
@@ -46,7 +46,7 @@ const WorkList = forwardRef(({ title }) => {
                         x="0px"
                         y="0px"
                         viewBox="0 0 100 100"
-                        enable-background="new 0 0 100 100"
+                        enableBackground="new 0 0 100 100"
                         xmlSpace="preserve"
                       >
                         <path
@@ -97,6 +97,6 @@ const WorkList = forwardRef(({ title }) => {
       </div>
     </section>
   );
-});
+};
 WorkList.displayName = "WorkList";
 export default WorkList;

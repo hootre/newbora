@@ -28,6 +28,7 @@
   -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   z-index: 40;
+  background-color: var(--bs-dark);
 }
 .NavContainer.navbar-fixed-top {
   top: 0;
@@ -465,6 +466,7 @@
   position: relative;
   width: 100%;
   height: auto;
+  top: 10%;
   margin: 0;
   padding: 0;
   /* vimeo video list css */
@@ -579,7 +581,7 @@
   text-align: center;
   align-items: center;
   padding: 2rem 0;
-  width: 100%;
+  width: 70%;
 }
 .vimeo-shadowbox .contentBox_1 .contents h2 {
   font-size: 28px;
@@ -596,6 +598,7 @@
   width: 70%;
   object-fit: contain;
 }
+.vimeo-shadowbox .contentBox_1,
 .vimeo-shadowbox .contentBox_2 {
   display: flex;
   flex-direction: column;
@@ -607,7 +610,7 @@
   gap: 10px;
   text-align: center;
   align-items: center;
-  width: 100%;
+  width: 70%;
   height: 100%;
   padding: 2rem 0;
 }
@@ -647,6 +650,9 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center; /* default: center */
+  display: flex;
+  justify-content: center;
+  width: 80%;
 }
 .vimeo-shadowbox__video-wrapper.col .carousel__slide > figure > div {
   aspect-ratio: 9 / 9;
@@ -654,6 +660,7 @@
   object-position: center; /* default: center */
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 .vimeo-shadowbox__video-wrapper.col .carousel__slide div iframe,
 .vimeo-shadowbox__video-wrapper.col
@@ -1674,49 +1681,66 @@
 }
 .carousel
   > input:nth-of-type(1).slide_active
-  ~ .carousel__thumbnails
-  li:nth-of-type(1) {
+  ~ .carousel__slides
+  .thumbnails_list:nth-of-type(1) {
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
 }
 .carousel
   > input:nth-of-type(2).slide_active
-  ~ .carousel__thumbnails
-  li:nth-of-type(2) {
+  ~ .carousel__slides
+  .thumbnails_list:nth-of-type(2) {
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
 }
 .carousel
   > input:nth-of-type(3).slide_active
-  ~ .carousel__thumbnails
-  li:nth-of-type(3) {
+  ~ .carousel__slides
+  .thumbnails_list:nth-of-type(3) {
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
 }
 .carousel
   > input:nth-of-type(4).slide_active
-  ~ .carousel__thumbnails
-  li:nth-of-type(4) {
+  ~ .carousel__slides
+  .thumbnails_list:nth-of-type(4) {
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
 }
 .carousel
   > input:nth-of-type(5).slide_active
-  ~ .carousel__thumbnails
-  li:nth-of-type(5) {
+  ~ .carousel__slides
+  .thumbnails_list:nth-of-type(5) {
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
 }
 .carousel
   > input:nth-of-type(6).slide_active
-  ~ .carousel__thumbnails
-  li:nth-of-type(6) {
+  ~ .carousel__slides
+  .thumbnails_list:nth-of-type(6) {
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
 }
-.carousel__slides {
+.row .carousel__slides {
   position: relative;
-  z-index: 1;
+  z-index: 233;
   padding: 0;
   margin: 0;
-  overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
   display: flex;
+  margin-bottom: 20%;
+  overflow-x: clip;
+}
+.col .carousel__slides {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  left: 15%;
+}
+.col .carousel__slides.only {
+  left: 0;
+}
+.col .carousel__slides.only .detail_video > div {
+  display: flex;
+  justify-content: center;
 }
 .carousel__slide {
   position: relative;
@@ -1732,6 +1756,7 @@
 }
 .carousel__slide figure {
   display: flex;
+  justify-content: center;
   margin: 0;
 }
 .carousel__slide img {
@@ -1754,23 +1779,32 @@
 .carousel__slide.scrollable {
   overflow-y: scroll;
 }
-.carousel__thumbnails {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  margin: 0 -10px;
-}
 .carousel__thumbnails li {
-  margin: 0 10px;
+  min-width: 100px;
+  max-width: 250px;
   transition: all 300ms ease-in-out;
 }
-
-.vimeo-shadowbox__video-wrapper.row .carousel__thumbnails li {
-  flex: 1 1 auto;
-  max-width: calc((100% / 7) - 20px);
+.carousel__slides.row .carousel__thumbnails {
+  position: absolute;
+  top: 102%;
+  left: 10%;
+  width: 80%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  transition: all 0.2s;
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+  padding: 5px;
+  overflow-x: scroll;
+  display: flex;
+  gap: 10px;
+  grid-auto-flow: column;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
 }
-.vimeo-shadowbox__video-wrapper.col .carousel__thumbnails {
+.carousel__slides.col .carousel__thumbnails {
   padding-bottom: 20rem;
   position: absolute;
   top: 0;
@@ -1780,6 +1814,7 @@
   flex-direction: column;
   gap: 2rem;
   z-index: 55555;
+  margin-top: 10px;
   max-width: calc((100% / 5) - 20px);
 }
 
@@ -1890,10 +1925,6 @@
 .react-player.ready {
   display: block;
 }
-.vimeo-shadowbox__video-wrapper.col .vimeo-shadowbox__video {
-  margin-left: -4rem;
-  transform: translateX(17%);
-}
 
 @media (max-width: 767px) {
   .mobile_vertical {
@@ -1920,17 +1951,16 @@
     width: 100%;
     min-height: 300px;
   }
-  .col .carousel__slides + .carousel__thumbnails {
-    margin-top: 0;
-    padding-bottom: 40rem;
-    left: 63%;
-  }
-  .col .carousel__slides {
+  .carousel__slides.col .carousel__thumbnails {
     padding-bottom: 10rem;
+    left: 60%;
+    max-width: calc((100% / 4));
   }
-  .vimeo-shadowbox__video-wrapper.col .vimeo-shadowbox__video {
-    margin-left: -4rem;
-    transform: translateX(17%);
+  .vimeo-shadowbox__video-wrapper.col .carousel__slide > figure > div {
+    aspect-ratio: 9 / 9;
+  }
+  .vimeo-shadowbox__video-wrapper.row .carousel__slide > figure > div {
+    width: 100% !important;
   }
   .vimeo-shadowbox__video-wrapper.col .carousel__slide div iframe,
   .vimeo-shadowbox__video-wrapper.col
@@ -1940,5 +1970,12 @@
     width: 57% !important;
     height: 100% !important;
     overflow: hidden;
+  }
+  .navCom .contact_btn {
+    font-size: 15px;
+  }
+  .carousel__slides.row .carousel__thumbnails {
+    width: 100% !important;
+    left: 0 !important;
   }
 }
