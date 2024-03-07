@@ -35,7 +35,7 @@ const NavCom = () => {
         className={"navbar navbar-fixed-top navbar-bg-switch NavContainer"}
         variants={variants}
         animate={hidden ? "hidden" : "visible"}
-        transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.3 }}
+        transition={{ ease: [0.1, 0.25, 0.3, 2] }}
       >
         <div className="container navCom">
           <div className="navbar-header ">

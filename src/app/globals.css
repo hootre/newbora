@@ -487,6 +487,7 @@ h2.section-subheading span:before {
 .icon-works {
   position: absolute;
   width: 100%;
+  height: 100%;
   top: 50%;
   text-align: center;
   opacity: 0;
@@ -564,6 +565,52 @@ h2.section-subheading span:before {
     font-weight: bold;
   }
 }
+.preloader-bg,
+#preloader {
+  background: #000;
+}
+.preloader-bg {
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 999999;
+}
+#preloader {
+  position: fixed;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  top: 80px;
+  overflow: hidden;
+  z-index: 999999;
+}
+#preloader-status {
+  display: table-cell;
+  vertical-align: middle;
+}
+.preloader-position {
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.loading_logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -80px);
+  top: auto;
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
 .image-works:hover .icon-works {
   opacity: 1;
   -moz-opacity: 1;
@@ -597,6 +644,71 @@ h2.section-subheading span:before {
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
+.image-works:hover .stroke-dotted {
+  stroke-width: 4px;
+  opacity: 1;
+}
+.image-works:hover .stroke-solid {
+  opacity: 0;
+  stroke-dashoffset: 300;
+}
+.image-works:hover .icon {
+  transform: scale(1.05);
+}
+.image-works:hover .hover-effect {
+  opacity: 0.75;
+  -moz-opacity: 0.75;
+  -webkit-opacity: 0.75;
+  filter: alpha(opacity=75);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+}
+
+.image-works:hover .icon-works {
+  opacity: 1;
+  -moz-opacity: 1;
+  -webkit-opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.stroke-dotted {
+  opacity: 0;
+  stroke-dasharray: 4, 5;
+  stroke-width: 1px;
+  transform-origin: 50% 50%;
+  animation: spin 4s infinite linear;
+  transition:
+    opacity 1s ease,
+    stroke-width 1s ease;
+}
+#play {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 30%;
+  height: 30%;
+}
+
+.stroke-solid {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 300;
+  stroke-width: 4px;
+  transition:
+    stroke-dashoffset 1s ease,
+    opacity 1s ease;
+}
+
+.icon {
+  transform-origin: 50% 50%;
+  transition: transform 200ms ease-out;
+}
+
 a,
 a:hover,
 a:visited,

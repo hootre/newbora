@@ -7,7 +7,7 @@ import { mainTitle } from "./fileArray";
 import VideoModal from "./VideoModal";
 import { forwardRef, useState } from "react";
 import { motion } from "framer-motion";
-const Mainvideo = forwardRef(() => {
+const Mainvideo = forwardRef((props, ref) => {
   const { readyVideo, toggleReadyVideo } = useVideoStore();
   const [isOpen, setOpen] = useState(false);
 

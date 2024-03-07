@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .NavContainer {
   transition: background-color 0.5s ease !important;
 }
@@ -1563,10 +1564,6 @@
   margin-bottom: 35px;
   margin-top: 35px;
 }
-.row .carousel {
-  left: 60%;
-  transform: translateX(-50%);
-}
 .carousel > input {
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -1783,6 +1780,7 @@
   flex-direction: column;
   gap: 2rem;
   z-index: 55555;
+  max-width: calc((100% / 5) - 20px);
 }
 
 .carousel__thumbnails label {
@@ -1850,7 +1848,22 @@
   height: 100vh;
   transform: translate(-50%, -50%);
 }
-
+.react-player__shadow {
+  grid-column: 2 / 3;
+  grid-row: 4 / 6;
+  width: 9rem;
+  height: 100%;
+  justify-self: center;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.react-player__play-icon {
+  border-width: 26px 0px 26px 46px !important;
+  border-color: transparent transparent transparent var(--bs-purple) !important;
+}
 /*  모달 비디어 사이즈 커스텀 */
 .modal-video {
   background: #000 !important;
@@ -1858,6 +1871,8 @@
 .modal-video .modal-video-body {
   max-width: none !important;
 }
+
+/*  */
 @media (min-aspect-ratio: 16/9) {
   .main_video iframe {
     /* height = 100 * (9 / 16) = 56.25 */
@@ -1912,9 +1927,6 @@
   }
   .col .carousel__slides {
     padding-bottom: 10rem;
-  }
-  .col .carousel__thumbnails > li {
-    width: 50% !important;
   }
   .vimeo-shadowbox__video-wrapper.col .vimeo-shadowbox__video {
     margin-left: -4rem;

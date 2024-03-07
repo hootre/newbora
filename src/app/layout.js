@@ -3,9 +3,9 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 import NavCom from "./NavCom";
 import LayoutCom from "./LayoutCom";
-import logo from "/public/images/logo.png";
 import Image from "next/image";
 
+import logo from "/public/images/logo.png";
 const Jquery = dynamic(() => import("./Jquery"), { ssr: false });
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,7 +52,6 @@ export default function RootLayout({ children }) {
             <div className="vertical-effect mobile_vertical"></div>
             <div className="vertical-effect"></div>
           </div>
-
           <div className="preloader-bg"></div>
           <div id="preloader">
             <div id="preloader-status">

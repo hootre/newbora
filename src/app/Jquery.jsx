@@ -7,26 +7,23 @@ import { useVideoStore } from "./Store";
 import { usePathname, useRouter } from "next/navigation";
 
 const Jquery = () => {
-  console.log("tfl");
-  const { readyVideo, toggleReadyVideo } = useVideoStore();
-  useEffect(() => {
-    if (readyVideo) {
-      if (!$("#preloader").hasClass("loaded")) {
-        $("#preloader").addClass("loaded");
-        $("#preloader").fadeOut(600);
-        $(".preloader-bg").delay(400).fadeOut(600);
-      }
-    }
-  }, [readyVideo]);
+  console.log("jquery");
+  const { readyVideo, readyDetailVide, toggleReadyVideo } = useVideoStore();
   const router = useRouter();
   const pathname = usePathname();
+  console.log(pathname);
+  useEffect(() => {
+    if (readyVideo || readyDetailVide) {
+      $("#preloader").addClass("loaded");
+      $("#preloader").fadeOut(600);
+      $(".preloader-bg").delay(400).fadeOut(600);
+    }
+  }, [readyVideo, readyDetailVide, pathname]);
   useEffect(() => {
     // 3.1. page scroll
     $(".page-scroll").on("click", function (e) {
       var $anchor = $(this);
-      console.log(pathname);
       if (pathname !== "/") {
-        console.log("move");
         router.push("/");
       } else {
         if ($anchor.data("href") === "#home") {
@@ -54,6 +51,7 @@ const Jquery = () => {
     });
   }, [pathname, router]);
   useEffect(() => {
+    $(".to-top-arrow").removeClass("show");
     // popup event
     $(".open-popup-link").on("click", function (e) {
       e.stopPropagation();
@@ -75,10 +73,10 @@ const Jquery = () => {
     // });
     $(window).on("scroll", function () {
       // 3.5. collapse navigation
-      if ($(".navbar").offset().top === 0) {
-        $(".navbar-bg-switch").addClass("main-navigation-bg");
-      } else {
+      if ($(".navbar").offset().top > 20) {
         $(".navbar-bg-switch").removeClass("main-navigation-bg");
+      } else {
+        $(".navbar-bg-switch").addClass("main-navigation-bg");
       }
       // 4. to top arrow animation
       if ($(this).scrollTop() > 400) {

@@ -87,13 +87,13 @@ export default function Page({ params }) {
                                 }
                                 key={idx}
                                 video={video}
+                                videoId={item.id}
                               />
                             </div>
                           </figure>
                         </li>
                       ))}
                     </ul>
-
                     <ul className="carousel__thumbnails">
                       {item.href.map((videoId, idx) => {
                         if (item.href.length > 1) {
@@ -104,13 +104,13 @@ export default function Page({ params }) {
                                 className="label"
                               >
                                 <Image
-                                  width={100}
-                                  height={200}
+                                  width={1920}
+                                  height={1080}
                                   style={{
                                     width: "100%",
                                     height: "auto",
                                   }}
-                                  src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
+                                  src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
                                   alt="image"
                                 />
                               </label>

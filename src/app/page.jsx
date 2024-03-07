@@ -9,6 +9,7 @@ import Link from "next/link";
 import NavCom from "./NavCom";
 import AboutCom from "./AboutCom";
 import { useRef } from "react";
+import Image from "next/image";
 
 const VideoCom = dynamic(() => import("./VIdeoCom"), { ssr: false });
 const Home = () => {
