@@ -7,11 +7,27 @@ import { navs } from "./fileArray";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import NavAbouCom from "./NavAbouCom";
 const NavCom = () => {
+  const router = useRouter();
   const { scrollYProgress, scrollY } = useScroll();
   const pathname = usePathname();
   const [hidden, setHidden] = useState(false);
+  const [cardState, setCardState] = useState(false);
+
+  const toggleCardState = () => {
+    if (cardState === false) {
+      document.getElementsByTagName("html")[0].style.overflow = "hidden";
+    } else {
+      document.getElementsByTagName("html")[0].style.overflow = "auto";
+    }
+    setCardState((prev) => !prev);
+  };
+  const closeNavModal = () => {
+    document.getElementsByTagName("html")[0].style.overflow = "auto";
+    setCardState(false);
+  };
   function update() {
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
@@ -46,38 +62,72 @@ const NavCom = () => {
             </div>
           </div>
           <div className="main-navigation ">
-            <div className={"navbar-collapse collapse "} id="navbar-collapse">
-              <ul className="nav navbar-nav navbar-right">
-                {navs.map((item, idx) => (
-                  <li key={idx}>
-                    <a
-                      className={
-                        item.acitve ? "page-scroll active" : "page-scroll"
-                      }
-                      data-href={`${item.href}`}
-                    >
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <motion.div
-            className="contact_btn"
-            whileHover={{
-              scale: 1.05,
-              transition: { duration: 0.2 },
-            }}
-            whileTap={{ scale: 0.9 }}
-          >
             {pathname === "/" ? (
-              <Link href={"/contact"}>Contact</Link>
+              <div className={"navbar-collapse collapse "} id="navbar-collapse">
+                <ul className="nav navbar-nav navbar-right">
+                  {navs.map((item, idx) => (
+                    <li key={idx}>
+                      <a
+                        className={
+                          item.acitve ? "page-scroll active" : "page-scroll"
+                        }
+                        data-href={`${item.href}`}
+                      >
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ) : (
-              <Link href={"/"}>Back</Link>
+              ""
             )}
-          </motion.div>
+          </div>
+          <div className="right_nav">
+            <motion.div
+              className="contact_btn"
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{ scale: 0.9 }}
+            >
+              {pathname !== "/contact" ? (
+                <Link href={"/contact"}>Contact</Link>
+              ) : (
+                <a onClick={() => router.back()}>Back</a>
+              )}
+            </motion.div>
+            <nav
+              className={cardState ? "menu-navigation open" : "menu-navigation"}
+            >
+              <a className="menu-icon-toggle" onClick={toggleCardState}>
+                <span></span>
+              </a>
+              <i className="menu-background top"></i>
+              <i className="menu-background middle"></i>
+              <i className="menu-background bottom"></i>
+              <div className="menu">
+                <ul>
+                  <li>
+                    <Link href="/" onClick={closeNavModal} className="linkA">
+                      For Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      onClick={closeNavModal}
+                      className="linkA"
+                    >
+                      For Contact
+                    </Link>
+                  </li>
+                </ul>
+                <NavAbouCom />
+              </div>
+            </nav>
+          </div>
         </div>
       </motion.section>
     </>

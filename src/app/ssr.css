@@ -166,6 +166,10 @@
   table-layout: fixed;
   width: 100%;
   height: 100%;
+  max-width: 1170px;
+  padding: 0 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background: none;
 }
 
@@ -178,17 +182,121 @@
   display: table-cell;
   vertical-align: middle;
 }
-h2.home-page-title {
+.center-container h2 {
   font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  text-align: left;
   color: #fff;
   margin: -2px 0 0 11px;
 }
+
+/* play btn */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.play {
+  height: 52px;
+  width: 52px;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.play:before {
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+}
+.play:after {
+  width: 50px;
+  height: 50px;
+  z-index: -1;
+  border-color: rgba(255, 255, 255, 0.4);
+  -webkit-animation: pulse-1 2.6s cubic-bezier(0.25, 0.9, 0.2, 1) 0s infinite;
+  animation: pulse-1 2.6s cubic-bezier(0.25, 0.9, 0.2, 1) 0s infinite;
+}
+.play:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  -webkit-transform: scale(0.35) translateY(-50%) translateX(-50%);
+  -ms-transform: scale(0.35) translateY(-50%) translateX(-50%);
+  transform: scale(0.35) translateY(-50%) translateX(-50%);
+  opacity: 0;
+  -webkit-animation: pulse-1 2.6s cubic-bezier(0.25, 0.9, 0.2, 1) 0.4s infinite;
+  animation: pulse-1 2.6s cubic-bezier(0.25, 0.9, 0.2, 1) 0.4s infinite;
+}
+.play > .inner-wrap:before {
+  border-radius: 200px;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  display: block;
+  content: "";
+  transition: all 0.45s cubic-bezier(0.15, 0.2, 0.1, 1) 0s;
+  -webkit-transition: all 0.45s cubic-bezier(0.15, 0.2, 0.1, 1) 0s;
+  background-color: #0071df !important;
+}
+.play > .inner-wrap {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.play svg {
+  width: 14px;
+  height: 14px;
+  z-index: 100;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: 2px;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.link-text {
+  display: flex;
+  margin-left: 25px;
+  color: #fff;
+  vertical-align: middle;
+}
+.page-scroll {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+@keyframes pulse-1 {
+  0% {
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(1.7);
+    opacity: 0;
+  }
+}
+/* --------- */
 .inner-divider-half {
   height: 50px;
 }
@@ -208,10 +316,8 @@ h1.home-page-title {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 700;
-  font-size: 115px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+  font-size: 80px;
+  text-align: left;
   color: #fff;
   margin: -14px auto -5px auto;
   width: 100%;
@@ -289,43 +395,14 @@ h1.home-page-title {
 }
 @media only screen and (max-width: 640px) {
   h1.home-page-title {
-    font-size: 55px;
+    font-size: 40px;
+    width: 100% !important;
     margin: -9px auto -2px auto;
   }
-  .more-button-txt-center {
-    width: 80px !important;
-    height: 80px;
-    top: 50%;
-    left: 50%;
-  }
-  .more-wraper-center {
-    width: 80px !important;
-    height: 80px;
+  .center-container h2 {
+    font-size: 15px;
   }
 }
 .mainContainer {
   position: relative;
-}
-
-.loader span {
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  top: -3px;
-  left: -3px;
-  border: 3px solid transparent;
-  border-top: 3px solid rgba(0, 0, 0, 0.75);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-}
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

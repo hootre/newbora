@@ -35,6 +35,11 @@ export default function RootLayout({ children }) {
         />
         <meta property="og:site_name" content="BORAMEDIA" />
         <meta property="og:locale" content="ko_KR" />
+        <link
+          href="https://db.onlinewebfonts.com/c/650e75c44483de69a226a69a55c25e82?family=Acumin+Pro+Bold"
+          rel="stylesheet"
+          type="text/css"
+        />
         <script src="https://www.youtube.com/iframe_api" defer></script>
       </head>
       <body>

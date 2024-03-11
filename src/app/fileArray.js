@@ -6,7 +6,7 @@ export let navs = [
   },
   {
     title: "about",
-    href: "#about",
+    href: "#aboutSection",
     acitve: false,
   },
   {
@@ -17,9 +17,17 @@ export let navs = [
 ];
 
 export let mainTitle = {
-  subTitle: "by BORA",
-  title_1: "2024",
-  title_2: "SHOWREEL",
+  subTitle: (
+    <h2>
+      Our team specializes in providing services centered around content,
+      storytelling, and narrative. <br />
+      With a focus on cinematic visuals, we primarily work on music videos,
+      <br />
+      advertisements, dramas, and promotional videos.
+    </h2>
+  ),
+  title_1: "We Craft Your Story Magically",
+  title_2: "With Ideas and Creativity",
 };
 import { TfiYoutube } from "react-icons/tfi";
 import { FaInstagram } from "react-icons/fa";
@@ -58,7 +66,7 @@ We always look forward to hearing from you.
       icon: <TfiYoutube />,
     },
     {
-      href: "https://www.youtube.com/@bora8340",
+      href: "https://www.instagram.com/boramedia_?igsh=MXMxc2lmNHZ6ejZ2Ng%3D%3D",
       icon: <FaInstagram />,
     },
     {
@@ -95,170 +103,6 @@ export let works = {
   title_point: "works",
   subscription: "By all means, choose your style",
   work_list: [
-    {
-      id: 1,
-      title: "TEMP_4",
-      videoType: "row",
-      href: ["Uy5KyqZgXdo"],
-
-      image: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "100%", height: "auto" }}
-          src="newbora/image1/cjh8lz2vg8nni1bi5sna"
-        />
-      ),
-
-      content_img_1: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "70%", height: "auto" }}
-          src="newbora/image1/xiurtkcjdow69bxiy1s9"
-        />
-      ),
-      content_title_1: "TEMP’s Promotion Movie",
-      content_subscription_1: (
-        <pre>
-          {`[Director] Kim hyungtae
-[D.O.P] Jeon DongChan
-[Equipment] Sony A7s3 / GM Lens
-[Location] verlin-platz
-`}
-        </pre>
-      ),
-      content_img_2: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "70%", height: "auto" }}
-          src="newbora/image1/nh7m1trjkxsjr3xp3pmu"
-        />
-      ),
-      content_title_2: "Introducing TEMP's: Korea's Leather Workshop",
-      content_subscription_2:
-        "TEMP's, a Korean leather workshop, specializes in delicately capturing the finish and texture of leather through the use of soft filters in filming. To enhance the overall tone of the video, we incorporate white and wood-tone props, adding a touch of sophistication and elegance.",
-      new: false,
-    },
-    {
-      id: 2,
-      title: "I AM 배우 프로필 프로젝트",
-      videoType: "row",
-      href: [
-        "cHNJ8pGA8lo",
-        "rws2PK3tIAk",
-        "e5GM-R7XotU",
-        "1CbFHZyD640",
-        "9c943K0qkTc",
-      ],
-      image: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "100%", height: "auto" }}
-          src="newbora/image2/tu3lqvqziv6hly99ebet"
-        />
-      ),
-
-      content_img_1: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "70%", height: "auto" }}
-          src="newbora/image2/g0w7tnueqaqpplpiqduh"
-        />
-      ),
-      content_title_1: "I AM Personal research Movie",
-      content_subscription_1: (
-        <pre>
-          {`[Director] Jeon Dongchan
-[D.O.P] Kwon JeongHyeok / Kim JeongMo
-[Actor] JooHeawon
-[Equipment] Blackmagic BMPCC 6K / SamyangOptics VDSLR
-[Location] 태안 신두리해안사구
-
-`}
-        </pre>
-      ),
-      content_img_2: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "70%", height: "auto" }}
-          src="newbora/image2/v1fabgvilx3rss21wak0"
-        />
-      ),
-      content_title_2: "Project IAM: Introducing Actors and Enhancing Skills",
-      content_subscription_2:
-        "Project IAM focuses on introducing actors and strengthening their skills. Using the Blackmagic BMPCC6K, we conducted filming at Sinjudi Coastal Cliffs, one of Korea's largest cliffs, known for its desert-like scenery. In this barren landscape, actors explored their inner selves, depicted beautifully as they embarked on journeys of self-discovery and character exploration. Project IAM provides an opportunity to appreciate both the natural beauty and the acting prowess of the performers, discovering and supporting their potential. Our goal is to convey inspiration and emotion to the audience through this collaborative endeavor",
-      content_img_3: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "70%", height: "auto" }}
-          src="newbora/image2/jfmhoprjuwcv6c8p4s5c"
-        />
-      ),
-      new: false,
-    },
-    {
-      id: 3,
-      title: "CINEMATIC DRONE",
-      videoType: "row",
-      href: ["GVgtyPkVLUY", "RERvflAzyoo"],
-      image: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "100%", height: "auto" }}
-          src="newbora/image3/qnzjern8eyjwrskiqj5o"
-        />
-      ),
-
-      content_img_1: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "70%", height: "auto" }}
-          src="newbora/image3/ybgiesf3g8owghhic5ii"
-        />
-      ),
-      content_title_1: "CINEMATIC DRONE",
-      content_subscription_1: (
-        <pre>
-          {`[Director] Jeon Dongchan
-[Operator] Kim Hunmin
-[Equipment] DJI Inspire 3 / DJI Mavic 3 / ARRI Alexa
-Drama, CF, Movies, Entertainment, Promotions, Etc.
-
-
-`}
-        </pre>
-      ),
-      content_img_2: (
-        <CldImage
-          width="1600"
-          height="900"
-          alt="image"
-          style={{ width: "70%", height: "auto" }}
-          src="newbora/image3/cxenayeoipzzscjna58d"
-        />
-      ),
-      content_title_2: "Cinematic Drone Filming Services",
-      content_subscription_2:
-        "Experience stunning aerial cinematography across various genres including films, dramas, commercials, promotions, music videos, and documentaries. With over 8 years of experience and a diverse portfolio of award-winning projects, we have the expertise to turn any vision into art.We utilize state-of-the-art equipment from DJI, including the Inspire, Mavic, Matrice X8, and more, to ensure the highest quality footage tailored to your project's needs.Our goal is to bring your vision to life from the skies. Explore the endless possibilities with our cinematic drone filming services.",
-      new: false,
-    },
     {
       id: 4,
       title: "Korea Tourism Organization: Kantabi Supporters",
@@ -759,7 +603,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
         />
       ),
 
-      new: true,
+      new: false,
     },
     {
       id: 13,
@@ -817,7 +661,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
         />
       ),
 
-      new: true,
+      new: false,
     },
     {
       id: 14,
@@ -867,7 +711,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
       content_subscription_2:
         "BORAMedia's 500CC channel is crafted with a passion for cocktail making and a wealth of expertise. Our videos are meticulously planned and executed, offering viewers the finest visual experiences through optimized camera angles and editing techniques. Each moment is creatively curated, providing our audience with an engaging viewing experience.Beyond simply sharing recipes, we aim to convey the essence and excitement of cocktail making through each video. With 500CC, you can explore the creative realm of cocktail crafting. Don't miss out on our latest videos by subscribing to our channel. We are grateful for your support.",
 
-      new: true,
+      new: false,
     },
     {
       id: 15,
@@ -925,7 +769,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
         />
       ),
 
-      new: true,
+      new: false,
     },
     {
       id: 16,
@@ -955,7 +799,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
       content_subscription_1:
         "2023년을 정리하면서 제작한 보라미디어 쇼릴입니다.",
 
-      new: true,
+      new: false,
     },
     {
       id: 17,
@@ -1004,7 +848,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
       content_subscription_2:
         "The Gakkum is one of the main projects of the Korea Association of Local Children's Centers, which provides a mentoring program for local children. In order to photograph these companies, we put a lot of thought into it with the person in charge and produced the best results.",
 
-      new: true,
+      new: false,
     },
     {
       id: 18,
@@ -1061,7 +905,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/더가꿈 홍보/u2jrh757okaaixcqifho"
         />
       ),
-      new: true,
+      new: false,
     },
     {
       id: 19,
@@ -1118,7 +962,7 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
           src="newbora/고카프/milmdpniaiwjya8mlgov"
         />
       ),
-      new: true,
+      new: false,
     },
     {
       id: 20,
@@ -1167,7 +1011,171 @@ Drama, CF, Movies, Entertainment, Promotions, Etc.
       content_subscription_2:
         "While filming the Messeisang K-PET video, considering that it is a sketch video, I look for references in various fields and am always thinking about what concept to film with.",
 
-      new: true,
+      new: false,
+    },
+    {
+      id: 1,
+      title: "TEMP_4",
+      videoType: "row",
+      href: ["Uy5KyqZgXdo"],
+
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/image1/cjh8lz2vg8nni1bi5sna"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/image1/xiurtkcjdow69bxiy1s9"
+        />
+      ),
+      content_title_1: "TEMP’s Promotion Movie",
+      content_subscription_1: (
+        <pre>
+          {`[Director] Kim hyungtae
+[D.O.P] Jeon DongChan
+[Equipment] Sony A7s3 / GM Lens
+[Location] verlin-platz
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/image1/nh7m1trjkxsjr3xp3pmu"
+        />
+      ),
+      content_title_2: "Introducing TEMP's: Korea's Leather Workshop",
+      content_subscription_2:
+        "TEMP's, a Korean leather workshop, specializes in delicately capturing the finish and texture of leather through the use of soft filters in filming. To enhance the overall tone of the video, we incorporate white and wood-tone props, adding a touch of sophistication and elegance.",
+      new: false,
+    },
+    {
+      id: 2,
+      title: "I AM 배우 프로필 프로젝트",
+      videoType: "row",
+      href: [
+        "cHNJ8pGA8lo",
+        "rws2PK3tIAk",
+        "e5GM-R7XotU",
+        "1CbFHZyD640",
+        "9c943K0qkTc",
+      ],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/image2/tu3lqvqziv6hly99ebet"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/image2/g0w7tnueqaqpplpiqduh"
+        />
+      ),
+      content_title_1: "I AM Personal research Movie",
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Kim JeongMo
+[Actor] JooHeawon
+[Equipment] Blackmagic BMPCC 6K / SamyangOptics VDSLR
+[Location] 태안 신두리해안사구
+
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/image2/v1fabgvilx3rss21wak0"
+        />
+      ),
+      content_title_2: "Project IAM: Introducing Actors and Enhancing Skills",
+      content_subscription_2:
+        "Project IAM focuses on introducing actors and strengthening their skills. Using the Blackmagic BMPCC6K, we conducted filming at Sinjudi Coastal Cliffs, one of Korea's largest cliffs, known for its desert-like scenery. In this barren landscape, actors explored their inner selves, depicted beautifully as they embarked on journeys of self-discovery and character exploration. Project IAM provides an opportunity to appreciate both the natural beauty and the acting prowess of the performers, discovering and supporting their potential. Our goal is to convey inspiration and emotion to the audience through this collaborative endeavor",
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/image2/jfmhoprjuwcv6c8p4s5c"
+        />
+      ),
+      new: false,
+    },
+    {
+      id: 3,
+      title: "CINEMATIC DRONE",
+      videoType: "row",
+      href: ["GVgtyPkVLUY", "RERvflAzyoo"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/image3/qnzjern8eyjwrskiqj5o"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/image3/ybgiesf3g8owghhic5ii"
+        />
+      ),
+      content_title_1: "CINEMATIC DRONE",
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[Operator] Kim Hunmin
+[Equipment] DJI Inspire 3 / DJI Mavic 3 / ARRI Alexa
+Drama, CF, Movies, Entertainment, Promotions, Etc.
+
+
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/image3/cxenayeoipzzscjna58d"
+        />
+      ),
+      content_title_2: "Cinematic Drone Filming Services",
+      content_subscription_2:
+        "Experience stunning aerial cinematography across various genres including films, dramas, commercials, promotions, music videos, and documentaries. With over 8 years of experience and a diverse portfolio of award-winning projects, we have the expertise to turn any vision into art.We utilize state-of-the-art equipment from DJI, including the Inspire, Mavic, Matrice X8, and more, to ensure the highest quality footage tailored to your project's needs.Our goal is to bring your vision to life from the skies. Explore the endless possibilities with our cinematic drone filming services.",
+      new: false,
     },
   ],
 };

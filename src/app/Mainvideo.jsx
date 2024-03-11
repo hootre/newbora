@@ -2,7 +2,6 @@
 import ReactPlayer from "react-player";
 import { useVideoStore } from "./Store";
 import { IoPlayOutline } from "react-icons/io5";
-import Link from "next/link";
 import { mainTitle } from "./fileArray";
 import VideoModal from "./VideoModal";
 import { forwardRef, useState } from "react";
@@ -27,7 +26,7 @@ const Mainvideo = forwardRef((props, ref) => {
           <div className="main_video">
             <ReactPlayer
               className={readyVideo ? "ready" : "react-player"}
-              url={`https://www.youtube.com/embed/nMK6b4CNFl8`}
+              url={`https://youtu.be/shyZyQY6lNo`}
               playing
               loop
               muted
@@ -39,24 +38,36 @@ const Mainvideo = forwardRef((props, ref) => {
 
       <div className="center-container">
         <div className="center-block">
-          <h2 className="home-page-title ">{mainTitle.subTitle}</h2>
-
-          <div className="inner-divider-half"></div>
-
           <h1 className="home-page-title ">
             {mainTitle.title_1}
             <br />
             {mainTitle.title_2}
           </h1>
-
-          <div className="inner-divider-half"></div>
-
+          {mainTitle.subTitle}
           <div className="more-wraper-center more-wraper-center-home">
             <a className="page-scroll " onClick={handleChange}>
-              <div className="more-button-bg-center more-button-circle"></div>
-              <div className="more-button-txt-center ">
-                <IoPlayOutline className="play_icon" />
-              </div>
+              <span className="screen-reader-text">Play Video</span>
+              <span className="play">
+                <span className="inner-wrap inner">
+                  <svg
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    width="600px"
+                    height="800px"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 600 800"
+                    enableBackground="new 0 0 600 800"
+                    xmlSpace="preserve"
+                  >
+                    <path fill="#fff" d="M0-1.79v800L600,395L0-1.79z"></path>{" "}
+                  </svg>
+                </span>
+              </span>
+              <span className="link-text">
+                <p>Enter 2023 showreel</p>
+              </span>
             </a>
           </div>
         </div>

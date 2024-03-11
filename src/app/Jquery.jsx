@@ -7,13 +7,10 @@ import { useVideoStore } from "./Store";
 import { usePathname, useRouter } from "next/navigation";
 
 const Jquery = () => {
-  console.log("jquery");
   const { readyVideo, readyDetailVide, toggleReadyVideo } = useVideoStore();
   const router = useRouter();
   const pathname = usePathname();
   useEffect(() => {
-    console.log(pathname);
-    console.log(readyDetailVide);
     if (readyVideo || readyDetailVide) {
       $("#preloader").addClass("loaded");
       $("#preloader").fadeOut(600);
@@ -40,7 +37,7 @@ const Jquery = () => {
             .stop()
             .animate(
               {
-                scrollTop: $($anchor.data("href")).offset().top - 55,
+                scrollTop: $($anchor.data("href")).offset().top,
               },
               1500,
               "easeInOutExpo"
@@ -57,7 +54,7 @@ const Jquery = () => {
 
     $(window).on("scroll", function () {
       // 3.5. collapse navigation
-      if ($(".navbar").offset().top < 120) {
+      if ($(".navbar").offset().top < 900) {
         $(".navbar-bg-switch").addClass("main-navigation-bg");
       } else {
         $(".navbar-bg-switch").removeClass("main-navigation-bg");

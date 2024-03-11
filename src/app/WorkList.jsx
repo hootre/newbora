@@ -1,5 +1,4 @@
 "use client";
-import { IoPlayOutline } from "react-icons/io5";
 import { works } from "./fileArray";
 import Link from "next/link";
 import { motion } from "framer-motion";
