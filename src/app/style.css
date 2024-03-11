@@ -920,7 +920,7 @@
   width: 80%;
 }
 .vimeo-shadowbox__video-wrapper.col .carousel__slide > figure > div {
-  aspect-ratio: 9 / 9;
+  aspect-ratio: 9 / 8;
   object-fit: cover;
   object-position: center; /* default: center */
   display: flex;
@@ -2097,8 +2097,9 @@
   overflow-y: scroll;
 }
 .carousel__thumbnails li {
+  list-style: none;
   min-width: 100px;
-  max-width: 250px;
+  max-width: 150px;
   transition: all 300ms ease-in-out;
 }
 .carousel__slides.row .carousel__thumbnails {

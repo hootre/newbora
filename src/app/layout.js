@@ -22,19 +22,37 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <head>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://boramedia.co.kr" />
-        <meta property="og:title" content="BORAMEDIA" />
+        <title>BORAMEDIA</title>
         <meta
-          property="og:image"
-          content="https://res-console.cloudinary.com/dquicfvbk/media_explorer_thumbnails/76de6740b9612292840f92681c65b6d4/detailed"
+          name="description"
+          content="[TEAMBORA] is comprised of 5 team members, each with 12 years of experience."
         />
+
+        <meta property="og:url" content="https://boramedia.co.kr/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="BORAMEDIA" />
         <meta
           property="og:description"
           content="[TEAMBORA] is comprised of 5 team members, each with 12 years of experience."
         />
-        <meta property="og:site_name" content="BORAMEDIA" />
-        <meta property="og:locale" content="ko_KR" />
+        <meta
+          property="og:image"
+          content="https://opengraph.b-cdn.net/production/documents/b8f3565b-9e1c-4f9b-80ac-31e8e31071e5.png?token=S811tOC6Dih9P4epWr1ZFVIFtnm8ITzhD72SDnDhHvI&height=630&width=1200&expires=33246136571"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="boramedia.co.kr" />
+        <meta property="twitter:url" content="https://boramedia.co.kr/" />
+        <meta name="twitter:title" content="BORAMEDIA" />
+        <meta
+          name="twitter:description"
+          content="[TEAMBORA] is comprised of 5 team members, each with 12 years of experience."
+        />
+        <meta
+          name="twitter:image"
+          content="https://opengraph.b-cdn.net/production/documents/b8f3565b-9e1c-4f9b-80ac-31e8e31071e5.png?token=S811tOC6Dih9P4epWr1ZFVIFtnm8ITzhD72SDnDhHvI&height=630&width=1200&expires=33246136571"
+        />
+
         <link
           href="https://db.onlinewebfonts.com/c/650e75c44483de69a226a69a55c25e82?family=Acumin+Pro+Bold"
           rel="stylesheet"
