@@ -209,7 +209,7 @@
   position: relative;
   vertical-align: middle;
   display: inline-block;
-  z-index: 10;
+  z-index: 9;
 }
 
 .play:before {

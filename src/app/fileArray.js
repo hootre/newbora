@@ -18,7 +18,7 @@ export let navs = [
 
 export let mainTitle = {
   subTitle: (
-    <h2>
+    <h2> 
       Our team specializes in providing services centered around content,
       storytelling, and narrative. <br />
       With a focus on cinematic visuals, we primarily work on music videos,
