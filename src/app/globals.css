@@ -703,7 +703,6 @@ a:hover,
 a:visited,
 a:active,
 a:focus {
-  color: #5f5f5f;
   text-decoration: none;
   outline: none;
   -webkit-font-smoothing: antialiased;

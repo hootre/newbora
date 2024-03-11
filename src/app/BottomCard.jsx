@@ -23,14 +23,6 @@ const BottomCard = () => {
             whileInView={visible}
             transition={{ ease: [0.1, 0.25, 0.3, 2], duration: 2 }}
           >
-            <div className="card_title">
-              <h1>Professional Team Members</h1>
-              <h3>
-                We are comprised of teams with over a decade of experience in
-                various fields including directing, filming, lighting, special
-                effects, drone operation, and more.
-              </h3>
-            </div>
             <Image src={card_img_1} alt="image" />
           </motion.div>
         </div>
@@ -41,16 +33,6 @@ const BottomCard = () => {
             whileInView={visible}
             transition={{ ease: [0.1, 0.25, 0.3, 2], duration: 2 }}
           >
-            <div className="card_title">
-              <h1>
-                24-hour <br />
-                production
-              </h1>
-              <h3 className="img2_text short_2">
-                We can work quickly with short production timelines,
-                accommodating urgent schedules for our clients.
-              </h3>
-            </div>
             <Image src={card_img_2} alt="image" />
           </motion.div>
           <motion.div
@@ -59,12 +41,6 @@ const BottomCard = () => {
             whileInView={visible}
             transition={{ ease: [0.1, 0.25, 0.3, 2], duration: 2 }}
           >
-            <div className="card_title short_1_title">
-              <h1>Global operations</h1>
-              <h3 className="img3_text short_1">
-                Our team operates globally, with a focus on South Korea
-              </h3>
-            </div>
             <Image src={card_img_3} alt="image" />
           </motion.div>
         </div>
@@ -77,14 +53,6 @@ const BottomCard = () => {
             whileInView={visible}
             transition={{ ease: [0.1, 0.25, 0.3, 2], duration: 2 }}
           >
-            <div className="card_title">
-              <h1>Stable data management</h1>
-              <h3>
-                Bora Media securely stores client data for up to 1 year using
-                private servers and Google Cloud infrastructure. With dual
-                backups, we ensure the safety of our clients valuable data.
-              </h3>
-            </div>
             <Image src={card_img_4} alt="image" />
           </motion.div>
         </div>
@@ -95,14 +63,6 @@ const BottomCard = () => {
             whileInView={visible}
             transition={{ ease: [0.1, 0.25, 0.3, 2], duration: 2 }}
           >
-            <div className="card_title">
-              <h1>Updated technology</h1>
-              <h3>
-                We always stay abreast of the latest technological advancements
-                and continually research to remain at the forefront of the
-                industry
-              </h3>
-            </div>
             <Image src={card_img_5} alt="image" />
           </motion.div>
         </div>

@@ -28,7 +28,7 @@ const AboutCom = () => {
             className="line"
             initial={{ backgroundSize: "0 20%" }}
             whileInView={{ backgroundSize: "100% 20%" }}
-            transition={{ ease: [0.1, 0.25, 0.3, 2] }}
+            transition={{ ease: [0.1, 0.25, 0.3, 2], delay: 1 }}
           >
             Repeat Customers.
           </motion.span>
@@ -51,7 +51,6 @@ const AboutCom = () => {
           {aboutText.aboutFooter.map((item, idx) => (
             <div className="col mb-3" key={idx}>
               <div className="d-flex flex-column justify-content-center text-center align-items-center gap-3">
-                {item.icon}
                 <div className="about_iconss font-2 fw-bold">
                   <h3 className="text-white"> {item.count}</h3>
                   <h6 className="text-white"> {item.text}</h6>

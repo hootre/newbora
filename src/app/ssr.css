@@ -280,7 +280,6 @@
   vertical-align: middle;
 }
 .page-scroll {
-  margin-top: 20px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -395,12 +394,13 @@ h1.home-page-title {
 }
 @media only screen and (max-width: 640px) {
   h1.home-page-title {
-    font-size: 40px;
+    font-size: 30px;
     width: 100% !important;
     margin: -9px auto -2px auto;
   }
   .center-container h2 {
-    font-size: 15px;
+    font-size: 12px;
+    margin: 0;
   }
 }
 .mainContainer {

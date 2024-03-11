@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 15px;
 }
 .menu-icon-toggle {
   cursor: pointer;
@@ -2392,7 +2392,8 @@
     overflow: hidden;
   }
   .navCom .contact_btn {
-    font-size: 15px;
+    font-size: 14px;
+    padding: 3px 15px;
   }
   .carousel__slides.row .carousel__thumbnails {
     width: 100% !important;
@@ -2453,5 +2454,9 @@
     color: #fff;
     font-weight: bold;
     text-align: left;
+  }
+  .menu-icon-toggle {
+    width: 25px;
+    height: 25px;
   }
 }
