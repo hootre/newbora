@@ -11,7 +11,7 @@ function VideoModal(props) {
           youtube={{ mute: 1, autoplay: 1 }}
           loop="1"
           isOpen={true}
-          videoId="nMK6b4CNFl8"
+          videoId="shyZyQY6lNo"
           onClose={props.close}
         />
       </Grow>

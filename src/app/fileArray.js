@@ -18,7 +18,7 @@ export let navs = [
 
 export let mainTitle = {
   subTitle: (
-    <h2> 
+    <h2>
       Our team specializes in providing services centered around content,
       storytelling, and narrative. <br />
       With a focus on cinematic visuals, we primarily work on music videos,
@@ -66,7 +66,7 @@ We always look forward to hearing from you.
       icon: <TfiYoutube />,
     },
     {
-      href: "https://www.instagram.com/boramedia_?igsh=MXMxc2lmNHZ6ejZ2Ng%3D%3D",
+      href: "https://www.instagram.com/boramedia_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
       icon: <FaInstagram />,
     },
     {
