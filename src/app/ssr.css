@@ -209,6 +209,7 @@
   position: relative;
   vertical-align: middle;
   display: inline-block;
+  z-index: 10;
 }
 
 .play:before {
@@ -282,6 +283,7 @@
   align-items: center;
   cursor: pointer;
 }
+
 .enter_btn {
   position: relative;
   top: 50px;

@@ -69,7 +69,9 @@ const NavCom = () => {
                     <li key={idx}>
                       <a
                         className={
-                          item.acitve ? "page-scroll active" : "page-scroll"
+                          item.acitve
+                            ? "page-scroll nav_title active"
+                            : "page-scroll nav_title"
                         }
                         data-href={`${item.href}`}
                       >

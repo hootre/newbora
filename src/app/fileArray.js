@@ -1,16 +1,16 @@
 export let navs = [
   {
-    title: "home",
+    title: "Home",
     href: "#home",
     acitve: false,
   },
   {
-    title: "about",
+    title: "About",
     href: "#aboutSection",
     acitve: false,
   },
   {
-    title: "works",
+    title: "Works",
     href: "#works",
     acitve: false,
   },

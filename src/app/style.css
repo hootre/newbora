@@ -266,7 +266,6 @@
   transition: background-color 0.5s ease !important;
 }
 .NavContainer #navbar-collapse {
-  max-height: 0px;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
   -ms-transition: all 0.4s ease-out;
@@ -412,23 +411,20 @@
   margin-bottom: 0;
   list-style: none;
 }
-.NavContainer .nav > li {
-  position: relative;
-  display: block;
-}
 
 .NavContainer .main-navigation .navbar-nav li a {
-  position: relative;
-  font-family: "Acumin Pro Light", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Acumin Pro Bold", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
-  right: -15px;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
   -ms-transition: all 0.4s ease-out;
@@ -529,9 +525,6 @@
     margin-right: 0;
     margin-left: 0;
   }
-  .NavContainer .navbar-header {
-    float: left;
-  }
   .NavContainer .navbar-fixed-bottom .navbar-collapse,
   .NavContainer .navbar-fixed-top .navbar-collapse,
   .NavContainer .navbar-static-top .navbar-collapse {
@@ -550,16 +543,10 @@
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-  .NavContainer .navbar-right {
-    float: right !important;
-    margin-right: -15px;
-  }
   .NavContainer .navbar-nav {
-    float: left;
-    margin: 0;
-  }
-  .NavContainer .navbar-nav > li {
-    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .NavContainer .navbar-nav > li > a {
     padding-top: 15px;
@@ -2421,10 +2408,24 @@
     gap: 2px;
   }
   .end_title h1 {
-    font-size: 35px;
+    font-size: 27px;
     color: #fff;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
+  }
+  .end_button {
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-image: linear-gradient(to right, #00abf4 0%, #0071df 100%);
+    font-size: 14px;
+    border-radius: 25px;
+    padding: 0 33px;
+    font-weight: bold;
+    height: 40px;
+    cursor: pointer;
+    line-height: 30px;
   }
   .menu-icon-toggle {
     width: 25px;
