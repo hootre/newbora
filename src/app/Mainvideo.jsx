@@ -1,7 +1,6 @@
 "use client";
 import ReactPlayer from "react-player";
 import { useVideoStore } from "./Store";
-import { IoPlayOutline } from "react-icons/io5";
 import { mainTitle } from "./fileArray";
 import VideoModal from "./VideoModal";
 import { forwardRef, useState } from "react";

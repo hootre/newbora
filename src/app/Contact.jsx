@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaAddressCard } from "react-icons/fa";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { MdEmail, MdWeb } from "react-icons/md";
 import { FaRegAddressCard } from "react-icons/fa6";
