@@ -304,8 +304,8 @@
   z-index: 10;
 }
 .NavContainer .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 50px;
+  padding-left: 50px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -472,36 +472,21 @@
   transition: all 0.4s ease-out;
 }
 @media only screen and (max-width: 1200px) {
-  .NavContainer .logo {
-    padding-left: 10px;
-    margin-left: 0;
-  }
   .NavContainer .main-navigation .navbar-nav li a {
     right: 8px;
   }
 }
 @media only screen and (max-width: 1080px) {
-  .NavContainer .logo {
-    padding-left: 0;
-    margin-left: -15px;
-  }
   .NavContainer .main-navigation .navbar-nav li a {
     right: -30px;
   }
 }
 @media only screen and (max-width: 995px) {
-  .NavContainer .logo {
-    margin-left: -33px;
-  }
   .NavContainer .main-navigation .navbar-nav li a {
     right: -48px;
   }
 }
 @media only screen and (max-width: 880px) {
-  .NavContainer .logo {
-    padding-left: 8px;
-    margin-left: auto;
-  }
   .NavContainer .main-navigation .navbar-nav li a {
     right: auto;
   }
@@ -536,9 +521,6 @@
   }
   .NavContainer .navbar {
     border-radius: 4px;
-  }
-  .NavContainer .container {
-    width: 750px;
   }
   .NavContainer .container-fluid > .navbar-collapse,
   .NavContainer .container-fluid > .navbar-header,
@@ -589,14 +571,8 @@
   }
 }
 @media (min-width: 992px) {
-  .NavContainer .container {
-    width: 970px;
-  }
 }
 @media (min-width: 1200px) {
-  .NavContainer .container {
-    width: 1170px;
-  }
 }
 
 .PageTopBtn .to-top-arrow {
@@ -920,7 +896,7 @@
   width: 80%;
 }
 .vimeo-shadowbox__video-wrapper.col .carousel__slide > figure > div {
-  aspect-ratio: 9 / 8;
+  aspect-ratio: 9 / 6;
   object-fit: cover;
   object-position: center; /* default: center */
   display: flex;
@@ -1132,7 +1108,11 @@
   letter-spacing: inherit;
   line-height: 1em;
   padding: 0 3px;
-  background-image: linear-gradient(to right, #00abf4 0, #0071df 100%);
+  background-image: linear-gradient(
+    to right,
+    #6f42c1 0,
+    var(--accent-color) 100%
+  );
   background-repeat: no-repeat;
   transition:
     background-size 0.9s cubic-bezier(0.15, 0.75, 0.4, 1),
@@ -1187,11 +1167,6 @@
   top: 0;
   padding: 5em 2em 0em 2em;
   overflow: hidden;
-}
-.AboutContainer .r-container {
-  max-width: 1140px;
-  margin-right: auto;
-  margin-left: auto;
 }
 .AboutContainer .z_box {
   z-index: 2;
@@ -1494,12 +1469,6 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-.r-container {
-  padding: 4em 0em;
-  max-width: 1140px;
-  margin-right: auto;
-  margin-left: auto;
 }
 .ContactContainer .r-container .footer {
   text-align: center;

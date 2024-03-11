@@ -26,8 +26,8 @@ export let mainTitle = {
       advertisements, dramas, and promotional videos.
     </h2>
   ),
-  title_1: "We Craft Your Story Magically",
-  title_2: "With Ideas and Creativity",
+  title_1: "We make your story a reality.",
+  title_2: "With magical ideas, creativity",
 };
 import { TfiYoutube } from "react-icons/tfi";
 import { FaInstagram } from "react-icons/fa";

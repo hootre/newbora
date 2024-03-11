@@ -44,7 +44,7 @@ const Mainvideo = forwardRef((props, ref) => {
           </h1>
           {mainTitle.subTitle}
           <div className="more-wraper-center more-wraper-center-home">
-            <a className="page-scroll " onClick={handleChange}>
+            <a className="page-scroll enter_btn" onClick={handleChange}>
               <span className="screen-reader-text">Play Video</span>
               <span className="play">
                 <span className="inner-wrap inner">
