@@ -2303,7 +2303,11 @@
 .react-player.ready {
   display: block;
 }
-
+@media (max-width: 1400px) {
+  .vimeo-shadowbox__video-wrapper.col .carousel__slide > figure > div {
+    aspect-ratio: 9 / 8;
+  }
+}
 @media (max-width: 767px) {
   .mobile_vertical {
     opacity: 0;
@@ -2430,5 +2434,9 @@
   .menu-icon-toggle {
     width: 25px;
     height: 25px;
+  }
+  .carousel__thumbnails li {
+    width: 60%;
+    min-width: 0px !important;
   }
 }
