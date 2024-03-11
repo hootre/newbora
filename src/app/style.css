@@ -365,8 +365,8 @@
   display: flex;
 }
 .navCom .contact_btn {
-  font-family: "Alumni Sans", sans-serif;
-  font-size: 20px;
+  font-family: "Acumin Pro Light", sans-serif;
+  font-size: 15px;
   padding: 5px 20px;
   border: 1px solid #fff;
   border-radius: 15px;
@@ -419,12 +419,12 @@
 
 .NavContainer .main-navigation .navbar-nav li a {
   position: relative;
-  font-family: "Alumni Sans", sans-serif;
+  font-family: "Acumin Pro Light", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 24px;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
@@ -2322,6 +2322,7 @@
   color: #fff;
 }
 .end_title h1 {
+  font-family: "Acumin Pro Bold";
   font-size: 45px;
   color: #fff;
   font-weight: bold;
@@ -2392,7 +2393,7 @@
     overflow: hidden;
   }
   .navCom .contact_btn {
-    font-size: 14px;
+    font-size: 12px;
     padding: 3px 15px;
   }
   .carousel__slides.row .carousel__thumbnails {

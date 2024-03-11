@@ -3,8 +3,8 @@
   --secondary-dark: #222222;
   --accent-color: #673995;
   --gray-color: #aaaaaa;
-  --font-1: "Alata", sans-serif;
-  --font-2: "Poppins", sans-serif;
+  --font-1: "Acumin Pro Bold", sans-serif;
+  --font-2: "Acumin Pro Light", sans-serif;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -335,7 +335,7 @@ h2.section-heading.section-heading-small {
 
 h2.section-heading {
   position: relative;
-  font-family: "Alata", sans-serif;
+  font-family: "Acumin Pro Bold", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 75px;
