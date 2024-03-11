@@ -2,9 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import NavCom from "./NavCom";
-import LayoutCom from "./LayoutCom";
 import Image from "next/image";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import logo from "/public/images/logo.png";
 const Jquery = dynamic(() => import("./Jquery"), { ssr: false });
 const inter = Inter({ subsets: ["latin"] });
@@ -84,6 +83,7 @@ export default function RootLayout({ children }) {
           {children}
           <Jquery />
         </main>
+        <SpeedInsights />
       </body>
     </html>
   );
