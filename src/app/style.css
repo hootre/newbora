@@ -511,6 +511,21 @@
     margin-right: -14px;
   }
 }
+@media (min-width: 1600px) {
+  .col-lg-3 {
+    width: 25% !important;
+  }
+}
+@media (max-width: 1600px) {
+  .col-lg-3 {
+    width: 33.3% !important;
+  }
+}
+@media (max-width: 1040px) {
+  .col-lg-3 {
+    width: 100% !important;
+  }
+}
 @media (min-width: 768px) {
   .NavContainer .navbar-fixed-bottom,
   .NavContainer .navbar-fixed-top {

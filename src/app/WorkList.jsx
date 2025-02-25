@@ -22,8 +22,8 @@ const WorkList = () => {
                 key={item.id}
                 className={
                   moreBtn
-                    ? "col-sm-12 col-md-12 col-lg-4 open_more"
-                    : "col-sm-12 col-md-12 col-lg-4"
+                    ? "col-sm-12 col-md-12 col-lg-3 open_more"
+                    : "col-sm-12 col-md-12 col-lg-3"
                 }
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

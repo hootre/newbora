@@ -5,13 +5,13 @@ export let navs = [
     acitve: false,
   },
   {
-    title: "About",
-    href: "#aboutSection",
+    title: "Works",
+    href: "#works",
     acitve: false,
   },
   {
-    title: "Works",
-    href: "#works",
+    title: "About",
+    href: "#aboutSection",
     acitve: false,
   },
 ];
