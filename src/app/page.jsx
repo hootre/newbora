@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <>
       <Mainvideo />
-      <AboutCom />
       <WorkList title={true} />
+      <AboutCom />
       <BottomCard />
       <div className="page-scroll PageTopBtn" data-href="#home">
         <div className="to-top-arrow show">

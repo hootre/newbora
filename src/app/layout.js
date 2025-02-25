@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
           content="https://opengraph.b-cdn.net/production/documents/b8f3565b-9e1c-4f9b-80ac-31e8e31071e5.png?token=S811tOC6Dih9P4epWr1ZFVIFtnm8ITzhD72SDnDhHvI&height=630&width=1200&expires=33246136571"
         />
 
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" /> 
         <meta property="twitter:domain" content="boramedia.co.kr" />
         <meta property="twitter:url" content="https://boramedia.co.kr/" />
         <meta name="twitter:title" content="BORAMEDIA" />
@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
         <main className="mainContainer">
           <NavCom />
           <div className="vertical-lines-wrapper">
-            <div className="vertical-lines">
+            <div className="vertical-lines"> 
               <div className="vertical-lines-wrapper">
                 <div className="vertical-effect"></div>
                 <div className="vertical-effect mobile_vertical"></div>

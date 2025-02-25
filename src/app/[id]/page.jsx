@@ -107,7 +107,6 @@ export default function Page({ params }) {
           >
             <div className={`vimeo-shadowbox__video-wrapper ${item.videoType}`}>
               <div>
-                <ImgCom item={item} />
                 <div className={`vimeo-shadowbox__video `}>
                   <div className="carousel">
                     <input
@@ -184,6 +183,8 @@ export default function Page({ params }) {
                     </ul>
                   </div>
                 </div>
+
+                <ImgCom item={item} />
               </div>
             </div>
           </div>

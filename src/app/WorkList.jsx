@@ -72,7 +72,9 @@ const WorkList = () => {
                   </Link>
                   {item.new ? (
                     <span className="preview-corner">
-                      <span className="preview-corner-txt">New</span>
+                      <span className="preview-corner-txt">
+                        <b>{item.new}</b>
+                      </span>
                     </span>
                   ) : (
                     ""

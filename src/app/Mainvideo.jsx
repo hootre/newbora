@@ -65,7 +65,7 @@ const Mainvideo = forwardRef((props, ref) => {
                 </span>
               </span>
               <span className="link-text">
-                <p>Enter 2023 showreel</p>
+                <p>Enter showreel</p>
               </span>
             </a>
           </div>

@@ -163,14 +163,14 @@ const Compo = () => {
 
           <div className="row">
             <div className="move-up section-demos">
-              {works.work_list.map((item) => (
-                <div key={item.id} className="col-sm-12 col-md-12 col-lg-4">
+              {works.work_list.map((item, idx) => (
+                <div key={idx} className="col-sm-12 col-md-12 col-lg-4">
                   {/* view vimeo video  list*/}
                   <div
-                    id={`vimeo_${item.id}`}
+                    id={`vimeo_${idx}`}
                     className="vimeo-shadowbox vimeo-shadowbox--hidden"
                   >
-                    <div className="bg_back hide-popup" data-id={item.id}></div>
+                    <div className="bg_back hide-popup" data-id={idx}></div>
                     <div className="bg_line"></div>
                     <div className="vimeo-shadowbox__video-wrapper">
                       <div className="contentBox_1">
@@ -223,14 +223,14 @@ const Compo = () => {
                       </div>
                       <div
                         className="vimeo-shadowbox__close-button"
-                        data-id={item.id}
+                        data-id={idx}
                       >
                         <IoClose />
                       </div>
                     </div>
                   </div>
                   <div className="image-works">
-                    <a className="open-popup-link hide-popup" data-id={item.id}>
+                    <a className="open-popup-link hide-popup" data-id={idx}>
                       <div className="hover-effect"></div>
 
                       <div className="icon-works">
@@ -244,7 +244,7 @@ const Compo = () => {
                     </a>
                     {item.new ? (
                       <span className="preview-corner">
-                        <span className="preview-corner-txt">New</span>
+                        <span className="preview-corner-txt">2024</span>
                       </span>
                     ) : (
                       ""

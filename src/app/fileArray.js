@@ -104,6 +104,1061 @@ export let works = {
   subscription: "By all means, choose your style",
   work_list: [
     {
+      id: 38,
+      title: "교촌에프엔비 바르고봉사단",
+      videoType: "row",
+      href: ["kRmFMuRrF5k"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/바르고봉사단/emobb9ewxosyw2ynu1jh
+"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/바르고봉사단/eyfcfhpym0ahw6tnj8km"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 교촌에프엔비 자립준비 지원사업
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/바르고봉사단/jptbif2zil4r98l49gjm
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/바르고봉사단/q9dqvqthsqipicmcqzbx
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 37,
+      title: "교촌에프엔비 자립준비 지원사업",
+      videoType: "row",
+      href: ["cwji-xu5A2c"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/자립준비/bw7iav4hbklspyqezaez"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/자립준비/agkpespos6n7awfwjnng
+"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 교촌에프엔비 자립준비 지원사업
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/자립준비/vsznlcihyk6xplggeo85
+
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/자립준비/r6b7juj6uqft5bgpjkvz"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 36,
+      title: "교촌에프엔비 아동건강 지원사업",
+      videoType: "row",
+      href: ["3rj4aaOwV6g"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/아동건강/hsqti6xxduhd7hfbjfl9"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/아동건강/cvicd2qsd8z0zaeg7qlu
+"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 교촌에프엔비 아동건강 지원사업
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/아동건강/ddjxtrztipvg72vekj2i
+
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/교촌치킨/아동건강/k5vxj0o3morfuhqrdxno"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 35,
+      title: "핸드아티코리아 인터뷰 시리즈",
+      videoType: "row",
+      href: ["2d83i9nLEOs", "ZnbuZyZ109A", "BYg_LXfFpLw", "7K3_ALN1dLA"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/핸드아티코리아 인터뷰/div9tabihspkbiedz0oo"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/핸드아티코리아 인터뷰/fqnbqaqfuzcua8tuswlz
+"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 핸드아티코리아 인터뷰 시리즈
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/핸드아티코리아 인터뷰/l5tpox95uf3wguhobyjz
+
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/핸드아티코리아 인터뷰/gfkvr6etguqroklhwnjc
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 34,
+      title: "국방전직교육원 홍보영상",
+      videoType: "row",
+      href: ["mdWmSqe9Q40"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/국방부/hmaf7yv8bxue3bv7qf8l
+"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/국방부/rbusfcxqkgwlloibgmw1"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 국방전직교육원 홍보영상
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/국방부/yubaj7bqepdfa3ecyw7x
+
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/국방부/ndz2qaznohg2oyj7kkus
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 34,
+      title: "메쎄이상 코리아베이비 현장 스케치",
+      videoType: "row",
+      href: ["644qoZT6okU", "PkoLYM6Cc38", "-zmivZ8Dr88", "fg7joXRJECU"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/코베/zxqdvulw7l2g7mv6zuuk
+"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/코베/z5olprluhi5upbzgzwrk
+"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 메쎄이상 코리아베이비 현장 스케치
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/코베/pvxmue48xjurbuq3jplo
+
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/코베/qdn3t7kd2casvmoxgxwj
+
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 33,
+      title: "메쎄이상 일러스트코리아 현장 스케치",
+      videoType: "row",
+      href: ["TuWsrizwKT0", "uw3OkNh149g", "hzBSbuf57Ls"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/일러스트코리아/rggjkyym5brxj6m2moiq"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/일러스트코리아/m0gpfykdoyaloszk9vyv
+"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 메쎄이상 일러스트코리아 현장 스케치
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/일러스트코리아/zszy6qujnlgks
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/일러스트코리아/tw3pfxijo1jmfamopqvb
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 32,
+      title: "메쎄이상 핸드아티코리아 현장 스케치",
+      videoType: "row",
+      href: ["0OR_eIZnFRg"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/핸드아티코리아/d7yglkhmeucseat7xiga
+"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/핸드아티코리아/r4qlkt3mqo2jqa"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 메쎄이상 핸드아티코리아 현장 스케치
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/핸드아티코리아/q13kxpacymq9iz
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/핸드아티코리아/r170tnwawnhbjm"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 31,
+      title: "메쎄이상 고카프 현장 스케치",
+      videoType: "row",
+      href: ["MrUfzdr7WM8", "uoX4P5Dq7TY", "VubHUIRRscw", "iKd0mYiH5mE"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/고카프/dixircm8kk2zfv811itn"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/고카프/hxtbykwcdaelkvponr7"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 메쎄이상 고카프 현장 스케치
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/고카프/oqcm6l5ajrusppru3ka
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/메쎄이상 스케치/고카프/bihexhi28crwp3aztvfe"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 30,
+      title: "한화시스템 신의기술1,2화",
+      videoType: "row",
+      href: ["c1wf0I6PTwI", "G8WAFRyzDVk"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/신의기술/wf9xh8qldxlfev7w3w0u"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/신의기술/o7eg1kbgtzlfhea0zbtp"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 한화시스템 신의기술1,2화
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/신의기술/k2u8sinc0zin8zwuy9iy
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/신의기술/drz05e07ktx9ylgmsubw"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 29,
+      title: "아이니 서울 웨딩 박람회",
+      videoType: "row",
+      href: ["hkpPvGYTMM4"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/아이니/hrbmlwthstgyz3yn9hon"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/아이니/kdpjdg8mjkcstnbpslhc"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 아이니 서울 웨딩 박람회
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/아이니/ukgous8vviyszz80kmd9
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/아이니/jn2celp6txs3shbxsm4r"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 28,
+      title: "유튜브 크리에이터 클럽",
+      videoType: "row",
+      href: ["zjTK4LQw2ZI"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/유튜브 크리에이터클럽/izywv0xmfilj6va5za5f
+
+"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/유튜브 크리에이터클럽/xhrgq93udqled2aojyaz"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 유튜브 크리에이터클럽
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/유튜브 크리에이터클럽/oagfbweogu5rkhcjsad6
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/유튜브 크리에이터클럽/ur8tnytldbqe0k411oem"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 27,
+      title: "쿠팡 광주FC 기공식",
+      videoType: "row",
+      href: ["19vzKH4wC98"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/광주/qzsjgmjdsvwyxfewg69j
+"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/광주/zrtdglp7lmnpdx139tvb"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 쿠팡 광주FC 준공식
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/광주/skuxm0fquo1guyiiiutl
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/광주/wkd4le8csdgscpow4cix
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 26,
+      title: "쿠팡 김천FC 기공식",
+      videoType: "row",
+      href: ["RZdvJL5GuUc"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/김천/f6z068u8lqmatcny8axg
+"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/김천/aqbbmntfvh2y31mpcjur"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 쿠팡 김천FC 기공식
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/김천/uzbeeic1xu13esjfrule
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/김천/f8jfsxep377vgo5xfuig
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 25,
+      title: "쿠팡 남대전FC 준공식",
+      videoType: "row",
+      href: ["Lk4wGSl7P0E"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/남대전/dsbcrwf49es8ms9carzi
+"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/남대전/owybzlcfblfza27shgd4"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 쿠팡 남대전FC준공식
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/남대전/fnvpuwgfmsrdaj5p0ik5
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/쿠팡/남대전/hufeanuqvgntrqibarqj
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 24,
+      title: "한지연 The가꿈 활동영상",
+      videoType: "row",
+      href: ["d61HGVIkQmg"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/한지연/활동영상/ijzkm4bgez8mqooknmbo
+"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/한지연/활동영상/zo6y31535y0vkytlpahp"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 한지연 The가꿈 활동영상
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/한지연/활동영상/imljqwhkyyils2hoc4mp
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/한지연/활동영상/bceknaiuqcnhb5ugpxps
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 23,
+      title: "한지연 지역아동센터 20주년 컨퍼런스",
+      videoType: "row",
+      href: ["d61HGVIkQmg"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/한지연/베이스캠프/zpexec8xgowrjtfzoa1i"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/한지연/베이스캠프/oatc7k7uluaeyguerjln"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 한지연 지역아동센터 20주년 컨퍼런스
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/한지연/베이스캠프/xlvulwqlv7l64vkq07og
+"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/한지연/베이스캠프/zxd845lk89tafk0qarmf
+"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 22,
+      title: "한지연 The가꿈 발대식",
+      videoType: "row",
+      href: ["675U6H4rCao"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/한지연/발대식/x5mkpai1aphmr9ucmwfe"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/한지연/발대식/linafpb8traeu8ggbqrw"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6 ,A7s3
+[PROJECT] 한지연 The가꿈 발대식
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/한지연/발대식/fmzxsina52cjfzxhewo7"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/한지연/발대식/rqdycatjiypzgfdnzfmu"
+        />
+      ),
+      new: "2025",
+    },
+    {
+      id: 21,
+      title: "훈민정음연합회 홍보영상",
+      videoType: "row",
+      href: ["hoLLNSTWaWQ"],
+      image: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "100%", height: "auto" }}
+          src="newbora/0225_new/훈민정음연합회/tu2bj8cruf4tsxul46c8"
+        />
+      ),
+
+      content_img_1: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/훈민정음연합회/cw5awksp3gsspoxbkeqk"
+        />
+      ),
+      content_subscription_1: (
+        <pre>
+          {`[Director] Jeon Dongchan
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[Equipment] SONY FX6
+[PROJECT] 훈밍정음 연합회
+`}
+        </pre>
+      ),
+      content_img_2: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/훈민정음연합회/km1w6nkjfkklo0s9967d"
+        />
+      ),
+      content_img_3: (
+        <CldImage
+          width="1600"
+          height="900"
+          alt="image"
+          style={{ width: "70%", height: "auto" }}
+          src="newbora/0225_new/훈민정음연합회/ak27gld9oi3zkmgkne8z"
+        />
+      ),
+      new: "2025",
+    },
+    {
       id: 4,
       title: "Korea Tourism Organization: Kantabi Supporters",
       videoType: "col",
@@ -131,7 +1186,7 @@ export let works = {
       content_subscription_1: (
         <pre>
           {`[Director] Jeon Dongchan
-[[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
 [Equipment] SONY A7s3, FX6, DJI Mavic3
 [Location] Korea Nami Island
 `}
@@ -158,7 +1213,7 @@ export let works = {
           src="newbora/kantabi/ulbhcak9aejchtt8njsg"
         />
       ),
-      new: true,
+      new: "2024",
     },
     {
       id: 5,
@@ -189,7 +1244,7 @@ export let works = {
       content_subscription_1: (
         <pre>
           {`[Director] Jeon Dongchan
-[[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
 [Equipment] SONY A7s3, FX6, DJI Mavic3
 [Location] Souel
 `}
@@ -207,7 +1262,7 @@ export let works = {
       content_title_2: "Cha Eunwoo, KTO Ambassador Photoshoot",
       content_subscription_2:
         "ASTRO's member, Cha Eunwoo, was chosen as the ambassador for the Korea Tourism Organization (KTO) and a photoshoot was conducted. Alongside the photoshoot, a short-form video was also filmed, capturing Cha Eunwoo's charming and captivating presence remarkably well.",
-      new: true,
+      new: "2024",
     },
     {
       id: 6,
@@ -245,7 +1300,7 @@ export let works = {
       content_subscription_1: (
         <pre>
           {`[Director] Jeon Dongchan
-[[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
 [Equipment] SONY A7s3, FX6, DJI Mavic3
 [Location] JEJU
 `}
@@ -272,7 +1327,7 @@ export let works = {
           src="newbora/제주 팸투어/ay02ongxnhsgsdtqmjek"
         />
       ),
-      new: true,
+      new: "2024",
     },
     {
       id: 7,
@@ -302,7 +1357,7 @@ export let works = {
       content_subscription_1: (
         <pre>
           {`[Director] Jeon Dongchan
-[[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
 [Equipment] SONY A7s2
 [Location] Seoul
 `}
@@ -321,7 +1376,7 @@ export let works = {
         "Puma Korea's 3-Year Journey: Celebrating the Annual Closing Ceremonies",
       content_subscription_2:
         "Over the past three years, we've had the pleasure of creating the closing ceremony videos for Puma Korea, building a strong connection along the way. Puma Korea always approaches their closing ceremonies with a fantastic atmosphere and unique concepts, allowing for a liberating experience. Thanks to the spirited individuals in attendance, we were able to capture footage that reflected the essence of these special themes. However, it's regrettable that some footage may appear blurry or hazy due to the limitations of the a7s2 era.",
-      new: true,
+      new: "2024",
     },
     {
       id: 8,
@@ -351,7 +1406,7 @@ export let works = {
       content_subscription_1: (
         <pre>
           {`[Director] Jeon Dongchan
-[[D.O.P] Kwon JeongHyeok / Jeon Dongjun
+[D.O.P] Kwon JeongHyeok / Jeon Dongjun
 [Equipment] SONY A7s3 / BMPCC URSA / GH5
 [Location] Japan Kansai / Hokkaido
 `}
@@ -378,7 +1433,7 @@ export let works = {
           src="newbora/일본정부관광국/nphkblgjwqzpsyedn4z0"
         />
       ),
-      new: true,
+      new: "2024",
     },
     {
       id: 9,
@@ -427,7 +1482,7 @@ export let works = {
       content_subscription_2:
         "At WolfLaunch, we're dedicated to exploring the wonders of nature through camping. Our team is committed to capturing the essence of outdoor living, where every scene tells a story of connection and serenity amidst the wilderness.From peaceful hikes along forest trails to cozy evenings spent by the campfire, our filming locations are carefully selected to showcase the diverse landscapes and experiences that camping offers. Whether you're seeking adventure or seeking solace, we invite you to join us as we journey through the great outdoors, one campsite at a time.",
 
-      new: true,
+      new: "2024",
     },
     {
       id: 10,
@@ -487,7 +1542,7 @@ export let works = {
         />
       ),
 
-      new: true,
+      new: "2024",
     },
     {
       id: 11,
@@ -545,7 +1600,7 @@ export let works = {
         />
       ),
 
-      new: true,
+      new: "2024",
     },
     {
       id: 12,
